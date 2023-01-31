@@ -6,16 +6,27 @@ janbox test design system project
 
 ```sh
 npm install rn-janbox-design-system-v2
+
+or
+
+yarn add rn-janbox-design-system-v2
 ```
 
 ## Usage
 
 ```js
-import { RnJanboxDesignSystemV2View } from "rn-janbox-design-system-v2";
+import { Button } from "rn-janbox-design-system-v2";
 
 // ...
 
-<RnJanboxDesignSystemV2View color="tomato" />
+<Button
+  buttonSize="medium"
+  buttonStyle="primary"
+  onPress={() => setButtonDisable(true)}
+  isLoading={buttonDisable}
+  isDisabled={buttonDisable}
+  content="Hải Óc Chó"
+/>;
 ```
 
 ## Contributing

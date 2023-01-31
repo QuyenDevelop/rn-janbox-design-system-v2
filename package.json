@@ -119,15 +119,21 @@
       "@react-native-community",
       "prettier"
     ],
+    "plugins": [
+      "react-hooks"
+    ],
     "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "quotes": [
+        2,
+        "double"
+      ],
       "prettier/prettier": [
         "error",
         {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
+          "singleQuote": false,
+          "endOfLine": "auto"
         }
       ]
     }
@@ -138,7 +144,7 @@
   ],
   "prettier": {
     "quoteProps": "consistent",
-    "singleQuote": true,
+    "singleQuote": false,
     "tabWidth": 2,
     "trailingComma": "es5",
     "useTabs": false
