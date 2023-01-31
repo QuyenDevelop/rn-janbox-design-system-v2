@@ -1,10 +1,11 @@
 import * as React from "react";
 
-import { StyleSheet, View } from "react-native";
-import { Button, Themes } from "rn-janbox-design-system-v2";
+import { StyleSheet, Text, View } from "react-native";
+import { BaseBottomSheet, Button, Themes } from "rn-janbox-design-system-v2";
 
 export default function App() {
   const [buttonDisable, setButtonDisable] = React.useState<boolean>(false);
+  const [showModal, setShowModal] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     if (buttonDisable) {
@@ -18,16 +19,15 @@ export default function App() {
     <View style={styles.container}>
       <Button
         buttonSize="large"
-        onPress={() => setButtonDisable(true)}
+        onPress={() => setShowModal(true)}
         isLoading={buttonDisable}
         isDisabled={buttonDisable}
-        content="Hải Óc Chó"
+        content="Click me"
       />
       {/* <View
         style={{
-          width: "100%",
-          height: Themes.StylesConstant.sizeLarge,
-          paddingHorizontal: Themes.StylesConstant.spacingNormal,
+          width: "70%",
+          paddingHorizontal: Themes.StylesConstant.spacing16,
           marginTop: 20,
         }}
       >
@@ -41,6 +41,26 @@ export default function App() {
           ButtonLeftView={<Text>x</Text>}
         />
       </View> */}
+      <BaseBottomSheet
+        isVisible={showModal}
+        onCloseModal={() => setShowModal(false)}
+        headerTitle={"Title"}
+        // headerRightView={<Text>Hai</Text>}
+      >
+        <View>
+          <Text>abc</Text>
+          <Text>abc</Text>
+          <Text>abc</Text>
+          <Text>abc</Text>
+          <Text>abc</Text>
+          <Text>abc</Text>
+          <Text>abc</Text>
+          <Text>abc</Text>
+          <Text>abc</Text>
+          <Text>abc</Text>
+          <Text>abc</Text>
+        </View>
+      </BaseBottomSheet>
     </View>
   );
 }

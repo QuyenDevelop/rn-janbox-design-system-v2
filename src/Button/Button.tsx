@@ -50,14 +50,14 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       ? {
           ...styles.ButtonLeftStyles,
           backgroundColor: isDisabled ? Color.black5s : getButtonRightBGColor,
-          borderRadius: StylesConstant.borderRadiusPrimary,
+          borderRadius: StylesConstant.borderRadius4,
           width: StylesConstant.iconSizeSpecial,
           height: StylesConstant.iconSizeSpecial,
         }
       : {
           ...styles.ButtonLeftStyles,
           backgroundColor: isDisabled ? Color.black5s : getButtonRightBGColor,
-          borderRadius: StylesConstant.borderRadiusPrimary,
+          borderRadius: StylesConstant.borderRadius8,
           width: StylesConstant.iconSizeMedium,
           height: StylesConstant.iconSizeMedium,
         };
@@ -97,10 +97,12 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
           ? {
               ...styles.disableStyle,
               maxHeight: getSize,
+              minHeight: getSize,
             }
           : {
               ...styles.enableStyle,
               maxHeight: getSize,
+              minHeight: getSize,
               backgroundColor: getBackgroundColor,
             }
       }
@@ -144,8 +146,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-    paddingHorizontal: StylesConstant.spacingPrimary,
-    borderRadius: StylesConstant.borderRadiusPrimary,
+    paddingHorizontal: StylesConstant.spacing8,
+    borderRadius: StylesConstant.borderRadius8,
     backgroundColor: Color.black3s,
   },
   enableStyle: {
@@ -153,8 +155,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-    paddingHorizontal: StylesConstant.spacingPrimary,
-    borderRadius: StylesConstant.borderRadiusPrimary,
+    paddingHorizontal: StylesConstant.spacing8,
+    borderRadius: StylesConstant.borderRadius8,
   },
   contentStyle: {
     flex: 1,
@@ -166,7 +168,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     alignItems: "center",
     justifyContent: "center",
-    marginHorizontal: StylesConstant.spacingPrimary,
+    marginHorizontal: StylesConstant.spacing8,
   },
   textStyle: {
     textAlign: "center",
