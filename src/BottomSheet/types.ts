@@ -23,6 +23,9 @@ export interface BottomSheetProps {
     | null
     | undefined;
 
+  disableBackdrop?: boolean;
+  disableSwipeComplete?: boolean;
+  backdropOpacity?: number;
   onCloseModal?: (() => void) | undefined;
   headerLeftOnPress?: ((event: GestureResponderEvent) => void) | undefined;
   headerRightOnPress?: ((event: GestureResponderEvent) => void) | undefined;

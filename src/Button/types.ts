@@ -24,6 +24,7 @@ export declare const buttonSize: {
 export interface ButtonProps {
   buttonStyle?: ButtonStyle;
   buttonSize?: ButtonSize;
+  width?: number;
   isLoading?: boolean;
   isDisabled?: boolean;
   content?: string;

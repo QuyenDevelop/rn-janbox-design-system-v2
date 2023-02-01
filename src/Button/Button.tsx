@@ -1,11 +1,11 @@
 import * as React from "react";
-import type { ButtonProps } from "./types";
-import { TouchableOpacity, Text, View, Image } from "react-native";
-import { StyleSheet } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Color, StylesConstant, TextStyles } from "../Themes";
 import { Images } from "../assets/Images";
+import type { ButtonProps } from "./types";
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
+  width,
   isLoading,
   isDisabled,
   content,
@@ -22,7 +22,9 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
 }) => {
   /** get Button Height size */
   const getSize =
-    buttonSize === "smallSpecial" || buttonSize === "small"
+    buttonSize === "smallSpecial" ||
+    buttonSize === "small" ||
+    width === StylesConstant.sizeSmall
       ? StylesConstant.sizeSmall
       : buttonSize === "medium"
       ? StylesConstant.sizeMedium
@@ -97,13 +99,21 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
           ? {
               ...styles.disableStyle,
               maxHeight: getSize,
+              height: getSize,
               minHeight: getSize,
+              minWidth: getSize,
+              width: width,
+              maxWidth: width,
             }
           : {
               ...styles.enableStyle,
               maxHeight: getSize,
+              height: getSize,
               minHeight: getSize,
               backgroundColor: getBackgroundColor,
+              minWidth: getSize,
+              width: width,
+              maxWidth: width,
             }
       }
       activeOpacity={1}

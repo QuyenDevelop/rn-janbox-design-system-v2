@@ -1,7 +1,12 @@
 import * as React from "react";
 
 import { StyleSheet, Text, View } from "react-native";
-import { BaseBottomSheet, Button, Themes } from "rn-janbox-design-system-v2";
+import {
+  BaseBottomSheet,
+  Button,
+  EmptyState,
+  Themes,
+} from "rn-janbox-design-system-v2";
 
 export default function App() {
   const [buttonDisable, setButtonDisable] = React.useState<boolean>(false);
@@ -17,48 +22,44 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Button
-        buttonSize="large"
-        onPress={() => setShowModal(true)}
-        isLoading={buttonDisable}
-        isDisabled={buttonDisable}
-        content="Click me"
-      />
-      {/* <View
-        style={{
-          width: "70%",
-          paddingHorizontal: Themes.StylesConstant.spacing16,
-          marginTop: 20,
-        }}
-      >
+      <View style={styles.boxButton}>
         <Button
           onPress={() => setButtonDisable(true)}
-          // isLoading={buttonDisable}
+          isLoading={buttonDisable}
           isDisabled={buttonDisable}
-          // buttonSize="smallSpecial"
+          // buttonSize={"small"}
           // buttonStyle="secondaryOne"
-          content="xyz"
+          // width={Themes.ScreenUtils.scale(32)}
+          content="Test Button"
           ButtonLeftView={<Text>x</Text>}
         />
-      </View> */}
+        <View
+          style={{
+            width: Themes.StylesConstant.spacing16,
+          }}
+        />
+        <Button onPress={() => setShowModal(true)} content="B" />
+      </View>
+
       <BaseBottomSheet
         isVisible={showModal}
         onCloseModal={() => setShowModal(false)}
         headerTitle={"Title"}
         // headerRightView={<Text>Hai</Text>}
+        // disableBackdrop
+        // isSwipeComplete
       >
-        <View>
-          <Text>abc</Text>
-          <Text>abc</Text>
-          <Text>abc</Text>
-          <Text>abc</Text>
-          <Text>abc</Text>
-          <Text>abc</Text>
-          <Text>abc</Text>
-          <Text>abc</Text>
-          <Text>abc</Text>
-          <Text>abc</Text>
-          <Text>abc</Text>
+        <View style={styles.contentContainer}>
+          <EmptyState
+            title={"Title"}
+            message={"Message"}
+            // buttonTitle={"Button"}
+            // buttonHandler={() => setShowModal(false)}
+          />
+          {/* <View style={styles.content}>
+            <Text>Swap area</Text>
+            <Text>Hãy tạo component vào kéo vào đây thay thế nhé</Text>
+          </View> */}
         </View>
       </BaseBottomSheet>
     </View>
@@ -71,12 +72,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  box: {
-    height: 60,
-    marginVertical: 20,
+  boxButton: {
+    paddingHorizontal: Themes.StylesConstant.spacing16,
+    marginTop: 20,
+    flexDirection: "row",
   },
-  text: {
-    color: Themes.Color.orange6s,
-    fontSize: 16,
+  contentContainer: {
+    flex: 1,
+    padding: 16,
+  },
+  content: {
+    backgroundColor: Themes.Color.black1s,
+    padding: 16,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

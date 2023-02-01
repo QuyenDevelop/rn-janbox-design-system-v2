@@ -6,6 +6,11 @@ const StylesConstant = {
   spacing8: ScreenUtils.scale(8),
   spacing12: ScreenUtils.scale(12),
   spacing16: ScreenUtils.scale(16),
+  spacing20: ScreenUtils.scale(20),
+  spacing24: ScreenUtils.scale(24),
+  spacing32: ScreenUtils.scale(32),
+  spacing40: ScreenUtils.scale(40),
+  spacing48: ScreenUtils.scale(48),
 
   /* ----- Border Radius ----- */
   borderRadius4: ScreenUtils.scale(4),

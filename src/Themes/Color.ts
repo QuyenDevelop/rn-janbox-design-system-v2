@@ -51,17 +51,17 @@ const Color = {
   black5s: "#666666",
   black6s: "#333333",
 
-  black1: "#14333333",
-  black2: "#33333333",
-  black3: "#66333333",
-  black4: "#99333333",
-  black5: "#CC333333",
+  black1: "rgba(51, 51, 51, 0.08)",
+  black2: "rgba(51, 51, 51, 0.2)",
+  black3: "rgba(51, 51, 51, 0.4)",
+  black4: "rgba(51, 51, 51, 0.6)",
+  black5: "rgba(51, 51, 51, 0.8)",
 
-  white1: "#14FFFFFF",
-  white2: "#33FFFFFF",
-  white3: "#66FFFFFF",
-  white4: "#99FFFFFF",
-  white5: "#CCFFFFFF",
+  white1: "rgba(255, 255, 255, 0.08)",
+  white2: "rgba(255, 255, 255, 0.2)",
+  white3: "rgba(255, 255, 255, 0.4)",
+  white4: "rgba(255, 255, 255, 0.6)",
+  white5: "rgba(255, 255, 255, 0.8)",
   white6: "#FFFFFF",
 
   // ----- shadow colors -----

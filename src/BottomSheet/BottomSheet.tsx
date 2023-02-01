@@ -1,5 +1,6 @@
 import React, { forwardRef, ForwardRefRenderFunction, useRef } from "react";
 import {
+  Image,
   KeyboardAvoidingView,
   ScrollView,
   StyleSheet,
@@ -10,6 +11,7 @@ import {
 import Modal from "react-native-modal";
 import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
 import type { BottomSheetProps, BottomSheetRef } from "./types";
+import { Images } from "../assets";
 
 export const BaseBottomSheetRef: ForwardRefRenderFunction<
   BottomSheetRef,
@@ -25,6 +27,9 @@ export const BaseBottomSheetRef: ForwardRefRenderFunction<
     headerTitle,
     headerRightView,
     headerRightOnPress,
+    disableBackdrop = false,
+    disableSwipeComplete = false,
+    backdropOpacity,
   } = props;
   const scrollRef = useRef<ScrollView>(null);
   const MAX_HEIGHT =
@@ -39,13 +44,15 @@ export const BaseBottomSheetRef: ForwardRefRenderFunction<
       statusBarTranslucent
       propagateSwipe={true}
       hardwareAccelerated={false}
-      onBackdropPress={onCloseModal}
+      onBackdropPress={disableBackdrop ? undefined : onCloseModal}
       onBackButtonPress={onCloseModal}
-      onSwipeComplete={onCloseModal}
+      onSwipeComplete={disableSwipeComplete ? undefined : onCloseModal}
+      backdropColor={Color.black5}
       onModalHide={onCloseModal}
       swipeDirection="down"
       style={styles.modalContainer}
       isVisible={isVisible}
+      backdropOpacity={backdropOpacity || 0.5}
       hideModalContentWhileAnimating={true}
       backdropTransitionOutTiming={0}
     >
@@ -65,7 +72,11 @@ export const BaseBottomSheetRef: ForwardRefRenderFunction<
                     headerLeftView
                   ) : (
                     <View style={styles.view24}>
-                      <Text style={TextStyles.text18}>X</Text>
+                      <Image
+                        source={Images.icClose}
+                        style={styles.iconCloseStyle}
+                        resizeMode="center"
+                      />
                     </View>
                   )}
                 </TouchableOpacity>
@@ -113,7 +124,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: StylesConstant.spacing4,
     paddingHorizontal: StylesConstant.spacing8,
-    borderBottomWidth: 1 * StyleSheet.hairlineWidth,
+    borderBottomWidth: 2 * StyleSheet.hairlineWidth,
     borderBottomColor: Color.black1s,
   },
   headerTitle: {
@@ -131,6 +142,13 @@ const styles = StyleSheet.create({
   view24: {
     width: StylesConstant.iconSizeMedium,
     height: StylesConstant.iconSizeMedium,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  iconCloseStyle: {
+    width: StylesConstant.iconSizeMedium,
+    height: StylesConstant.iconSizeMedium,
+    overflow: "hidden",
     alignItems: "center",
     justifyContent: "center",
   },

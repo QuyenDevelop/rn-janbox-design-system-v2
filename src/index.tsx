@@ -1,8 +1,21 @@
+/** import các thành phần Themes */
 import * as Themes from "./Themes";
 
-// import * as Types from "./types";
-
+/** import các thành phần Button */
 import { Button } from "./Button";
+
+/** import các thành phần BaseBottomSheet */
 import { BaseBottomSheet } from "./BottomSheet";
 
-export { Themes, Button, BaseBottomSheet };
+/** import các Components */
+import { ComponentDIM, EmptyState, PlaceHolder } from "./Components";
+
+/** export các module components & types */
+export {
+  Themes,
+  Button,
+  BaseBottomSheet,
+  ComponentDIM,
+  EmptyState,
+  PlaceHolder,
+};
