@@ -23,7 +23,7 @@ const StylesConstant = {
   sizeSmall: ScreenUtils.scale(32),
 
   /* ----- Icon Size ----- */
-  // iconSizeLarge: ScreenUtils.scale(32),
+  iconSizeLarge: ScreenUtils.scale(32),
   iconSizeMedium: ScreenUtils.scale(24),
   iconSizeSpecial: ScreenUtils.scale(16),
 };

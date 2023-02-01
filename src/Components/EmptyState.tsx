@@ -21,13 +21,15 @@ const EmptyState: FunctionComponent<EmptyStateProps> = ({
   backgroundColor,
 }) => {
   return (
-    <View style={styles.container}>
+    <View
+      style={{
+        ...styles.container,
+        backgroundColor: backgroundColor || Color.white6,
+      }}
+    >
       <Image
         source={imgSource || Images.empty}
-        style={{
-          ...styles.imageStyle,
-          backgroundColor: backgroundColor || Color.white6,
-        }}
+        style={styles.imageStyle}
         resizeMode="center"
       />
       <View style={styles.emptyContentStyle}>

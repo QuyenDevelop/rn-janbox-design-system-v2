@@ -1,12 +1,7 @@
 import * as React from "react";
 
 import { StyleSheet, Text, View } from "react-native";
-import {
-  BaseBottomSheet,
-  Button,
-  EmptyState,
-  Themes,
-} from "rn-janbox-design-system-v2";
+import { BaseBottomSheet, Button, Themes } from "rn-janbox-design-system-v2";
 
 export default function App() {
   const [buttonDisable, setButtonDisable] = React.useState<boolean>(false);
@@ -50,16 +45,17 @@ export default function App() {
         // isSwipeComplete
       >
         <View style={styles.contentContainer}>
-          <EmptyState
+          {/* <PlaceHolder holderSize={48} /> */}
+          {/* <EmptyState
             title={"Title"}
             message={"Message"}
             // buttonTitle={"Button"}
             // buttonHandler={() => setShowModal(false)}
-          />
-          {/* <View style={styles.content}>
+          /> */}
+          <View style={styles.content}>
             <Text>Swap area</Text>
             <Text>Hãy tạo component vào kéo vào đây thay thế nhé</Text>
-          </View> */}
+          </View>
         </View>
       </BaseBottomSheet>
     </View>
