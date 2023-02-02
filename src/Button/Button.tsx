@@ -53,8 +53,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
           ...styles.ButtonLeftStyles,
           backgroundColor: isDisabled ? Color.black5s : getButtonRightBGColor,
           borderRadius: StylesConstant.borderRadius4,
-          width: StylesConstant.iconSizeSpecial,
-          height: StylesConstant.iconSizeSpecial,
+          width: StylesConstant.iconSizeSmall,
+          height: StylesConstant.iconSizeSmall,
         }
       : {
           ...styles.ButtonLeftStyles,
@@ -69,8 +69,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
     buttonSize === "smallSpecial"
       ? {
           ...styles.ButtonLeftStyles,
-          width: StylesConstant.iconSizeSpecial,
-          height: StylesConstant.iconSizeSpecial,
+          width: StylesConstant.iconSizeSmall,
+          height: StylesConstant.iconSizeSmall,
         }
       : {
           ...styles.ButtonLeftStyles,

@@ -1,7 +1,13 @@
 import * as React from "react";
 
 import { StyleSheet, Text, View } from "react-native";
-import { BaseBottomSheet, Button, Themes } from "rn-janbox-design-system-v2";
+import {
+  Badge,
+  BaseBottomSheet,
+  Button,
+  Dot,
+  Themes,
+} from "rn-janbox-design-system-v2";
 
 export default function App() {
   const [buttonDisable, setButtonDisable] = React.useState<boolean>(false);
@@ -53,6 +59,8 @@ export default function App() {
             // buttonHandler={() => setShowModal(false)}
           /> */}
           <View style={styles.content}>
+            <Dot />
+            <Badge content={99} />
             <Text>Swap area</Text>
             <Text>Hãy tạo component vào kéo vào đây thay thế nhé</Text>
           </View>

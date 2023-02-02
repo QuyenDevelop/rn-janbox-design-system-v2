@@ -8,7 +8,13 @@ import { Button } from "./Button";
 import { BaseBottomSheet } from "./BottomSheet";
 
 /** import các Components */
-import { ComponentDIM, EmptyState, PlaceHolder } from "./Components";
+import {
+  ComponentDIM,
+  EmptyState,
+  PlaceHolder,
+  Dot,
+  Badge,
+} from "./Components";
 
 /** export các module components & types */
 export {
@@ -18,4 +24,6 @@ export {
   ComponentDIM,
   EmptyState,
   PlaceHolder,
+  Dot,
+  Badge,
 };

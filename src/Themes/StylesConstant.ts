@@ -25,5 +25,6 @@ export const StylesConstant = {
   /* ----- Icon Size ----- */
   iconSizeLarge: ScreenUtils.scale(32),
   iconSizeMedium: ScreenUtils.scale(24),
-  iconSizeSpecial: ScreenUtils.scale(16),
+  iconSizeSmall: ScreenUtils.scale(16),
+  iconSizeSmallSmall: ScreenUtils.scale(12),
 };

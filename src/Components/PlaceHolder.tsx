@@ -12,7 +12,7 @@ const PlaceHolder: FunctionComponent<PlaceHolderProps> = ({
   const getImageSize =
     holderSize > StylesConstant.sizeLarge
       ? StylesConstant.iconSizeLarge
-      : StylesConstant.iconSizeSpecial;
+      : StylesConstant.iconSizeSmall;
 
   return (
     <View
