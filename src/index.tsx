@@ -2,10 +2,13 @@
 import * as Themes from "./Themes";
 
 /** import các thành phần Button */
-import { Button } from "./Button";
+import { Button, IconButton } from "./Button";
 
 /** import các thành phần BaseBottomSheet */
 import { BaseBottomSheet } from "./BottomSheet";
+
+/** import các thành phần TextInput */
+import { TextInput } from "./TextInput";
 
 /** import các Components */
 import {
@@ -20,10 +23,12 @@ import {
 export {
   Themes,
   Button,
+  IconButton,
   BaseBottomSheet,
   ComponentDIM,
   EmptyState,
   PlaceHolder,
   Dot,
   Badge,
+  TextInput,
 };

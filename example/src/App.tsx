@@ -2,16 +2,16 @@ import * as React from "react";
 
 import { StyleSheet, Text, View } from "react-native";
 import {
-  Badge,
   BaseBottomSheet,
   Button,
-  Dot,
+  TextInput,
   Themes,
 } from "rn-janbox-design-system-v2";
 
 export default function App() {
   const [buttonDisable, setButtonDisable] = React.useState<boolean>(false);
   const [showModal, setShowModal] = React.useState<boolean>(false);
+  const [value, setValue] = React.useState<string>("Typing here ...");
 
   React.useEffect(() => {
     if (buttonDisable) {
@@ -59,10 +59,21 @@ export default function App() {
             // buttonHandler={() => setShowModal(false)}
           /> */}
           <View style={styles.content}>
-            <Dot />
-            <Badge content={99} />
+            {/* <Dot /> */}
+            {/* <Badge content={99} /> */}
             <Text>Swap area</Text>
             <Text>Hãy tạo component vào kéo vào đây thay thế nhé</Text>
+            <TextInput
+              // editable={false}
+              label="Label"
+              value={value}
+              onChangeText={setValue}
+              onClearInput={() => setValue("")}
+              errorMessage="error Message"
+              placeholder="Placeholder ..."
+              // noteMessage="note Message"
+              // height={100}
+            />
           </View>
         </View>
       </BaseBottomSheet>
