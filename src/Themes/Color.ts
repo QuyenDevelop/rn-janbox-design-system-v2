@@ -1,4 +1,4 @@
-const Color = {
+export const Color = {
   brandA: "#F57C00",
   brandB: "#1135A8",
   // primary color
@@ -66,6 +66,7 @@ const Color = {
 
   // ----- shadow colors -----
   shadowColor1: "rgba(0, 0, 0, 0.05)",
-};
 
-export default Color;
+  // ----- Gradient colors -----
+  skeletonGradient: "linear-gradient(270deg, #F2F2F2 9.12%, #DDDDDD 98.39%)",
+};

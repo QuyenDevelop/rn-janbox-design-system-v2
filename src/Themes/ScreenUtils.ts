@@ -27,7 +27,7 @@ const isIphoneX = () => {
   );
 };
 
-const ScreenUtils = {
+export const ScreenUtils = {
   isPad() {
     if (Platform.OS === "ios") {
       const platformIOS = Platform as PlatformIOSStatic;
@@ -117,5 +117,3 @@ const ScreenUtils = {
     return PixelRatio.roundToNearestPixel(heightPercent);
   },
 };
-
-export default ScreenUtils;

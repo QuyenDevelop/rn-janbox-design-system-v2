@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
-import Color from "./Color";
+import { Color } from "./Color";
 
-const ShadowStyles = StyleSheet.create({
+export const ShadowStyles = StyleSheet.create({
   primary: {
     shadowColor: Color.shadowColor1,
     shadowOffset: {
@@ -30,5 +30,3 @@ const ShadowStyles = StyleSheet.create({
     // shadowRadius: 4.65,
   },
 });
-
-export default ShadowStyles;

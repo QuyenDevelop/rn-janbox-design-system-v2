@@ -1,6 +1,6 @@
-import ScreenUtils from "./ScreenUtils";
+import { ScreenUtils } from "./ScreenUtils";
 
-const StylesConstant = {
+export const StylesConstant = {
   /* ----- Spacing Size ----- */
   spacing4: ScreenUtils.scale(4),
   spacing8: ScreenUtils.scale(8),
@@ -27,5 +27,3 @@ const StylesConstant = {
   iconSizeMedium: ScreenUtils.scale(24),
   iconSizeSpecial: ScreenUtils.scale(16),
 };
-
-export default StylesConstant;

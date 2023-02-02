@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const TextStyles = StyleSheet.create({
+export const TextStyles = StyleSheet.create({
   text48: {
     fontSize: 48,
     lineHeight: 56,
@@ -42,5 +42,3 @@ const TextStyles = StyleSheet.create({
     lineHeight: 14,
   },
 });
-
-export default TextStyles;
