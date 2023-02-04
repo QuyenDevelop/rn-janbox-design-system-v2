@@ -8,7 +8,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   width,
   isLoading,
   isDisabled,
-  content,
+  name,
   contentStyles,
   containerStyle,
   children,
@@ -136,10 +136,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
               resizeMode="cover"
             />
           )}
-          {content && (
-            <Text style={[getButtonContentStyle, contentStyles]}>
-              {content}
-            </Text>
+          {name && (
+            <Text style={[getButtonContentStyle, contentStyles]}>{name}</Text>
           )}
           {ButtonRightView && (
             <View style={getButtonRightStyle}>{ButtonRightView}</View>
@@ -224,6 +222,7 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     textAlign: "center",
+    fontWeight: "500",
   },
   iconButton: {
     alignItems: "center",

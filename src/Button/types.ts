@@ -27,7 +27,7 @@ export interface ButtonProps {
   width?: number;
   isLoading?: boolean;
   isDisabled?: boolean;
-  content?: string;
+  name?: string;
   contentStyles?: TextStyle;
   containerStyle?: ViewStyle;
   children?: React.ReactNode | JSX.Element | null | undefined;

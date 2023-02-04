@@ -1,16 +1,19 @@
-/** import các thành phần Themes */
+/** import component/types from Themes */
 import * as Themes from "./Themes";
 
-/** import các thành phần Button */
+/** import component/types from Button */
 import { Button, IconButton } from "./Button";
 
-/** import các thành phần BaseBottomSheet */
+/** import component/types from BaseBottomSheet */
 import { BaseBottomSheet } from "./BottomSheet";
 
-/** import các thành phần TextInput */
-import { TextInput } from "./TextInput";
+/** import component/types from TextInput */
+import { BaseTextInput, Textarea } from "./BaseTextInput";
 
-/** import các Components */
+/** import component/types from BaseDialog */
+import { BaseDialog } from "./BaseDialog";
+
+/** import component/types from */
 import {
   ComponentDIM,
   EmptyState,
@@ -30,5 +33,7 @@ export {
   PlaceHolder,
   Dot,
   Badge,
-  TextInput,
+  BaseTextInput,
+  Textarea,
+  BaseDialog,
 };

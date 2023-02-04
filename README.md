@@ -25,7 +25,7 @@ import { Button } from "rn-janbox-design-system-v2";
   onPress={() => setButtonDisable(true)}
   isLoading={buttonDisable}
   isDisabled={buttonDisable}
-  content="Click me"
+  name="Click me"
 />;
 ```
 

@@ -44,7 +44,7 @@ const EmptyState: FunctionComponent<EmptyStateProps> = ({
         {buttonTitle && buttonHandler && (
           <Button
             width={ScreenUtils.scale(248)}
-            content={buttonTitle}
+            name={buttonTitle}
             onPress={buttonHandler}
           />
         )}

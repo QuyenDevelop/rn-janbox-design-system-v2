@@ -27,4 +27,7 @@ export const StylesConstant = {
   iconSizeMedium: ScreenUtils.scale(24),
   iconSizeSmall: ScreenUtils.scale(16),
   iconSizeSmallSmall: ScreenUtils.scale(12),
+
+  /* ----- Icon Size ----- */
+  dialogWidthPrimary: ScreenUtils.scale(296),
 };

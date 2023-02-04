@@ -3,8 +3,9 @@ import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import {
   BaseBottomSheet,
+  BaseDialog,
   Button,
-  TextInput,
+  Textarea,
   Themes,
 } from "rn-janbox-design-system-v2";
 
@@ -12,6 +13,7 @@ export default function App() {
   const [buttonDisable, setButtonDisable] = React.useState<boolean>(false);
   const [showModal, setShowModal] = React.useState<boolean>(false);
   const [value, setValue] = React.useState<string>("Typing here ...");
+  const [showDialog, setShowDialog] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     if (buttonDisable) {
@@ -31,7 +33,7 @@ export default function App() {
           // buttonSize={"small"}
           // buttonStyle="secondaryOne"
           // width={Themes.ScreenUtils.scale(32)}
-          content="Test Button"
+          name="Test Button"
           ButtonLeftView={<Text>x</Text>}
         />
         <View
@@ -39,7 +41,7 @@ export default function App() {
             width: Themes.StylesConstant.spacing16,
           }}
         />
-        <Button onPress={() => setShowModal(true)} content="B" />
+        <Button onPress={() => setShowModal(true)} name="B" />
       </View>
 
       <BaseBottomSheet
@@ -63,20 +65,42 @@ export default function App() {
             {/* <Badge content={99} /> */}
             <Text>Swap area</Text>
             <Text>Hãy tạo component vào kéo vào đây thay thế nhé</Text>
-            <TextInput
+            {/* <BaseTextInput
               // editable={false}
               label="Label"
               value={value}
               onChangeText={setValue}
               onClearInput={() => setValue("")}
-              errorMessage="error Message"
+              errorMessage="error Message baksbkabvasbviaubvkxzjbviaujkzbciaubcias baucbiasbicba"
               placeholder="Placeholder ..."
               // noteMessage="note Message"
               // height={100}
+            /> */}
+            <Textarea
+              // editable={false}
+              label="Label"
+              value={value}
+              onChangeText={setValue}
+              onClearInput={() => setValue("")}
+              // errorMessage="error Message baksbkabvasbviaubvkxzjbviaujkzbciaubcias baucbiasbicba"
+              placeholder="Placeholder ..."
+              // isFocus
+              noteMessage="note Message"
+              height={100}
             />
           </View>
         </View>
       </BaseBottomSheet>
+      <BaseDialog
+        isVisible={showDialog}
+        onClose={() => setShowDialog(false)}
+        title={"Đây là title nhé, tối đa 2 dòng"}
+        message={"Đây là description nhé,  tối đa 2 dòng thôi nhé"}
+        buttonCancelName={"Từ chối"}
+        onPressCancel={() => setShowDialog(false)}
+        buttonAcceptName={"Đồng ý"}
+        onPressAccept={() => console.log("Đồng ý")}
+      />
     </View>
   );
 }

@@ -10,8 +10,25 @@ export declare interface InputProps extends TextInputProps {
   onClearInput: () => void;
   inputStyle?: StyleProp<ViewStyle>;
   isRequired?: boolean;
+  isFocus?: boolean;
   textRightComponent?: React.ReactNode;
   textLeftComponent?: React.ReactNode;
+}
+
+export declare interface TextareaProps extends TextInputProps {
+  label?: string;
+  noteMessage?: string;
+  errorMessage?: string;
+  height?: number;
+  containerStyle?: StyleProp<ViewStyle>;
+  onClearInput: () => void;
+  inputStyle?: StyleProp<ViewStyle>;
+  isFocus?: boolean;
+  isRequired?: boolean;
+  textRightComponent?: React.ReactNode;
+  textLeftComponent?: React.ReactNode;
+  /** num of limited of value length */
+  limited?: number;
 }
 
 export const styles = StyleSheet.create({
@@ -34,6 +51,15 @@ export const styles = StyleSheet.create({
     borderRadius: StylesConstant.borderRadius8,
     borderWidth: 2 * StyleSheet.hairlineWidth,
     borderColor: Color.black2s,
+    paddingHorizontal: StylesConstant.spacing16,
+  },
+  inputFocusContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    overflow: "hidden",
+    borderRadius: StylesConstant.borderRadius8,
+    borderWidth: 2 * StyleSheet.hairlineWidth,
+    borderColor: Color.blue6s,
     paddingHorizontal: StylesConstant.spacing16,
   },
   inputErrorContainer: {
@@ -64,12 +90,10 @@ export const styles = StyleSheet.create({
     ...TextStyles.text14,
     color: Color.red6s,
     marginLeft: StylesConstant.spacing16,
-    marginTop: StylesConstant.spacing4,
   },
   noteMessage: {
     ...TextStyles.text14,
     color: Color.black5s,
     marginLeft: StylesConstant.spacing16,
-    marginTop: StylesConstant.spacing4,
   },
 });
