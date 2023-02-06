@@ -13,6 +13,9 @@ import { BaseTextInput, Textarea } from "./BaseTextInput";
 /** import component/types from BaseDialog */
 import { BaseDialog } from "./BaseDialog";
 
+/** import component/types from SnackBar */
+import { SnackBar } from "./SnackBar";
+
 /** import component/types from */
 import {
   ComponentDIM,
@@ -36,4 +39,5 @@ export {
   BaseTextInput,
   Textarea,
   BaseDialog,
+  SnackBar,
 };

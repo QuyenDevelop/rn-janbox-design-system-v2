@@ -96,4 +96,16 @@ export const styles = StyleSheet.create({
     color: Color.black5s,
     marginLeft: StylesConstant.spacing16,
   },
+  noteView: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: StylesConstant.spacing4,
+  },
+  counter: {
+    ...TextStyles.text14,
+    color: Color.black5s,
+    width: StylesConstant.spacing40,
+    textAlign: "right",
+  },
 });

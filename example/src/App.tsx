@@ -5,15 +5,16 @@ import {
   BaseBottomSheet,
   BaseDialog,
   Button,
-  Textarea,
+  SnackBar,
   Themes,
 } from "rn-janbox-design-system-v2";
 
 export default function App() {
   const [buttonDisable, setButtonDisable] = React.useState<boolean>(false);
   const [showModal, setShowModal] = React.useState<boolean>(false);
-  const [value, setValue] = React.useState<string>("Typing here ...");
+  // const [value, setValue] = React.useState<string>("Typing here ...");
   const [showDialog, setShowDialog] = React.useState<boolean>(false);
+  const [showSnackBar, setShowSnackBar] = React.useState<string>("abc");
 
   React.useEffect(() => {
     if (buttonDisable) {
@@ -41,7 +42,7 @@ export default function App() {
             width: Themes.StylesConstant.spacing16,
           }}
         />
-        <Button onPress={() => setShowModal(true)} name="B" />
+        <Button onPress={() => setShowSnackBar("xyzz")} name="B" />
       </View>
 
       <BaseBottomSheet
@@ -76,7 +77,7 @@ export default function App() {
               // noteMessage="note Message"
               // height={100}
             /> */}
-            <Textarea
+            {/* <Textarea
               // editable={false}
               label="Label"
               value={value}
@@ -87,7 +88,7 @@ export default function App() {
               // isFocus
               noteMessage="note Message"
               height={100}
-            />
+            /> */}
           </View>
         </View>
       </BaseBottomSheet>
@@ -101,6 +102,7 @@ export default function App() {
         buttonAcceptName={"Đồng ý"}
         onPressAccept={() => console.log("Đồng ý")}
       />
+      <SnackBar message={showSnackBar} />
     </View>
   );
 }

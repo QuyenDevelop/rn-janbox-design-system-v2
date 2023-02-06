@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import { TextInput as Input, Text, View } from "react-native";
 import { IconButton } from "../Button";
-import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
+import { Color, ScreenUtils, StylesConstant } from "../Themes";
 import { InputProps, TextareaProps, styles } from "./types";
 
 export const BaseTextInput: FunctionComponent<InputProps> = ({
@@ -199,15 +199,9 @@ export const Textarea: FunctionComponent<TextareaProps> = ({
           {...props}
         />
       </View>
-      <View
-        style={{
-          flex: 1,
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginTop: StylesConstant.spacing4,
-        }}
-      >
+      <View style={styles.noteView}>
         <View
+          // eslint-disable-next-line react-native/no-inline-styles
           style={{
             flex: 0.9,
           }}
@@ -224,16 +218,7 @@ export const Textarea: FunctionComponent<TextareaProps> = ({
             </Text>
           ) : null}
         </View>
-        <Text
-          style={{
-            ...TextStyles.text14,
-            color: Color.black5s,
-            width: StylesConstant.spacing40,
-            textAlign: "right",
-          }}
-        >
-          {counter}
-        </Text>
+        <Text style={styles.counter}>{counter}</Text>
       </View>
     </View>
   );
