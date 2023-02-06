@@ -30,4 +30,7 @@ export const StylesConstant = {
 
   /* ----- Icon Size ----- */
   dialogWidthPrimary: ScreenUtils.scale(296),
+
+  /* ----- Icon Size ----- */
+  headerHeight: ScreenUtils.scale(44),
 };

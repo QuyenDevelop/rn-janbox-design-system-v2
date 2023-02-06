@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import {
   BaseBottomSheet,
   BaseDialog,
+  BaseHeaderBar,
   BaseLabel,
   Button,
   SnackBar,
@@ -15,7 +16,7 @@ export default function App() {
   const [showModal, setShowModal] = React.useState<boolean>(false);
   // const [value, setValue] = React.useState<string>("Typing here ...");
   const [showDialog, setShowDialog] = React.useState<boolean>(false);
-  const [showSnackBar] = React.useState<string>("abc");
+  const [showSnackBar, setShowSnackBar] = React.useState<string>("abc");
 
   React.useEffect(() => {
     if (buttonDisable) {
@@ -26,25 +27,31 @@ export default function App() {
   }, [buttonDisable]);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.boxButton}>
-        <Button
-          onPress={() => setButtonDisable(true)}
-          isLoading={buttonDisable}
-          isDisabled={buttonDisable}
-          // buttonSize={"small"}
-          // buttonStyle="ButtonTypes.SECONDARY_ONE"
-          // width={Themes.ScreenUtils.scale(32)}
-          name="Test Button"
-          ButtonLeftView={<Text>x</Text>}
-        />
-        <View
-          style={{
-            width: Themes.StylesConstant.spacing16,
-          }}
-        />
-        {/* <Button onPress={() => setShowSnackBar("xyzzcz")} name="SnackBar" /> */}
-        <Button onPress={() => setShowModal(true)} name="Modal" />
+    <View style={{ flex: 1 }}>
+      <BaseHeaderBar
+        renderIconLeft={<View />}
+        title={"Title tối đa 1 dòng nhiều"}
+      />
+      <View style={styles.container}>
+        <View style={styles.boxButton}>
+          <Button
+            onPress={() => setButtonDisable(true)}
+            isLoading={buttonDisable}
+            isDisabled={buttonDisable}
+            // buttonSize={"small"}
+            // buttonStyle="ButtonTypes.SECONDARY_ONE"
+            // width={Themes.ScreenUtils.scale(32)}
+            name="Test Button"
+            ButtonLeftView={<Text>x</Text>}
+          />
+          <View
+            style={{
+              width: Themes.StylesConstant.spacing16,
+            }}
+          />
+          <Button onPress={() => setShowSnackBar("xyzzcz")} name="SnackBar" />
+          {/* <Button onPress={() => setShowModal(true)} name="Modal" /> */}
+        </View>
       </View>
 
       <BaseBottomSheet

@@ -16,6 +16,9 @@ import { BaseDialog } from "./BaseDialog";
 /** import component/types from SnackBar */
 import { SnackBar, SnackBarTypes, SnackBarPosition } from "./SnackBar";
 
+/** import component/types from SnackBar */
+import { BaseHeaderBar, HeaderTypes } from "./BaseHeaderBar";
+
 /** import component/types from */
 import {
   ComponentDIM,
@@ -49,4 +52,6 @@ export {
   SnackBarPosition,
   BaseLabel,
   LabelTypes,
+  BaseHeaderBar,
+  HeaderTypes,
 };
