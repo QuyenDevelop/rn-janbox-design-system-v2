@@ -91,7 +91,7 @@ export const SnackBar = React.forwardRef<SnackRef, SnackBarProps>(
       message,
       type = SnackBarTypes.SUCCESS,
       position = SnackBarPosition.BOTTOM,
-      duration = 30000,
+      duration = 5000,
       snackBarIcon,
       buttonName,
       snackBarAction,

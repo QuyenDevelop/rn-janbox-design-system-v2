@@ -4,4 +4,5 @@ export const Images = {
   icClose: require("./icon-close.png"),
   icBack: require("./icon-back.png"),
   icHolder: require("./icon-holder.png"),
+  icCheck: require("./icCheck.png"),
 };

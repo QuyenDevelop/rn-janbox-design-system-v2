@@ -17,6 +17,7 @@ export default function App() {
   // const [value, setValue] = React.useState<string>("Typing here ...");
   const [showDialog, setShowDialog] = React.useState<boolean>(false);
   const [showSnackBar, setShowSnackBar] = React.useState<string>("abc");
+  // const [isChecked, setisChecked] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     if (buttonDisable) {
@@ -52,6 +53,18 @@ export default function App() {
           <Button onPress={() => setShowSnackBar("xyzzcz")} name="SnackBar" />
           {/* <Button onPress={() => setShowModal(true)} name="Modal" /> */}
         </View>
+        {/* <CheckBox
+          content="Điền nội dung"
+          isChecked={isChecked}
+          isDisabled
+          handleCheck={() => setisChecked(!isChecked)}
+        /> */}
+        {/* <RadioCheckBox
+          content="Điền nội dung"
+          isChecked={!isChecked}
+          isDisabled
+          handleCheck={() => setisChecked(!isChecked)}
+        /> */}
       </View>
 
       <BaseBottomSheet

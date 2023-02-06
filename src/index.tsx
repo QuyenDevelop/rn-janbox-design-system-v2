@@ -26,6 +26,8 @@ import {
   PlaceHolder,
   Dot,
   Badge,
+  CheckBox,
+  RadioCheckBox,
 } from "./Components";
 
 /** import component/types from SnackBar */
@@ -44,6 +46,8 @@ export {
   PlaceHolder,
   Dot,
   Badge,
+  CheckBox,
+  RadioCheckBox,
   BaseTextInput,
   Textarea,
   BaseDialog,
