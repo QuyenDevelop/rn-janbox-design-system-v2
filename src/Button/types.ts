@@ -7,19 +7,19 @@ import type {
   ViewStyle,
 } from "react-native";
 
-export declare type ButtonStyle = "primary" | "secondaryOne" | "secondaryTwo";
-export declare const buttonStyle: {
-  readonly primary: "primary";
-  readonly secondaryOne: "secondaryOne";
-  readonly secondaryTwo: "secondaryTwo";
-};
-export declare type ButtonSize = "small" | "smallSpecial" | "medium" | "large";
-export declare const buttonSize: {
-  readonly small: "small";
-  readonly smallSpecial: "smallSpecial";
-  readonly medium: "medium";
-  readonly large: "large";
-};
+export declare type ButtonStyle = "PRIMARY" | "SECONDARY_ONE" | "SECONDARY_TWO";
+export enum ButtonTypes {
+  PRIMARY = "PRIMARY",
+  SECONDARY_ONE = "SECONDARY_ONE",
+  SECONDARY_TWO = "SECONDARY_TWO",
+}
+export declare type ButtonSize = "SMALL" | "SMALL_SPECIAL" | "MEDIUM" | "LARGE";
+export enum ButtonSizes {
+  SMALL = "SMALL",
+  SMALL_SPECIAL = "SMALL_SPECIAL",
+  MEDIUM = "MEDIUM",
+  LARGE = "LARGE",
+}
 
 export interface ButtonProps {
   buttonStyle?: ButtonStyle;

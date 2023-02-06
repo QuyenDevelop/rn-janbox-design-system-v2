@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import {
   BaseBottomSheet,
   BaseDialog,
+  BaseLabel,
   Button,
   SnackBar,
   Themes,
@@ -14,7 +15,7 @@ export default function App() {
   const [showModal, setShowModal] = React.useState<boolean>(false);
   // const [value, setValue] = React.useState<string>("Typing here ...");
   const [showDialog, setShowDialog] = React.useState<boolean>(false);
-  const [showSnackBar, setShowSnackBar] = React.useState<string>("abc");
+  const [showSnackBar] = React.useState<string>("abc");
 
   React.useEffect(() => {
     if (buttonDisable) {
@@ -32,7 +33,7 @@ export default function App() {
           isLoading={buttonDisable}
           isDisabled={buttonDisable}
           // buttonSize={"small"}
-          // buttonStyle="secondaryOne"
+          // buttonStyle="ButtonTypes.SECONDARY_ONE"
           // width={Themes.ScreenUtils.scale(32)}
           name="Test Button"
           ButtonLeftView={<Text>x</Text>}
@@ -42,7 +43,8 @@ export default function App() {
             width: Themes.StylesConstant.spacing16,
           }}
         />
-        <Button onPress={() => setShowSnackBar("xyzz")} name="B" />
+        {/* <Button onPress={() => setShowSnackBar("xyzzcz")} name="SnackBar" /> */}
+        <Button onPress={() => setShowModal(true)} name="Modal" />
       </View>
 
       <BaseBottomSheet
@@ -64,6 +66,7 @@ export default function App() {
           <View style={styles.content}>
             {/* <Dot /> */}
             {/* <Badge content={99} /> */}
+            <BaseLabel content="Content label" />
             <Text>Swap area</Text>
             <Text>Hãy tạo component vào kéo vào đây thay thế nhé</Text>
             {/* <BaseTextInput
@@ -102,7 +105,7 @@ export default function App() {
         buttonAcceptName={"Đồng ý"}
         onPressAccept={() => console.log("Đồng ý")}
       />
-      <SnackBar message={showSnackBar} />
+      <SnackBar message={showSnackBar} buttonName="Button" />
     </View>
   );
 }

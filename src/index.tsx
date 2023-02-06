@@ -2,7 +2,7 @@
 import * as Themes from "./Themes";
 
 /** import component/types from Button */
-import { Button, IconButton } from "./Button";
+import { Button, IconButton, ButtonTypes, ButtonSizes } from "./Button";
 
 /** import component/types from BaseBottomSheet */
 import { BaseBottomSheet } from "./BottomSheet";
@@ -14,7 +14,7 @@ import { BaseTextInput, Textarea } from "./BaseTextInput";
 import { BaseDialog } from "./BaseDialog";
 
 /** import component/types from SnackBar */
-import { SnackBar } from "./SnackBar";
+import { SnackBar, SnackBarTypes, SnackBarPosition } from "./SnackBar";
 
 /** import component/types from */
 import {
@@ -25,11 +25,16 @@ import {
   Badge,
 } from "./Components";
 
+/** import component/types from SnackBar */
+import { BaseLabel, LabelTypes } from "./Label";
+
 /** export các module components & types */
 export {
   Themes,
   Button,
   IconButton,
+  ButtonTypes,
+  ButtonSizes,
   BaseBottomSheet,
   ComponentDIM,
   EmptyState,
@@ -40,4 +45,8 @@ export {
   Textarea,
   BaseDialog,
   SnackBar,
+  SnackBarTypes,
+  SnackBarPosition,
+  BaseLabel,
+  LabelTypes,
 };

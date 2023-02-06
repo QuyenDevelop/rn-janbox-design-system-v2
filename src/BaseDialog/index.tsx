@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
 import Modal from "react-native-modal";
-import { Button } from "../Button";
+import { Button, ButtonTypes } from "../Button";
 import { Color, ShadowStyles, StylesConstant, TextStyles } from "../Themes";
 import type { DialogProps } from "./types";
 import { SpacingHorizontal } from "../Components";
@@ -54,7 +54,7 @@ export const BaseDialog: FunctionComponent<DialogProps> = ({
             <View style={styles.buttonBox}>
               {!isHideCancelButton && (
                 <Button
-                  buttonStyle="secondaryOne"
+                  buttonStyle={ButtonTypes.SECONDARY_ONE}
                   name={buttonCancelName}
                   onPress={onPressCancel}
                 />
@@ -64,7 +64,7 @@ export const BaseDialog: FunctionComponent<DialogProps> = ({
               )}
               {!isHideAcceptButton && (
                 <Button
-                  buttonStyle="primary"
+                  buttonStyle={ButtonTypes.PRIMARY}
                   name={buttonAcceptName}
                   onPress={onPressAccept}
                 />

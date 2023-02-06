@@ -2,9 +2,9 @@ import * as React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Color, StylesConstant, TextStyles } from "../Themes";
 import { Images } from "../assets/Images";
-import type { ButtonProps } from "./types";
+import { ButtonProps, ButtonSizes, ButtonTypes } from "./types";
 
-export const Button: React.FunctionComponent<ButtonProps> = ({
+const Button: React.FunctionComponent<ButtonProps> = ({
   width,
   isLoading,
   isDisabled,
@@ -17,38 +17,38 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   onPress,
   onBlur,
   onFocus,
-  buttonStyle = "primary",
-  buttonSize = "large",
+  buttonStyle = ButtonTypes.PRIMARY,
+  buttonSize = ButtonSizes.LARGE,
 }) => {
   /** get Button Height size */
   const getSize =
-    buttonSize === "smallSpecial" ||
-    buttonSize === "small" ||
+    buttonSize === ButtonSizes.SMALL_SPECIAL ||
+    buttonSize === ButtonSizes.SMALL ||
     width === StylesConstant.sizeSmall
       ? StylesConstant.sizeSmall
-      : buttonSize === "medium"
+      : buttonSize === ButtonSizes.MEDIUM
       ? StylesConstant.sizeMedium
       : StylesConstant.sizeLarge;
 
   /** get Button background color */
   const getBackgroundColor =
-    buttonStyle === "secondaryOne"
+    buttonStyle === ButtonTypes.SECONDARY_ONE
       ? Color.primary1s
-      : buttonStyle === "secondaryTwo"
+      : buttonStyle === ButtonTypes.SECONDARY_TWO
       ? Color.red1s
       : Color.primary6s;
 
   /** get Button icon background color */
   const getButtonRightBGColor =
-    buttonStyle === "secondaryOne"
+    buttonStyle === ButtonTypes.SECONDARY_ONE
       ? Color.primary6s
-      : buttonStyle === "secondaryTwo"
+      : buttonStyle === ButtonTypes.SECONDARY_TWO
       ? Color.red6s
       : Color.white6;
 
   /** get Button icon styles */
   const getButtonRightStyle =
-    buttonSize === "smallSpecial"
+    buttonSize === ButtonSizes.SMALL_SPECIAL
       ? {
           ...styles.ButtonLeftStyles,
           backgroundColor: isDisabled ? Color.black5s : getButtonRightBGColor,
@@ -66,7 +66,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
 
   /** get Button Loading styles */
   const getButtonLoadingStyle =
-    buttonSize === "smallSpecial"
+    buttonSize === ButtonSizes.SMALL_SPECIAL
       ? {
           ...styles.ButtonLeftStyles,
           width: StylesConstant.iconSizeSmall,
@@ -80,7 +80,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
 
   /** get Button Content Text styles */
   const getButtonContentStyle =
-    buttonSize === "smallSpecial"
+    buttonSize === ButtonSizes.SMALL_SPECIAL
       ? {
           ...styles.textStyle,
           ...TextStyles.text14,
@@ -148,7 +148,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   );
 };
 
-export const IconButton: React.FunctionComponent<ButtonProps> = ({
+const IconButton: React.FunctionComponent<ButtonProps> = ({
   children,
   onPress,
   width = StylesConstant.iconSizeLarge,
@@ -189,6 +189,8 @@ export const IconButton: React.FunctionComponent<ButtonProps> = ({
     </TouchableOpacity>
   );
 };
+
+export { Button, IconButton, ButtonTypes, ButtonSizes };
 
 const styles = StyleSheet.create({
   disableStyle: {
