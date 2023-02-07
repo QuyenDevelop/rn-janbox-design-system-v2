@@ -3,6 +3,7 @@ export const Images = {
   empty: require("./empty.png"),
   icClose: require("./icon-close.png"),
   icCloseWhite: require("./icCloseWhite.png"),
+  icSearch: require("./icSearch.png"),
   icBack: require("./icon-back.png"),
   icHolder: require("./icon-holder.png"),
   icCheck: require("./icCheck.png"),

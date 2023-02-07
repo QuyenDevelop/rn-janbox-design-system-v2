@@ -6,6 +6,7 @@ import {
   BaseHeaderBar,
   BaseLabel,
   BasePopup,
+  BaseSearch,
   Button,
   Themes,
 } from "rn-janbox-design-system-v2";
@@ -13,7 +14,7 @@ import {
 export default function App() {
   const [buttonDisable, setButtonDisable] = React.useState<boolean>(false);
   const [showModal, setShowModal] = React.useState<boolean>(false);
-  // const [value, setValue] = React.useState<string>("Typing here ...");
+  const [value, setValue] = React.useState<string>("Typing here ...");
   const [showDialog, setShowDialog] = React.useState<boolean>(false);
   // const [showSnackBar, setShowSnackBar] = React.useState<string>("abc");
   // const [isChecked, setisChecked] = React.useState<boolean>(true);
@@ -32,6 +33,12 @@ export default function App() {
         renderIconLeft={<View />}
         title={"Title tối đa 1 dòng nhiều"}
       />
+      <BaseSearch
+        placeHolder="Hint text"
+        value={value}
+        onChangeText={setValue}
+        onClearInput={() => setValue("")}
+      />
       <View style={styles.container}>
         <View style={styles.boxButton}>
           <Button
@@ -42,7 +49,7 @@ export default function App() {
             // buttonStyle="ButtonTypes.SECONDARY_ONE"
             // width={Themes.ScreenUtils.scale(32)}
             name="Test Button"
-            ButtonLeftView={<Text>x</Text>}
+            buttonLeftView={<Text>x</Text>}
           />
           <View
             style={{

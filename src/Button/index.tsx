@@ -2,7 +2,7 @@ import * as React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Color, StylesConstant, TextStyles } from "../Themes";
 import { Images } from "../assets/Images";
-import { ButtonProps, ButtonSizes, ButtonTypes } from "./types";
+import { ButtonProps, ButtonSizes, ButtonTypes, IconColor } from "./types";
 
 const Button: React.FunctionComponent<ButtonProps> = ({
   width,
@@ -12,8 +12,8 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   contentStyles,
   containerStyle,
   children,
-  ButtonLeftView,
-  ButtonRightView,
+  buttonLeftView,
+  buttonRightView,
   onPress,
   onBlur,
   onFocus,
@@ -126,8 +126,8 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         children
       ) : (
         <View style={[styles.contentStyle, containerStyle]}>
-          {ButtonLeftView && !isLoading && (
-            <View style={getButtonRightStyle}>{ButtonLeftView}</View>
+          {buttonLeftView && !isLoading && (
+            <View style={getButtonRightStyle}>{buttonLeftView}</View>
           )}
           {isLoading && (
             <Image
@@ -139,8 +139,8 @@ const Button: React.FunctionComponent<ButtonProps> = ({
           {name && (
             <Text style={[getButtonContentStyle, contentStyles]}>{name}</Text>
           )}
-          {ButtonRightView && (
-            <View style={getButtonRightStyle}>{ButtonRightView}</View>
+          {buttonRightView && (
+            <View style={getButtonRightStyle}>{buttonRightView}</View>
           )}
         </View>
       )}
@@ -152,6 +152,7 @@ const IconButton: React.FunctionComponent<ButtonProps> = ({
   children,
   onPress,
   width = StylesConstant.iconSizeLarge,
+  iconColor = IconColor.LIGHT,
 }) => {
   const iconSize =
     width > StylesConstant.iconSizeLarge
@@ -175,7 +176,7 @@ const IconButton: React.FunctionComponent<ButtonProps> = ({
     >
       {children ? (
         children
-      ) : (
+      ) : iconColor === IconColor.LIGHT ? (
         <Image
           style={{
             ...styles.iconButton,
@@ -185,12 +186,22 @@ const IconButton: React.FunctionComponent<ButtonProps> = ({
           source={Images.icCloseWhite}
           resizeMode="cover"
         />
+      ) : (
+        <Image
+          style={{
+            ...styles.iconButton,
+            width: iconSize,
+            height: iconSize,
+          }}
+          source={Images.icClose}
+          resizeMode="cover"
+        />
       )}
     </TouchableOpacity>
   );
 };
 
-export { Button, IconButton, ButtonTypes, ButtonSizes };
+export { Button, IconButton, ButtonTypes, ButtonSizes, IconColor };
 
 const styles = StyleSheet.create({
   disableStyle: {

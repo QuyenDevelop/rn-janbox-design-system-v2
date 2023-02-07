@@ -2,7 +2,13 @@
 import * as Themes from "./Themes";
 
 /** import component/types from Button */
-import { Button, IconButton, ButtonTypes, ButtonSizes } from "./Button";
+import {
+  Button,
+  IconButton,
+  ButtonTypes,
+  ButtonSizes,
+  IconColor,
+} from "./Button";
 
 /** import component/types from BaseBottomSheet */
 import { BaseBottomSheet } from "./BottomSheet";
@@ -36,6 +42,9 @@ import { BaseLabel, LabelTypes } from "./Label";
 /** import component/types from SnackBar */
 import { BasePopup } from "./BasePopup";
 
+/** import component/types from SnackBar */
+import { BaseSearch } from "./BaseSearch";
+
 /** export các module components & types */
 export {
   Themes,
@@ -43,6 +52,7 @@ export {
   IconButton,
   ButtonTypes,
   ButtonSizes,
+  IconColor,
   BaseBottomSheet,
   ComponentDIM,
   EmptyState,
@@ -62,4 +72,5 @@ export {
   BaseHeaderBar,
   HeaderTypes,
   BasePopup,
+  BaseSearch,
 };

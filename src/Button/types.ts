@@ -20,6 +20,11 @@ export enum ButtonSizes {
   MEDIUM = "MEDIUM",
   LARGE = "LARGE",
 }
+export declare type IconColorType = "LIGHT" | "DARK";
+export enum IconColor {
+  LIGHT = "LIGHT",
+  DARK = "DARK",
+}
 
 export interface ButtonProps {
   buttonStyle?: ButtonStyle;
@@ -31,16 +36,17 @@ export interface ButtonProps {
   contentStyles?: TextStyle;
   containerStyle?: ViewStyle;
   children?: React.ReactNode | JSX.Element | null | undefined;
-  ButtonLeftView?:
+  buttonLeftView?:
     | React.ComponentType<any>
     | React.ReactElement
     | null
     | undefined;
-  ButtonRightView?:
+  buttonRightView?:
     | React.ComponentType<any>
     | React.ReactElement
     | null
     | undefined;
+  iconColor?: IconColorType;
 
   onPress?: ((event: GestureResponderEvent) => void) | undefined;
   onFocus?: ((e: NativeSyntheticEvent<TargetedEvent>) => void) | undefined;
