@@ -1,13 +1,13 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import {
-  TextInput,
-  View,
-  TextInputProps,
-  StyleSheet,
   Image,
+  StyleSheet,
+  TextInput,
+  TextInputProps,
+  View,
   ViewStyle,
 } from "react-native";
-import { IconButton, IconColor } from "../Button";
+import { IconButtonClear, IconColor } from "../Button";
 import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
 import { Images } from "../assets";
 
@@ -125,8 +125,7 @@ export const BaseSearch: FunctionComponent<SearchProps> = ({
             {clearTextIcon ? (
               clearTextIcon
             ) : (
-              <IconButton
-                width={StylesConstant.iconSizeSmall}
+              <IconButtonClear
                 onPress={onClearInput}
                 iconColor={IconColor.DARK}
               />

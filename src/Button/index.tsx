@@ -154,10 +154,10 @@ const IconButton: React.FunctionComponent<ButtonProps> = ({
   width = StylesConstant.iconSizeLarge,
   iconColor = IconColor.LIGHT,
 }) => {
-  const iconSize =
-    width > StylesConstant.iconSizeLarge
-      ? StylesConstant.iconSizeMedium
-      : StylesConstant.iconSizeSmall;
+  // const iconSize =
+  //   width > StylesConstant.iconSizeLarge
+  //     ? StylesConstant.iconSizeMedium
+  //     : StylesConstant.iconSizeSmall;
 
   return (
     <TouchableOpacity
@@ -174,34 +174,44 @@ const IconButton: React.FunctionComponent<ButtonProps> = ({
         overflow: "hidden",
       }}
     >
-      {children ? (
-        children
-      ) : iconColor === IconColor.LIGHT ? (
+      {children || (
         <Image
-          style={{
-            ...styles.iconButton,
-            width: iconSize,
-            height: iconSize,
-          }}
-          source={Images.icCloseWhite}
-          resizeMode="cover"
-        />
-      ) : (
-        <Image
-          style={{
-            ...styles.iconButton,
-            width: iconSize,
-            height: iconSize,
-          }}
-          source={Images.icClose}
-          resizeMode="cover"
+          source={
+            iconColor === IconColor.LIGHT ? Images.icCloseWhite : Images.icClose
+          }
+          resizeMode="center"
         />
       )}
     </TouchableOpacity>
   );
 };
 
-export { Button, IconButton, ButtonTypes, ButtonSizes, IconColor };
+const IconButtonClear: React.FunctionComponent<ButtonProps> = ({
+  onPress,
+  iconColor = IconColor.LIGHT,
+}) => {
+  return (
+    <IconButton width={StylesConstant.iconSizeSmall} onPress={onPress}>
+      <Image
+        source={
+          iconColor === IconColor.LIGHT
+            ? Images.icCloseWhite2
+            : Images.icCloseDark2
+        }
+        resizeMode="center"
+      />
+    </IconButton>
+  );
+};
+
+export {
+  Button,
+  IconButton,
+  IconButtonClear,
+  ButtonTypes,
+  ButtonSizes,
+  IconColor,
+};
 
 const styles = StyleSheet.create({
   disableStyle: {

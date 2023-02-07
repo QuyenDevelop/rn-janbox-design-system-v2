@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import { TextInput as Input, Text, View } from "react-native";
-import { IconButton } from "../Button";
+import { IconButtonClear } from "../Button";
 import { Color, ScreenUtils, StylesConstant } from "../Themes";
 import { InputProps, TextareaProps, styles } from "./types";
 
@@ -105,12 +105,7 @@ export const BaseTextInput: FunctionComponent<InputProps> = ({
           onBlur={handleBlur}
           {...props}
         />
-        {value && editable && (
-          <IconButton
-            width={StylesConstant.iconSizeSmall}
-            onPress={onClearInput}
-          />
-        )}
+        {value && editable && <IconButtonClear onPress={onClearInput} />}
         {textRightComponent}
       </View>
       {errorMessage ? (
