@@ -176,15 +176,15 @@ const IconButton: React.FunctionComponent<ButtonProps> = ({
       {children ? (
         children
       ) : (
-        <View
+        <Image
           style={{
             ...styles.iconButton,
             width: iconSize,
             height: iconSize,
           }}
-        >
-          <Text style={styles.closestText}>x</Text>
-        </View>
+          source={Images.icCloseWhite}
+          resizeMode="cover"
+        />
       )}
     </TouchableOpacity>
   );
@@ -229,9 +229,11 @@ const styles = StyleSheet.create({
   iconButton: {
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: Color.black3s,
   },
   closestText: {
     fontSize: 14,
     fontWeight: "bold",
+    color: Color.white6,
   },
 });

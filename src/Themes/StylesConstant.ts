@@ -15,6 +15,7 @@ export const StylesConstant = {
   /* ----- Border Radius ----- */
   borderRadius4: ScreenUtils.scale(4),
   borderRadius8: ScreenUtils.scale(8),
+  borderRadius12: ScreenUtils.scale(12),
   borderRadius16: ScreenUtils.scale(16),
 
   /* ----- Height Size ----- */

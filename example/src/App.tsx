@@ -3,11 +3,10 @@ import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import {
   BaseBottomSheet,
-  BaseDialog,
   BaseHeaderBar,
   BaseLabel,
+  BasePopup,
   Button,
-  SnackBar,
   Themes,
 } from "rn-janbox-design-system-v2";
 
@@ -16,7 +15,7 @@ export default function App() {
   const [showModal, setShowModal] = React.useState<boolean>(false);
   // const [value, setValue] = React.useState<string>("Typing here ...");
   const [showDialog, setShowDialog] = React.useState<boolean>(false);
-  const [showSnackBar, setShowSnackBar] = React.useState<string>("abc");
+  // const [showSnackBar, setShowSnackBar] = React.useState<string>("abc");
   // const [isChecked, setisChecked] = React.useState<boolean>(true);
 
   React.useEffect(() => {
@@ -50,8 +49,8 @@ export default function App() {
               width: Themes.StylesConstant.spacing16,
             }}
           />
-          <Button onPress={() => setShowSnackBar("xyzzcz")} name="SnackBar" />
-          {/* <Button onPress={() => setShowModal(true)} name="Modal" /> */}
+          {/* <Button onPress={() => setShowSnackBar("xyzzcz")} name="SnackBar" /> */}
+          <Button onPress={() => setShowDialog(true)} name="Modal" />
         </View>
         {/* <CheckBox
           content="Điền nội dung"
@@ -115,17 +114,32 @@ export default function App() {
           </View>
         </View>
       </BaseBottomSheet>
-      <BaseDialog
+      <BasePopup
+        isVisible={showDialog}
+        onClose={() => setShowDialog(false)}
+        title={"Title hãy viết 1 dòng thôi nhé"}
+        message={
+          "Phần nội dung bạn hãy viết vào đây nhé, nhưng đừng viết dài quá nhé, viết tối đa tầm 4 dòng đủ hiểu để đọc thôi nhé"
+        }
+        // buttonCancelName={"Từ chối"}
+        // onPressCancel={() => setShowDialog(false)}
+        buttonAcceptName={"Đồng ý"}
+        onPressAccept={() => console.log("Đồng ý")}
+        image={{
+          uri: "https://bedental.vn/wp-content/uploads/2022/11/nguoi-mau-Shin-Jae-Eun.jpg",
+        }}
+      />
+      {/* <BaseDialog
         isVisible={showDialog}
         onClose={() => setShowDialog(false)}
         title={"Đây là title nhé, tối đa 2 dòng"}
         message={"Đây là description nhé,  tối đa 2 dòng thôi nhé"}
         buttonCancelName={"Từ chối"}
-        onPressCancel={() => setShowDialog(false)}
+        // onPressCancel={() => setShowDialog(false)}
         buttonAcceptName={"Đồng ý"}
         onPressAccept={() => console.log("Đồng ý")}
-      />
-      <SnackBar message={showSnackBar} buttonName="Button" />
+      /> */}
+      {/* <SnackBar message={showSnackBar} buttonName="Button" /> */}
     </View>
   );
 }

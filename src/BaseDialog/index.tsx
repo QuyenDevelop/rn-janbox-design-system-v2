@@ -16,10 +16,8 @@ export const BaseDialog: FunctionComponent<DialogProps> = ({
   disableBackdrop = false,
   disableSwipeComplete = false,
   backdropOpacity,
-  isHideCancelButton = false,
   buttonCancelName,
   onPressCancel,
-  isHideAcceptButton = false,
   buttonAcceptName,
   onPressAccept,
 }) => {
@@ -50,27 +48,25 @@ export const BaseDialog: FunctionComponent<DialogProps> = ({
           <Text style={styles.message} numberOfLines={2}>
             {message}
           </Text>
-          {(!isHideCancelButton || !isHideAcceptButton) && (
-            <View style={styles.buttonBox}>
-              {!isHideCancelButton && (
-                <Button
-                  buttonStyle={ButtonTypes.SECONDARY_ONE}
-                  name={buttonCancelName}
-                  onPress={onPressCancel}
-                />
-              )}
-              {!isHideCancelButton && (
-                <SpacingHorizontal size={StylesConstant.spacing8} />
-              )}
-              {!isHideAcceptButton && (
-                <Button
-                  buttonStyle={ButtonTypes.PRIMARY}
-                  name={buttonAcceptName}
-                  onPress={onPressAccept}
-                />
-              )}
-            </View>
-          )}
+          <View style={styles.buttonBox}>
+            {buttonCancelName && (
+              <Button
+                buttonStyle={ButtonTypes.SECONDARY_ONE}
+                name={buttonCancelName}
+                onPress={onPressCancel || onClose}
+              />
+            )}
+            {buttonCancelName && (
+              <SpacingHorizontal size={StylesConstant.spacing8} />
+            )}
+            {buttonAcceptName && onPressAccept && (
+              <Button
+                buttonStyle={ButtonTypes.PRIMARY}
+                name={buttonAcceptName}
+                onPress={onPressAccept}
+              />
+            )}
+          </View>
         </View>
       </KeyboardAvoidingView>
     </Modal>

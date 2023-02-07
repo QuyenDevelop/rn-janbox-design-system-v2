@@ -33,6 +33,9 @@ import {
 /** import component/types from SnackBar */
 import { BaseLabel, LabelTypes } from "./Label";
 
+/** import component/types from SnackBar */
+import { BasePopup } from "./BasePopup";
+
 /** export các module components & types */
 export {
   Themes,
@@ -58,4 +61,5 @@ export {
   LabelTypes,
   BaseHeaderBar,
   HeaderTypes,
+  BasePopup,
 };
