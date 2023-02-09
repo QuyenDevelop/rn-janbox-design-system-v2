@@ -11,7 +11,8 @@
     "prestart": "yarn update-stories",
     "storybook-watcher": "sb-rn-watcher --config-path .ondevice",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "publish-storybook": "yarn build-storybook && npx chromatic --project-token=a84840b96a1d"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.3",
@@ -19,9 +20,9 @@
     "@react-native-community/slider": "^4.3.3",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
-    "react-native-web": "^0.18.10",
     "react-native": "0.70.6",
     "react-native-safe-area-context": "^4.4.1",
+    "react-native-web": "^0.18.10",
     "rn-janbox-design-system-v2": "../"
   },
   "devDependencies": {
@@ -36,9 +37,8 @@
     "@storybook/addon-ondevice-controls": "next",
     "@storybook/addon-ondevice-notes": "next",
     "@storybook/addon-react-native-web": "^0.0.19",
-    "@storybook/react-native": "next",
     "@storybook/react": "^6.5.14",
-    "babel-plugin-react-docgen-typescript": "^1.5.1",
+    "@storybook/react-native": "next",
     "@storybook/testing-library": "^0.0.13",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^26.0.23",
@@ -47,7 +47,9 @@
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.4",
+    "babel-plugin-react-docgen-typescript": "^1.5.1",
     "babel-plugin-react-native-web": "^0.18.10",
+    "chromatic": "^6.17.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.72.3",
     "react-test-renderer": "18.2.0",
