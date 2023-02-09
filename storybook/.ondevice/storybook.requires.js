@@ -47,10 +47,6 @@ try {
   argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
 } catch {}
 
-const getStories = () => {
-  return {
-    "./components/Button": require("../stories/Button.stories.tsx"),
-  };
-};
+const getStories = () => {};
 
 configure(getStories, module, false);

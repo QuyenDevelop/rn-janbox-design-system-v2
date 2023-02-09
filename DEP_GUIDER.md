@@ -35,13 +35,24 @@
 ## Chạy chương trình
 
 - **Bước 1**: `yarn` để cài đặt các gói cần thiết.
-  └── **Bước làm sạch**: `yarn clean` dùng để làm sạch code android native trước khi chạy.
+
+```
+  └── `yarn clean` dùng để làm sạch code android native trước khi chạy.
+```
+
 - **Bước 2 - start example**: để chạy chương trình.
+
+```
   └── `yarn example ios` để chạy chương trình trên môi trường IOS.
   └── `yarn example android` để chạy chương trình trên môi trường android.
+```
+
 - **Bước 3 - start storybook**: để chạy storybook server.
+
+```
   ├── split new **Terminal**
   └── `yarn storybook` để start storybook.
+```
 
 ## Deployment
 

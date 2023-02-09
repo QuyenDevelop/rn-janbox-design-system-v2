@@ -12,7 +12,8 @@
     "storybook-watcher": "sb-rn-watcher --config-path .ondevice",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "publish-storybook": "yarn build-storybook && npx chromatic --project-token=a84840b96a1d"
+    "publish-storybook": "yarn build-storybook && npx chromatic --project-token=a84840b96a1d",
+    "chromatic": "chromatic --project-token=a84840b96a1d"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.3",
@@ -65,5 +66,7 @@
       "json",
       "node"
     ]
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "storybook@0.0.1"
 }
