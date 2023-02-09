@@ -42,13 +42,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/QuyenDevelop/rn-janbox-design-system-v2.git",
-  "author": "QuyenDevelop <phamquyen.it.997@gmail.com> (https://github.com/QuyenDevelop/rn-janbox-design-system-v2.git)",
+  "repository": "https://github.com/QuyenDevelop/app-demo-design-system-lib",
+  "author": "QuyenDevelop <phamquyen.it.997@gmail.com> (https://github.com/QuyenDevelop/app-demo-design-system-lib)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/QuyenDevelop/rn-janbox-design-system-v2.git/issues"
+    "url": "https://github.com/QuyenDevelop/app-demo-design-system-lib/issues"
   },
-  "homepage": "https://github.com/QuyenDevelop/rn-janbox-design-system-v2.git#readme",
+  "homepage": "https://github.com/QuyenDevelop/app-demo-design-system-lib#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
