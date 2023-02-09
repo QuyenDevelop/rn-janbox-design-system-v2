@@ -1,4 +1,5 @@
 import type React from "react";
+import { TouchableOpacityProps } from "react-native";
 import type {
   GestureResponderEvent,
   NativeSyntheticEvent,
@@ -26,7 +27,7 @@ export enum IconColor {
   DARK = "DARK",
 }
 
-export interface ButtonProps {
+export interface ButtonProps extends TouchableOpacityProps {
   buttonStyle?: ButtonStyle;
   buttonSize?: ButtonSize;
   width?: number;
@@ -35,17 +36,9 @@ export interface ButtonProps {
   name?: string;
   contentStyles?: TextStyle;
   containerStyle?: ViewStyle;
-  children?: React.ReactNode | JSX.Element | null | undefined;
-  buttonLeftView?:
-    | React.ComponentType<any>
-    | React.ReactElement
-    | null
-    | undefined;
-  buttonRightView?:
-    | React.ComponentType<any>
-    | React.ReactElement
-    | null
-    | undefined;
+  children?: React.ReactNode;
+  buttonLeftView?: React.ReactNode;
+  buttonRightView?: React.ReactNode;
   iconColor?: IconColorType;
 
   onPress?: ((event: GestureResponderEvent) => void) | undefined;

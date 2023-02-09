@@ -12,16 +12,8 @@ export interface BottomSheetProps {
   headerTitle: string;
   containerStyle?: ViewStyle;
   children: React.ReactNode | JSX.Element;
-  headerLeftView?:
-    | React.ComponentType<any>
-    | React.ReactElement
-    | null
-    | undefined;
-  headerRightView?:
-    | React.ComponentType<any>
-    | React.ReactElement
-    | null
-    | undefined;
+  headerLeftView?: React.ReactNode;
+  headerRightView?: React.ReactNode;
 
   disableBackdrop?: boolean;
   disableSwipeComplete?: boolean;
