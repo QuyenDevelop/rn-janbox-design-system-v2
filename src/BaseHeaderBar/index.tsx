@@ -1,14 +1,17 @@
 import React, { FunctionComponent } from "react";
 import {
+  Image,
   Platform,
   StatusBar,
   StyleSheet,
   Text,
   TextStyle,
+  TouchableOpacity,
   View,
   ViewStyle,
 } from "react-native";
 import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
+import { Images } from "../assets";
 
 /** Thanh điều hướng ở trên cùng của app để điều hướng người dùng và có các nút điều khiển */
 
@@ -26,7 +29,9 @@ export interface HeaderBarProps {
   /** Property is used setup background color of Header */
   headerColor?: string;
   /** Property is used render icon Left and action Left */
-  renderIconLeft: React.ReactNode;
+  renderIconLeft?: React.ReactNode;
+  /** Property is Event when click icon Left */
+  onPressGoBack?: () => void;
   /** Property is used render list icons right | action right (maximum 2 icon) */
   renderIconRight?: React.ReactNode;
   /** property is header title show */
@@ -56,6 +61,12 @@ const styles = StyleSheet.create({
     flex: 1,
     maxWidth: ScreenUtils.scale(84),
   },
+  iconBackPress: {
+    width: ScreenUtils.scale(40),
+    height: ScreenUtils.scale(40),
+    alignItems: "center",
+    justifyContent: "center",
+  },
   headerTextStyle: {
     flex: 1,
     textAlign: "center",
@@ -73,6 +84,7 @@ export const BaseHeaderBar: FunctionComponent<HeaderBarProps> = ({
   renderIconRight,
   title,
   headerTextStyle,
+  onPressGoBack,
 }) => {
   React.useEffect(() => {
     if (Platform.OS === "android") {
@@ -95,7 +107,12 @@ export const BaseHeaderBar: FunctionComponent<HeaderBarProps> = ({
         <View
           style={{ ...styles.iconLeft, marginLeft: StylesConstant.spacing4 }}
         >
-          {renderIconLeft}
+          <TouchableOpacity
+            style={styles.iconBackPress}
+            onPress={onPressGoBack}
+          >
+            {renderIconLeft ? renderIconLeft : <Image source={Images.icBack} />}
+          </TouchableOpacity>
         </View>
         <Text
           style={[

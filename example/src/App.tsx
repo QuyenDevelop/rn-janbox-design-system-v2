@@ -29,10 +29,7 @@ export default function App() {
 
   return (
     <View style={{ flex: 1 }}>
-      <BaseHeaderBar
-        renderIconLeft={<View />}
-        title={"Title tối đa 1 dòng nhiều"}
-      />
+      <BaseHeaderBar title={"Title tối đa 1 dòng nhiều"} />
       <BaseSearch
         placeHolder="Hint text"
         value={value}

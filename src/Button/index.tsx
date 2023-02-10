@@ -219,7 +219,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-    paddingHorizontal: StylesConstant.spacing8,
     borderRadius: StylesConstant.borderRadius8,
     backgroundColor: Color.black3s,
   },
@@ -228,7 +227,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-    paddingHorizontal: StylesConstant.spacing8,
     borderRadius: StylesConstant.borderRadius8,
   },
   contentStyle: {

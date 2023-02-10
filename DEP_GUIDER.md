@@ -37,21 +37,21 @@
 - **Bước 1**: `yarn` để cài đặt các gói cần thiết.
 
 ```
-  └── `yarn clean` dùng để làm sạch code android native trước khi chạy.
+  - `yarn clean` dùng để làm sạch code android native trước khi chạy.
 ```
 
 - **Bước 2 - start example**: để chạy chương trình.
 
 ```
-  └── `yarn example ios` để chạy chương trình trên môi trường IOS.
-  └── `yarn example android` để chạy chương trình trên môi trường android.
+  - `yarn example ios` để chạy chương trình trên môi trường IOS.
+  - `yarn example android` để chạy chương trình trên môi trường android.
 ```
 
 - **Bước 3 - start storybook**: để chạy storybook server.
 
 ```
-  ├── split new **Terminal**
-  └── `yarn storybook` để start storybook.
+  - split new **Terminal**
+  - `yarn storybook` để start storybook.
 ```
 
 ## Deployment
@@ -63,7 +63,10 @@
 ### Publish Storybook with Chromatics
 
 - **publish storybook từ Thư mục storybook**: sự dụng tool chromatics
-  ├── **Publish storybook documents**: <https://storybook.js.org/docs/react/sharing/publish-storybook>
-  └── **Chromatics documents**: <https://www.chromatic.com/docs/setup>
+
+```
+  ─ **Publish storybook documents**: <https://storybook.js.org/docs/react/sharing/publish-storybook>
+  - **Chromatics documents**: <https://www.chromatic.com/docs/setup>
+```
 
 Lưu ý: Thực hiện lỗi bước nào thì Google để sửa chữa code. :wrench: :wrench: :wrench:

@@ -8,13 +8,14 @@
   "react-native": "src/index",
   "source": "src/index",
   "files": [
-    "src",
     "lib",
     "android",
     "ios",
     "cpp",
     "*.podspec",
+    "!src",
     "!lib/typescript/example",
+    "!lib/typescript/storybook",
     "!ios/build",
     "!android/build",
     "!android/gradle",
@@ -34,7 +35,7 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "storybook": "yarn --cwd storybook",
-    "bootstrap": "yarn example && yarn install && yarn example pods && yarn storybook && yarn install",
+    "bootstrap": "yarn example && yarn install && yarn example pods",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
   },
   "keywords": [
