@@ -1,7 +1,8 @@
 import * as React from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Color, StylesConstant, TextStyles } from "../Themes";
 import { Images } from "../assets/Images";
+import { styles } from "./styles";
 import { ButtonProps, ButtonSizes, ButtonTypes, IconColor } from "./types";
 
 const Button: React.FunctionComponent<ButtonProps> = ({
@@ -206,53 +207,10 @@ const IconButtonClear: React.FunctionComponent<ButtonProps> = ({
 
 export {
   Button,
+  ButtonProps,
   IconButton,
   IconButtonClear,
   ButtonTypes,
   ButtonSizes,
   IconColor,
 };
-
-const styles = StyleSheet.create({
-  disableStyle: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    overflow: "hidden",
-    borderRadius: StylesConstant.borderRadius8,
-    backgroundColor: Color.black3s,
-  },
-  enableStyle: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    overflow: "hidden",
-    borderRadius: StylesConstant.borderRadius8,
-  },
-  contentStyle: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  ButtonLeftStyles: {
-    overflow: "hidden",
-    alignItems: "center",
-    justifyContent: "center",
-    marginHorizontal: StylesConstant.spacing8,
-  },
-  textStyle: {
-    textAlign: "center",
-    fontWeight: "500",
-  },
-  iconButton: {
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: Color.black3s,
-  },
-  closestText: {
-    fontSize: 14,
-    fontWeight: "bold",
-    color: Color.white6,
-  },
-});

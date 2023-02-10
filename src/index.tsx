@@ -4,6 +4,7 @@ import * as Themes from "./Themes";
 /** import component/types from Button */
 import {
   Button,
+  ButtonProps,
   IconButton,
   ButtonTypes,
   ButtonSizes,
@@ -37,7 +38,7 @@ import {
 } from "./Components";
 
 /** import component/types from SnackBar */
-import { BaseLabel, LabelTypes } from "./Label";
+import { BaseLabel, LabelTypes, LabelProps } from "./Label";
 
 /** import component/types from SnackBar */
 import { BasePopup } from "./BasePopup";
@@ -49,6 +50,7 @@ import { BaseSearch } from "./BaseSearch";
 export {
   Themes,
   Button,
+  ButtonProps,
   IconButton,
   ButtonTypes,
   ButtonSizes,
@@ -69,6 +71,7 @@ export {
   SnackBarPosition,
   BaseLabel,
   LabelTypes,
+  LabelProps,
   BaseHeaderBar,
   HeaderTypes,
   BasePopup,
