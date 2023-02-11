@@ -86,11 +86,13 @@ const Button: React.FunctionComponent<ButtonProps> = ({
           ...styles.textStyle,
           ...TextStyles.text14,
           color: isDisabled ? Color.black5s : getButtonRightBGColor,
+          maxWidth: (width && width - StylesConstant.spacing12) || undefined,
         }
       : {
           ...styles.textStyle,
           ...TextStyles.text16,
           color: isDisabled ? Color.black5s : getButtonRightBGColor,
+          maxWidth: (width && width - StylesConstant.spacing12) || undefined,
         };
 
   return (
@@ -137,7 +139,12 @@ const Button: React.FunctionComponent<ButtonProps> = ({
         {children
           ? children
           : name && (
-              <Text style={[getButtonContentStyle, contentStyles]}>{name}</Text>
+              <Text
+                style={[getButtonContentStyle, contentStyles]}
+                numberOfLines={1}
+              >
+                {name}
+              </Text>
             )}
         {buttonRightView && (
           <View style={getButtonRightStyle}>{buttonRightView}</View>

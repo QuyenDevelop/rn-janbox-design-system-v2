@@ -26,9 +26,9 @@ export interface PopupProps {
   /** property using close dialog (required) */
   onClose: (() => void) | undefined;
   /** property is the value of title dialog (required) */
-  title: string;
+  title?: string;
   /** property is the description dialog (required) */
-  message: string;
+  message?: string;
   /** property using custom styles of content */
   containerStyle?: ViewStyle;
   /** property is the name button cancel  */
@@ -99,6 +99,8 @@ const styles = StyleSheet.create({
     paddingBottom: StylesConstant.spacing16,
     position: "absolute",
     bottom: 0,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   icCloseButton: {
     position: "absolute",

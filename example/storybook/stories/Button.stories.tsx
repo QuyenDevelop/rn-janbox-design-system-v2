@@ -9,7 +9,7 @@ import {
   ButtonTypes,
 } from "rn-janbox-design-system-v2";
 import { boolean, number, select, text } from "@storybook/addon-knobs";
-import { Text } from "react-native";
+// import { Text } from "react-native";
 
 const ButtonLoading: FunctionComponent<ButtonProps> = (props) => {
   const [isLoading, setLoading] = useState(false);
@@ -53,8 +53,9 @@ storiesOf("Button", module)
       buttonStyle={select("Button style", ButtonTypes, ButtonTypes.PRIMARY)}
       width={number("Custom Width", 100)}
       buttonSize={select("Button Size", ButtonSizes, ButtonSizes.MEDIUM)}
+      name={text("Button Name", "😀")}
     >
-      <Text>{text("Children Content", "👍")}</Text>
+      {/* <Text>{text("Children Content", "👍")}</Text> */}
     </Button>
   ));
 
