@@ -2,14 +2,25 @@ import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react-native";
 import React, { FunctionComponent, useState } from "react";
 import CenterView from "./CenterView";
-import { Button, ButtonProps } from "rn-janbox-design-system-v2";
+import {
+  Button,
+  ButtonProps,
+  ButtonSizes,
+  ButtonTypes,
+} from "rn-janbox-design-system-v2";
+import { boolean, number, select, text } from "@storybook/addon-knobs";
+import { Text } from "react-native";
 
 const ButtonLoading: FunctionComponent<ButtonProps> = (props) => {
   const [isLoading, setLoading] = useState(false);
+
+  const onPress = () => {
+    props.onPress || setLoading(true);
+  };
   return (
     <Button
       isLoading={isLoading}
-      onPress={() => setLoading(true)}
+      onPress={onPress}
       isDisabled={isLoading}
       {...props}
     />
@@ -18,9 +29,33 @@ const ButtonLoading: FunctionComponent<ButtonProps> = (props) => {
 
 storiesOf("Button", module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
-  .add("Button Loading", () => {
-    return <ButtonLoading name="Click me" />;
+  .add("Primary", () => {
+    return <ButtonLoading name={text("Button Name", "Primary")} />;
   })
-  .add("with some emoji", () => <Button onPress={action("clicked-emoji")} />);
+  .add("Customs", () => (
+    <Button
+      isLoading={boolean("Loading", false)}
+      isDisabled={boolean("Disabled", false)}
+      name={text("Button Name", "Customizes")}
+      onPress={action("clicked-emoji")}
+      buttonStyle={select(
+        "Button style",
+        ButtonTypes,
+        ButtonTypes.SECONDARY_ONE
+      )}
+      buttonSize={select("Button Size", ButtonSizes, ButtonSizes.MEDIUM)}
+    />
+  ))
+  .add("Customs With", () => (
+    <Button
+      isLoading={boolean("Loading", false)}
+      isDisabled={boolean("Disabled", false)}
+      buttonStyle={select("Button style", ButtonTypes, ButtonTypes.PRIMARY)}
+      width={number("Custom Width", 100)}
+      buttonSize={select("Button Size", ButtonSizes, ButtonSizes.MEDIUM)}
+    >
+      <Text>{text("Children Content", "👍")}</Text>
+    </Button>
+  ));
 
 // 😀 😎 👍 💯

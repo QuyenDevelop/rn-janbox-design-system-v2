@@ -123,28 +123,26 @@ const Button: React.FunctionComponent<ButtonProps> = ({
       onBlur={onBlur}
       onFocus={onFocus}
     >
-      {children ? (
-        children
-      ) : (
-        <View style={[styles.contentStyle, containerStyle]}>
-          {buttonLeftView && !isLoading && (
-            <View style={getButtonRightStyle}>{buttonLeftView}</View>
-          )}
-          {isLoading && (
-            <Image
-              source={Images.loading}
-              style={getButtonLoadingStyle}
-              resizeMode="cover"
-            />
-          )}
-          {name && (
-            <Text style={[getButtonContentStyle, contentStyles]}>{name}</Text>
-          )}
-          {buttonRightView && (
-            <View style={getButtonRightStyle}>{buttonRightView}</View>
-          )}
-        </View>
-      )}
+      <View style={[styles.contentStyle, containerStyle]}>
+        {buttonLeftView && !isLoading && (
+          <View style={getButtonRightStyle}>{buttonLeftView}</View>
+        )}
+        {isLoading && (
+          <Image
+            source={Images.loading}
+            style={getButtonLoadingStyle}
+            resizeMode="cover"
+          />
+        )}
+        {children
+          ? children
+          : name && (
+              <Text style={[getButtonContentStyle, contentStyles]}>{name}</Text>
+            )}
+        {buttonRightView && (
+          <View style={getButtonRightStyle}>{buttonRightView}</View>
+        )}
+      </View>
     </TouchableOpacity>
   );
 };

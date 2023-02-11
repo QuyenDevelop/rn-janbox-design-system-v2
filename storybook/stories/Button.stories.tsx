@@ -3,6 +3,8 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import * as React from "react";
 
 import { Button, ButtonTypes } from "rn-janbox-design-system-v2";
+// const pak = require("../../package.json");
+// const { Button, ButtonTypes } = pak.source;
 
 export default {
   /**
