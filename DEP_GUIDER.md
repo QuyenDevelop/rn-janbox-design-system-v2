@@ -43,7 +43,7 @@
   - `yarn clean` dùng để làm sạch code android native trước khi chạy.
 
 - **Bước 2 - start example và start example storybook**: để View app hoặc View storybook test trên android/ios.
-  ![setup](./imgesDoc/setup.png)
+  ![setup](./imgesDoc/settup.png)
 
 **Lưu ý:** chọn export App hoặc Storybook để chọn phương thức Run, Build ứng dụng example
 
