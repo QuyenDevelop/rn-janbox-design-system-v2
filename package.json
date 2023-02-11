@@ -34,7 +34,6 @@
     "prepack": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
-    "storybook": "yarn --cwd storybook",
     "bootstrap": "yarn example && yarn install && yarn example pods",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
   },
