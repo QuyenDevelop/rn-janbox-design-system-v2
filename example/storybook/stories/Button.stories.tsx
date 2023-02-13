@@ -29,6 +29,14 @@ const ButtonLoading: FunctionComponent<ButtonProps> = (props) => {
 
 storiesOf("Button", module)
   .addDecorator((getStory) => <ContainerView>{getStory()}</ContainerView>)
+  .add("Button", () => {
+    return (
+      <Button
+        name={text("Button Name", "Button")}
+        onPress={() => console.log("Abc")}
+      />
+    );
+  })
   .add("Button Have Loading", () => {
     return <ButtonLoading name={text("Button Name", "Button")} />;
   })

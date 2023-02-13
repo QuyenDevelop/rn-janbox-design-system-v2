@@ -2,7 +2,7 @@ import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
 import React, { FunctionComponent, useState } from "react";
 import { BasePopup, Button } from "rn-janbox-design-system-v2";
-import ContainerView from "./ContainerView";
+import { ContainerView } from "./";
 
 export const PopupPrimary: FunctionComponent = () => {
   const [show, setShow] = useState(false);

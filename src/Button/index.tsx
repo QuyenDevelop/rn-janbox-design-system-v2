@@ -119,7 +119,6 @@ const Button: React.FunctionComponent<ButtonProps> = ({
               maxWidth: width,
             }
       }
-      activeOpacity={1}
       onPress={onPress}
       disabled={isDisabled}
       onBlur={onBlur}
@@ -167,7 +166,6 @@ const IconButton: React.FunctionComponent<ButtonProps> = ({
 
   return (
     <TouchableOpacity
-      activeOpacity={1}
       onPress={onPress}
       // eslint-disable-next-line react-native/no-inline-styles
       style={{
