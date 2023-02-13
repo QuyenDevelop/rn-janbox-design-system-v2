@@ -2,7 +2,7 @@ import { action } from "@storybook/addon-actions";
 import { text } from "@storybook/addon-knobs";
 import React, { FunctionComponent, useState } from "react";
 import { BaseDialog, Button } from "rn-janbox-design-system-v2";
-import { ContainerView } from "./";
+import { ContainerView } from ".";
 
 export const DialogPrimary: FunctionComponent = () => {
   const [show, setShow] = useState(false);

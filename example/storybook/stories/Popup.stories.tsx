@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/react-native";
 import React from "react";
-import { ContainerView, PopupPrimary, PopupSecondary } from "./components";
+import { ContainerView, PopupPrimary, PopupSecondary } from "../components";
 
 storiesOf("Popup", module)
   .addDecorator((getStory) => {

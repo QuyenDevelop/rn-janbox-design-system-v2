@@ -9,7 +9,7 @@ import {
 } from "rn-janbox-design-system-v2";
 import { boolean, number, select, text } from "@storybook/addon-knobs";
 // import { Text } from "react-native";
-import { ContainerView } from "./components";
+import { ContainerView } from "../components";
 
 const ButtonLoading: FunctionComponent<ButtonProps> = (props) => {
   const [isLoading, setLoading] = useState(false);
@@ -30,17 +30,9 @@ const ButtonLoading: FunctionComponent<ButtonProps> = (props) => {
 storiesOf("Button", module)
   .addDecorator((getStory) => <ContainerView>{getStory()}</ContainerView>)
   .add("Button", () => {
-    return (
-      <Button
-        name={text("Button Name", "Button")}
-        onPress={() => console.log("Abc")}
-      />
-    );
-  })
-  .add("Button Have Loading", () => {
     return <ButtonLoading name={text("Button Name", "Button")} />;
   })
-  .add("Button Have Customize style", () => (
+  .add("Button change style", () => (
     <Button
       isLoading={boolean("Loading", false)}
       isDisabled={boolean("Disabled", false)}
@@ -54,7 +46,7 @@ storiesOf("Button", module)
       buttonSize={select("Button Size", ButtonSizes, ButtonSizes.MEDIUM)}
     />
   ))
-  .add("Button Have Customize With", () => (
+  .add("Button change With", () => (
     <Button
       isLoading={boolean("Loading", false)}
       isDisabled={boolean("Disabled", false)}
