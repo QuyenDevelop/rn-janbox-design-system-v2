@@ -1,6 +1,6 @@
 {
   "name": "rn-janbox-design-system-v2",
-  "version": "0.1.1",
+  "version": "0.1.13",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -8,12 +8,12 @@
   "react-native": "src/index",
   "source": "src/index",
   "files": [
+    "src",
     "lib",
     "android",
     "ios",
     "cpp",
     "*.podspec",
-    "!src",
     "!lib/typescript/example",
     "!lib/typescript/storybook",
     "!ios/build",

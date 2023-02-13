@@ -28,7 +28,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-*.tgz
 
 # Android/IJ
 #
