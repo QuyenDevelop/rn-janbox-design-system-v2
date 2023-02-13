@@ -10,18 +10,18 @@ const styles = StyleSheet.create({
   },
 });
 
-export interface CenterViewProps extends ViewProps {}
+export interface ContainerViewProps extends ViewProps {}
 
-const CenterView: FunctionComponent<CenterViewProps> = ({ children }) => {
+export const ContainerView: FunctionComponent<ContainerViewProps> = ({
+  children,
+}) => {
   return <View style={styles.main}>{children}</View>;
 };
 
-CenterView.defaultProps = {
+ContainerView.defaultProps = {
   children: null,
 };
 
-CenterView.propTypes = {
+ContainerView.propTypes = {
   children: PropTypes.node,
 };
-
-export default CenterView;

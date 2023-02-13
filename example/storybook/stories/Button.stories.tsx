@@ -1,7 +1,6 @@
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react-native";
 import React, { FunctionComponent, useState } from "react";
-import CenterView from "./CenterView";
 import {
   Button,
   ButtonProps,
@@ -10,6 +9,7 @@ import {
 } from "rn-janbox-design-system-v2";
 import { boolean, number, select, text } from "@storybook/addon-knobs";
 // import { Text } from "react-native";
+import { ContainerView } from "./components";
 
 const ButtonLoading: FunctionComponent<ButtonProps> = (props) => {
   const [isLoading, setLoading] = useState(false);
@@ -28,11 +28,11 @@ const ButtonLoading: FunctionComponent<ButtonProps> = (props) => {
 };
 
 storiesOf("Button", module)
-  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
-  .add("Primary", () => {
-    return <ButtonLoading name={text("Button Name", "Primary")} />;
+  .addDecorator((getStory) => <ContainerView>{getStory()}</ContainerView>)
+  .add("Button Have Loading", () => {
+    return <ButtonLoading name={text("Button Name", "Button")} />;
   })
-  .add("Customs", () => (
+  .add("Button Have Customize style", () => (
     <Button
       isLoading={boolean("Loading", false)}
       isDisabled={boolean("Disabled", false)}
@@ -46,7 +46,7 @@ storiesOf("Button", module)
       buttonSize={select("Button Size", ButtonSizes, ButtonSizes.MEDIUM)}
     />
   ))
-  .add("Customs With", () => (
+  .add("Button Have Customize With", () => (
     <Button
       isLoading={boolean("Loading", false)}
       isDisabled={boolean("Disabled", false)}
