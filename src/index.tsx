@@ -19,6 +19,7 @@ import { BaseTextInput, Textarea } from "./BaseTextInput";
 
 /** import component/types from BaseDialog */
 import { BaseDialog } from "./BaseDialog";
+import { DialogProps } from "./BaseDialog/types";
 
 /** import component/types from SnackBar */
 import { SnackBar, SnackBarTypes, SnackBarPosition } from "./SnackBar";
@@ -66,6 +67,7 @@ export {
   BaseTextInput,
   Textarea,
   BaseDialog,
+  DialogProps,
   SnackBar,
   SnackBarTypes,
   SnackBarPosition,
