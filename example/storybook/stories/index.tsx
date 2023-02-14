@@ -6,3 +6,5 @@ import "./EmptyState.stories";
 import "./Input.stories";
 import "./PlaceHolder.stories";
 import "./Snackbar.stories";
+import "./Header.stories";
+import "./SearchBar.stories";

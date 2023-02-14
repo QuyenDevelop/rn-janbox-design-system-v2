@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingTop: ScreenUtils.getStatusBarHeight(),
     borderBottomWidth: 2 * StyleSheet.hairlineWidth,
-    borderBottomColor: Color.black1s,
+    borderBottomColor: Color.black2s,
   },
   contentContainer: {
     flex: 1,
@@ -58,8 +58,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: StylesConstant.spacing8,
   },
   iconLeft: {
-    flex: 1,
+    minWidth: ScreenUtils.scale(40),
     maxWidth: ScreenUtils.scale(84),
+    alignItems: "center",
+    justifyContent: "center",
   },
   iconBackPress: {
     width: ScreenUtils.scale(40),
@@ -111,7 +113,17 @@ export const BaseHeaderBar: FunctionComponent<HeaderBarProps> = ({
             style={styles.iconBackPress}
             onPress={onPressGoBack}
           >
-            {renderIconLeft ? renderIconLeft : <Image source={Images.icBack} />}
+            {renderIconLeft ? (
+              renderIconLeft
+            ) : (
+              <Image
+                source={
+                  headerType === HeaderTypes.DARK
+                    ? Images.icBack
+                    : Images.icBackWhite
+                }
+              />
+            )}
           </TouchableOpacity>
         </View>
         <Text

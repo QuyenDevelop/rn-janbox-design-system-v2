@@ -9,4 +9,5 @@ export const Images = {
   icBack: require("./icon-back.png"),
   icHolder: require("./icon-holder.png"),
   icCheck: require("./icCheck.png"),
+  icBackWhite: require("./icons/icBackWhite.png"),
 };
