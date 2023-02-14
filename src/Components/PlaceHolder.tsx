@@ -19,7 +19,7 @@ const PlaceHolder: FunctionComponent<PlaceHolderProps> = ({
       style={{
         ...styles.imageContainer,
         width: holderSize,
-        height: holderSize,
+        maxHeight: holderSize,
         backgroundColor: backgroundColor || Color.black1s,
       }}
     >
