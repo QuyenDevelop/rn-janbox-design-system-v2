@@ -9,6 +9,7 @@ import {
   ViewProps,
 } from "react-native";
 import { Color, StylesConstant, TextStyles } from "../Themes";
+import { ScreenUtils } from "../Themes/ScreenUtils";
 
 export declare type SnackBarType = "INFO" | "ERROR" | "SUCCESS";
 export enum SnackBarTypes {
@@ -52,7 +53,7 @@ export interface SnackBarProps extends ViewProps, SnackBarProperties {}
 const styles = StyleSheet.create({
   snackBar: {
     flex: 1,
-    width: "100%",
+    width: ScreenUtils.WIDTH_SCREEN - StylesConstant.spacing16 * 2,
     minHeight: StylesConstant.sizeLarge,
     position: "absolute",
   },
@@ -61,7 +62,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: StylesConstant.spacing16,
     paddingVertical: StylesConstant.spacing8,
     borderRadius: StylesConstant.borderRadius8,
-    marginHorizontal: StylesConstant.spacing16,
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
@@ -108,13 +108,17 @@ export const SnackBar = React.forwardRef<SnackRef, SnackBarProps>(
         ? Color.red6s
         : Color.green6s;
 
-    const showSnackBar = () => {
+    const showSnackBar = React.useCallback(() => {
       Animated.timing(animatedValue.current, {
         toValue: 1,
         duration: 1000,
         useNativeDriver: false,
-      }).start();
-    };
+      }).start(() => {
+        const hideTimer = setTimeout(() => hideSnackBar(), duration);
+
+        return () => clearTimeout(hideTimer);
+      });
+    }, [duration]);
 
     const hideSnackBar = () => {
       Animated.timing(animatedValue.current, {
@@ -126,10 +130,7 @@ export const SnackBar = React.forwardRef<SnackRef, SnackBarProps>(
 
     React.useEffect(() => {
       showSnackBar();
-      setInterval(() => {
-        hideSnackBar();
-      }, duration);
-    }, [duration, message]);
+    }, [message, showSnackBar]);
 
     return (
       <Animated.View
