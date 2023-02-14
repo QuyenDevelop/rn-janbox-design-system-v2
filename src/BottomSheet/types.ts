@@ -11,6 +11,7 @@ export interface BottomSheetProps {
   isVisible: boolean;
   headerTitle: string;
   containerStyle?: ViewStyle;
+  height?: number;
   children: React.ReactNode | JSX.Element;
   headerLeftView?: React.ReactNode;
   headerRightView?: React.ReactNode;

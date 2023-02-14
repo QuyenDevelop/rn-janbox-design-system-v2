@@ -30,13 +30,18 @@ export const BaseBottomSheetRef: ForwardRefRenderFunction<
     disableBackdrop = false,
     disableSwipeComplete = false,
     backdropOpacity,
+    height,
   } = props;
   const scrollRef = useRef<ScrollView>(null);
   const MAX_HEIGHT =
+    height ||
     ScreenUtils.HEIGHT_SCREEN -
-    ScreenUtils.getStatusBarHeight() -
-    ScreenUtils.scale(24);
-
+      ScreenUtils.getStatusBarHeight() -
+      ScreenUtils.scale(24);
+  const containerViewStyle = [
+    { ...styles.contentContainer, height: height },
+    containerStyle,
+  ];
   return (
     <Modal
       useNativeDriver
@@ -57,8 +62,8 @@ export const BaseBottomSheetRef: ForwardRefRenderFunction<
       backdropTransitionOutTiming={0}
     >
       <KeyboardAvoidingView behavior="position" enabled>
-        <View style={{ maxHeight: MAX_HEIGHT }}>
-          <View style={[styles.contentContainer, containerStyle]}>
+        <View style={{ maxHeight: MAX_HEIGHT, height: height }}>
+          <View style={containerViewStyle}>
             <View style={styles.headerView}>
               <View>
                 <TouchableOpacity
