@@ -103,6 +103,7 @@ export const BaseTextInput: FunctionComponent<InputProps> = ({
           style={{ ...styles.input, height: height || ScreenUtils.scale(40) }}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          multiline={false}
           {...props}
         />
         {value && editable && <IconButtonClear onPress={onClearInput} />}
@@ -126,7 +127,7 @@ export const BaseTextInput: FunctionComponent<InputProps> = ({
             marginTop: StylesConstant.spacing4,
           }}
         >
-          <Text style={styles.errorMessage} numberOfLines={2}>
+          <Text style={styles.noteMessage} numberOfLines={2}>
             {noteMessage}
           </Text>
         </View>

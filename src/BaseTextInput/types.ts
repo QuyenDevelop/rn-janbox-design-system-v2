@@ -21,7 +21,7 @@ export declare interface TextareaProps extends TextInputProps {
   errorMessage?: string;
   height?: number;
   containerStyle?: StyleProp<ViewStyle>;
-  onClearInput: () => void;
+  onClearInput?: () => void;
   inputStyle?: StyleProp<ViewStyle>;
   isFocus?: boolean;
   isRequired?: boolean;
@@ -85,6 +85,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     ...TextStyles.text16,
     color: Color.black6s,
+    marginRight: StylesConstant.spacing8,
   },
   errorMessage: {
     ...TextStyles.text14,
