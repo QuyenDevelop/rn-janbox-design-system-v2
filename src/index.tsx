@@ -47,6 +47,9 @@ import { BasePopup } from "./BasePopup";
 /** import component/types from SnackBar */
 import { BaseSearch } from "./BaseSearch";
 
+/** import component/types from SnackBar */
+import { FloatingButton, FloatingButtonProps } from "./FloatingButton";
+
 /** export các module components & types */
 export {
   Themes,
@@ -78,4 +81,6 @@ export {
   HeaderTypes,
   BasePopup,
   BaseSearch,
+  FloatingButton,
+  FloatingButtonProps,
 };
