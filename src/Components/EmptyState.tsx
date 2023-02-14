@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
-import { Color, ScreenUtils, StylesConstant } from "../Themes";
+import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
 import type { EmptyStateProps } from "./types";
 import { Images } from "../assets";
 import { Button } from "../Button";
@@ -30,7 +30,7 @@ const EmptyState: FunctionComponent<EmptyStateProps> = ({
       <Image
         source={imgSource || Images.empty}
         style={styles.imageStyle}
-        resizeMode="center"
+        resizeMode="cover"
       />
       <View style={styles.emptyContentStyle}>
         {title && (
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    marginHorizontal: StylesConstant.spacing16,
+    paddingHorizontal: StylesConstant.spacing16,
   },
   imageStyle: {
     width: ScreenUtils.scale(200),
@@ -68,17 +68,22 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   emptyContentStyle: {
-    flex: 1,
     marginTop: StylesConstant.spacing40,
     marginBottom: StylesConstant.spacing8,
     alignItems: "center",
     justifyContent: "center",
   },
   titleStyle: {
+    ...TextStyles.text16,
+    fontWeight: "500",
     marginBottom: StylesConstant.spacing8,
+    textAlign: "center",
   },
   messageStyle: {
+    ...TextStyles.text14,
+    fontWeight: "400",
     marginBottom: StylesConstant.spacing24,
+    textAlign: "center",
   },
 });
 
