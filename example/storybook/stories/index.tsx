@@ -9,3 +9,4 @@ import "./Snackbar.stories";
 import "./Header.stories";
 import "./SearchBar.stories";
 import "./Checkbox.stories";
+import "./FloatingButton.stories";

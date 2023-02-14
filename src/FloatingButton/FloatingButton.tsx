@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useRef, useState } from "react";
 import {
   Animated,
-  Dimensions,
   Image,
   PanResponder,
   TouchableOpacity,
+  View,
 } from "react-native";
 import { FloatingButtonProps } from ".";
 import { ScreenUtils } from "../Themes";
@@ -52,11 +52,11 @@ export const FloatingButton: FunctionComponent<FloatingButtonProps> = ({
         pan.flattenOffset();
         Animated.spring(pan, {
           toValue: {
-            x: ScreenUtils.scale(16),
+            x: ScreenUtils.scale(0),
             y:
-              pan.y._value < -(Dimensions.get("screen").height * 2) / 3 ||
-              pan.y._value > Dimensions.get("screen").height / 12
-                ? ScreenUtils.scale(16)
+              pan.y._value < -(ScreenUtils.HEIGHT_SCREEN * 2) / 3 ||
+              pan.y._value > ScreenUtils.HEIGHT_SCREEN / 12
+                ? ScreenUtils.scale(0)
                 : pan.y._value,
           },
           useNativeDriver: false,
@@ -69,13 +69,13 @@ export const FloatingButton: FunctionComponent<FloatingButtonProps> = ({
   ).current;
 
   return (
-    <>
+    <View>
       <Animated.View
         style={[
           {
             ...styles.imgSupport,
             left: ScreenUtils.WIDTH_SCREEN - ScreenUtils.scale(96),
-            bottom: ScreenUtils.scale(90),
+            bottom: ScreenUtils.scale(60),
             transform: [{ translateX: pan.x }, { translateY: pan.y }],
           },
         ]}
@@ -96,6 +96,6 @@ export const FloatingButton: FunctionComponent<FloatingButtonProps> = ({
         onCloseContent={() => showAction(false)}
         ListSupport={ListSupport}
       />
-    </>
+    </View>
   );
 };
