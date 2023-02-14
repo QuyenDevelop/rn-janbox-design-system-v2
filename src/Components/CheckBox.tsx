@@ -50,11 +50,7 @@ export const CheckBox: FunctionComponent<CheckBoxProps> = ({
   handleCheck,
   content,
 }) => {
-  const getColor = isDisabled
-    ? Color.black3s
-    : isChecked
-    ? Color.primary6s
-    : Color.black6s;
+  const getColor = isDisabled ? Color.black3s : Color.primary6s;
 
   return (
     <TouchableOpacity
@@ -96,11 +92,7 @@ export const RadioCheckBox: FunctionComponent<CheckBoxProps> = ({
   handleCheck,
   content,
 }) => {
-  const getColor = isDisabled
-    ? Color.black3s
-    : isChecked
-    ? Color.primary6s
-    : Color.black6s;
+  const getColor = isDisabled ? Color.black3s : Color.primary6s;
   return (
     <TouchableOpacity
       style={styles.container}
@@ -110,11 +102,12 @@ export const RadioCheckBox: FunctionComponent<CheckBoxProps> = ({
         style={{
           ...styles.radioContainer,
           borderColor: getColor,
-          backgroundColor: isDisabled
-            ? Color.black3s
-            : isChecked
-            ? Color.primary6s
-            : Color.white6,
+          backgroundColor:
+            isDisabled && isChecked
+              ? Color.black3s
+              : isChecked
+              ? Color.primary6s
+              : Color.white6,
         }}
       >
         {isChecked && (

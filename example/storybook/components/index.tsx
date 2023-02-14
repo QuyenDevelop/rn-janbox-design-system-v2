@@ -7,3 +7,4 @@ export * from "./Input";
 export * from "./SnackBar";
 export * from "./Header";
 export * from "./SearchBar";
+export * from "./Checkbox";
