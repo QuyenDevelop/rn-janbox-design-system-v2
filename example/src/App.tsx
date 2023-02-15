@@ -9,6 +9,9 @@ import {
   BaseSearch,
   Button,
   FloatingButton,
+  ILineSkeleton,
+  ISquareSkeleton,
+  ITooltip,
   Themes,
 } from "rn-janbox-design-system-v2";
 
@@ -19,6 +22,7 @@ export default function App() {
   const [showDialog, setShowDialog] = React.useState<boolean>(false);
   // const [showSnackBar, setShowSnackBar] = React.useState<string>("abc");
   // const [isChecked, setisChecked] = React.useState<boolean>(true);
+  const [toolTip, settoolTip] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     if (buttonDisable) {
@@ -37,7 +41,21 @@ export default function App() {
         onChangeText={setValue}
         onClearInput={() => setValue("")}
       />
+
       <View style={styles.container}>
+        <ITooltip
+          onCloseTooltip={() => settoolTip(false)}
+          isVisible={toolTip}
+          message={
+            "con gaf cuc tacs la chanh, e an thitj gaf lai them thitj vit"
+          }
+        >
+          <Button onPress={() => settoolTip(true)} name="Modal" />
+        </ITooltip>
+        <View style={{}}>
+          <ISquareSkeleton size={100} />
+          <ILineSkeleton height={8} width={100} />
+        </View>
         <View style={styles.boxButton}>
           <Button
             onPress={() => setButtonDisable(true)}
@@ -54,6 +72,7 @@ export default function App() {
               width: Themes.StylesConstant.spacing16,
             }}
           />
+
           {/* <Button onPress={() => setShowSnackBar("xyzzcz")} name="SnackBar" /> */}
           <Button onPress={() => setShowDialog(true)} name="Modal" />
         </View>

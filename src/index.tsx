@@ -50,6 +50,17 @@ import { BaseSearch } from "./BaseSearch";
 /** import component/types from SnackBar */
 import { FloatingButton, FloatingButtonProps } from "./FloatingButton";
 
+/** import component/types from Tooltip */
+import { IToolTipProps, ITooltip } from "./Tooltip";
+
+/** import component/types from SnackBar */
+import {
+  ILineSkeleton,
+  ISkeletonProps,
+  ISquareSkeleton,
+  ISquareSkeletonProps,
+} from "./ISkeletons";
+
 /** export các module components & types */
 export {
   Themes,
@@ -83,4 +94,10 @@ export {
   BaseSearch,
   FloatingButton,
   FloatingButtonProps,
+  ITooltip,
+  IToolTipProps,
+  ILineSkeleton,
+  ISkeletonProps,
+  ISquareSkeleton,
+  ISquareSkeletonProps,
 };

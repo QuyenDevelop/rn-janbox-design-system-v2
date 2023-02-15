@@ -1,9 +1,9 @@
-import StorybookUIRoot from "./storybook";
-
-// import App from "./src/App";
+import App from "./src/App";
+export { App as default };
 
 /**
  * export App if you are Developer
  * export StorybookUIRoot if you want to Build Apk or Ipa file
  */
-export { StorybookUIRoot as default };
+// import StorybookUIRoot from "./storybook";
+// export { App as default };
