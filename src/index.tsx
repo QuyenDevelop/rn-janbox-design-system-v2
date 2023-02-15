@@ -24,10 +24,10 @@ import { DialogProps } from "./BaseDialog/types";
 /** import component/types from SnackBar */
 import { SnackBar, SnackBarTypes, SnackBarPosition } from "./SnackBar";
 
-/** import component/types from SnackBar */
+/** import component/types from HeaderBar */
 import { BaseHeaderBar, HeaderTypes } from "./BaseHeaderBar";
 
-/** import component/types from */
+/** import component/types from Components*/
 import {
   ComponentDIM,
   EmptyState,
@@ -38,28 +38,31 @@ import {
   RadioCheckBox,
 } from "./Components";
 
-/** import component/types from SnackBar */
+/** import component/types from Label */
 import { BaseLabel, LabelTypes, LabelProps } from "./Label";
 
-/** import component/types from SnackBar */
+/** import component/types from BasePopup */
 import { BasePopup } from "./BasePopup";
 
-/** import component/types from SnackBar */
+/** import component/types from BaseSearch */
 import { BaseSearch } from "./BaseSearch";
 
-/** import component/types from SnackBar */
+/** import component/types from FloatingButton */
 import { FloatingButton, FloatingButtonProps } from "./FloatingButton";
 
 /** import component/types from Tooltip */
 import { IToolTipProps, ITooltip } from "./Tooltip";
 
-/** import component/types from SnackBar */
+/** import component/types from ISkeletons */
 import {
   ILineSkeleton,
   ISkeletonProps,
   ISquareSkeleton,
   ISquareSkeletonProps,
 } from "./ISkeletons";
+
+/** import component/types from ITags */
+import { ITags, ITagsProps } from "./ITags";
 
 /** export các module components & types */
 export {
@@ -100,4 +103,6 @@ export {
   ISkeletonProps,
   ISquareSkeleton,
   ISquareSkeletonProps,
+  ITags,
+  ITagsProps,
 };

@@ -11,6 +11,7 @@ import {
   FloatingButton,
   ILineSkeleton,
   ISquareSkeleton,
+  ITags,
   ITooltip,
   Themes,
 } from "rn-janbox-design-system-v2";
@@ -74,7 +75,7 @@ export default function App() {
           />
 
           {/* <Button onPress={() => setShowSnackBar("xyzzcz")} name="SnackBar" /> */}
-          <Button onPress={() => setShowDialog(true)} name="Modal" />
+          <Button onPress={() => setShowModal(true)} name="Modal" />
         </View>
         {/* <CheckBox
           content="Điền nội dung"
@@ -110,6 +111,8 @@ export default function App() {
             {/* <Dot /> */}
             {/* <Badge content={99} /> */}
             <BaseLabel content="Content label" />
+            <ITags tagName="Tags" isShowClose onCloseTag={() => {}} />
+
             <Text>Swap area</Text>
             <Text>Hãy tạo component vào kéo vào đây thay thế nhé</Text>
             {/* <BaseTextInput
