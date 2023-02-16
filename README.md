@@ -15,6 +15,7 @@ yarn add rn-janbox-design-system-v2
 ## Usage
 
 ```js
+// ---- using Button Component ------
 import { Button } from "rn-janbox-design-system-v2";
 
 // ...
@@ -27,6 +28,46 @@ import { Button } from "rn-janbox-design-system-v2";
   isDisabled={buttonDisable}
   name="Click me"
 />;
+```
+
+```js
+// ---- using Tab Component ------
+import {
+  ITabView,
+  ITabBarItem,
+  ITabItemProps,
+  TabModel,
+} from "rn-janbox-design-system-v2";
+
+// ...
+const App = (second) => {
+  const [index, setIndex] = React.useState < number > 0;
+  const routes: Array<TabModel> = [];
+
+  const renderTabIcon = (props: ITabItemProps) => {
+    return <ITabBarItem {...props} />;
+  };
+
+  const renderScene = React.useCallback(({ tab }: { tab: TabModel }) => {
+    switch (tab.key) {
+      case "Button":
+        return <ButtonTab />;
+      default:
+        return <></>;
+    }
+  }, []);
+
+  return (
+    <ITabView
+      onIndexChange={setIndex}
+      renderScene={renderScene}
+      navigationState={{ index, routes }}
+      renderTabIcon={renderTabIcon} // ---- custom ItemTabbar
+      // disableSwipe       // ----- disable Swipe tab
+      isFixed // ----- styles Fixed tabbar
+    />
+  );
+};
 ```
 
 ## Contributing
