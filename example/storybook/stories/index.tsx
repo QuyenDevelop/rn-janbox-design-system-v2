@@ -11,3 +11,4 @@ import "./SearchBar.stories";
 import "./Checkbox.stories";
 import "./FloatingButton.stories";
 import "./Tabview.stories";
+import "./Skeleton.stories";

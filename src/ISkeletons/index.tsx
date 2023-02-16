@@ -24,6 +24,7 @@ export const ILineSkeleton: FunctionComponent<ISkeletonProps> = ({
       style={{
         width: width,
         height: height,
+        margin: StylesConstant.spacing4,
       }}
     >
       <PlaceholderLine
@@ -53,6 +54,7 @@ export const ISquareSkeleton: FunctionComponent<ISquareSkeletonProps> = ({
     <Placeholder
       Animation={Fade}
       style={{
+        margin: StylesConstant.spacing4,
         width: size,
         height: size,
       }}
