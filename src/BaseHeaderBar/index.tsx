@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingTop: ScreenUtils.getStatusBarHeight(),
     borderBottomWidth: 2 * StyleSheet.hairlineWidth,
-    borderBottomColor: Color.black2s,
+    borderBottomColor: Color.black1s,
   },
   contentContainer: {
     flex: 1,

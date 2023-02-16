@@ -64,6 +64,16 @@ import {
 /** import component/types from ITags */
 import { ITags, ITagsProps } from "./ITags";
 
+/** import component/types from ITabs */
+import {
+  ITabView,
+  ITabBarItem,
+  ITabsProps,
+  ITabItemProps,
+  TabModel,
+} from "./ITabs";
+import { Tab as ICustomTab } from "@rneui/themed";
+
 /** export các module components & types */
 export {
   Themes,
@@ -105,4 +115,10 @@ export {
   ISquareSkeletonProps,
   ITags,
   ITagsProps,
+  ICustomTab,
+  ITabView,
+  ITabsProps,
+  ITabBarItem,
+  ITabItemProps,
+  TabModel,
 };

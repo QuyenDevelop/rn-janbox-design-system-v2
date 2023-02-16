@@ -25,7 +25,7 @@ export const SpacingHorizontal: FunctionComponent<DotProps> = ({
   return (
     <View
       style={{
-        ...styles.horizontalSpacing,
+        ...styles.verticalSpacing,
         width: size,
         backgroundColor: color,
       }}

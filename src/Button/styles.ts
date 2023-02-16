@@ -18,10 +18,11 @@ export const styles = StyleSheet.create({
     borderRadius: StylesConstant.borderRadius8,
   },
   contentStyle: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    overflow: "hidden",
+    marginHorizontal: StylesConstant.spacing16,
   },
   ButtonLeftStyles: {
     overflow: "hidden",
