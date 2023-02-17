@@ -55,9 +55,9 @@ export const TabViewPrimary: FunctionComponent = () => {
     }
   }, []);
 
-  const renderTabIcon = (props: ITabItemProps) => {
+  const renderTabIcon = React.useCallback((props: ITabItemProps) => {
     return <ITabBarItem {...props} />;
-  };
+  }, []);
 
   return (
     <FlexCenterView>

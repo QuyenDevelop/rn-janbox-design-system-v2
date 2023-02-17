@@ -29,7 +29,7 @@ export const PopupPrimary: FunctionComponent = () => {
         image={{
           uri: text(
             "Image Url",
-            "https://bedental.vn/wp-content/uploads/2022/11/nguoi-mau-Shin-Jae-Eun.jpg"
+            "https://janbox.com/blog/wp-content/uploads/2021/10/Tai-app-janbox-nhan-ngay-300-yen-vao-vi-mua-sam-thoa-thich.png"
           ),
         }}
       />
@@ -48,7 +48,7 @@ export const PopupSecondary: FunctionComponent = () => {
         imageBackground={{
           uri: text(
             "Image Url",
-            "https://bedental.vn/wp-content/uploads/2022/11/nguoi-mau-Shin-Jae-Eun.jpg"
+            "https://pbs.twimg.com/media/FQYG-fXVQAIslhN.png"
           ),
         }}
         buttonAcceptName={text("Button Accept Name", "Đồng ý")}
