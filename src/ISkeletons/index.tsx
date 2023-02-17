@@ -9,7 +9,7 @@ import { Color, StylesConstant } from "../Themes";
 
 export interface ISkeletonProps {
   width: number;
-  height: number;
+  height?: number;
   cornerRadius?: number;
 }
 

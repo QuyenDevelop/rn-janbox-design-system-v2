@@ -81,10 +81,10 @@ export const ITabBarItem: FunctionComponent<ITabItemProps> = ({
               <Dot />
             </View>
           </View>
-        ) : isShowBadge ? (
+        ) : isShowBadge && tab.badgeNumber && tab.badgeNumber > 0 ? (
           <View style={styles.view24}>
             <View style={styles.relativeView}>
-              <Badge content={tab.badgeNumber || 0} />
+              <Badge content={tab.badgeNumber} />
             </View>
           </View>
         ) : null}

@@ -1,7 +1,7 @@
 {
   "name": "rn-janbox-design-system-v2",
-  "version": "1.0.1",
-  "description": "Janbox react-native design system",
+  "version": "1.0.2",
+  "description": "Ichiba react-native design system",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",

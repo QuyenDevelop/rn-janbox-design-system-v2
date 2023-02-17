@@ -8,6 +8,7 @@ import {
   Textarea,
   Themes,
 } from "rn-janbox-design-system-v2";
+import { FlexCenterView } from "./FlexCenterView";
 
 export const TextInputDefault: FunctionComponent = () => {
   return (
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
 export const TextDropdown: FunctionComponent = () => {
   const [show, setShow] = useState<boolean>(false);
   return (
-    <>
+    <FlexCenterView>
       <BaseTextInput
         editable={boolean("Editable", true)}
         label={text("Label", "Text Dropdown List")}
@@ -93,6 +94,6 @@ export const TextDropdown: FunctionComponent = () => {
           </View>
         </View>
       </BaseBottomSheet>
-    </>
+    </FlexCenterView>
   );
 };

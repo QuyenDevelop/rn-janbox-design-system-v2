@@ -73,7 +73,7 @@ export const TabViewPrimary: FunctionComponent = () => {
         isShowRedDot={boolean("Show/Hide Dot", false)}
         isShowBadge={boolean("Show/Hide Badge", false)}
         disableSwipe={boolean("disable/enable Swipe", false)}
-        isFixed
+        isFixed={boolean("Fixed width Item Tab", true)}
       />
     </FlexCenterView>
   );
