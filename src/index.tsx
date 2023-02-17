@@ -9,6 +9,7 @@ import {
   ButtonTypes,
   ButtonSizes,
   IconColor,
+  IconButtonClear,
 } from "./Button";
 
 /** import component/types from BaseBottomSheet */
@@ -72,7 +73,6 @@ import {
   ITabItemProps,
   TabModel,
 } from "./ITabs";
-import { Tab as ICustomTab } from "@rneui/themed";
 
 /** export các module components & types */
 export {
@@ -80,6 +80,7 @@ export {
   Button,
   ButtonProps,
   IconButton,
+  IconButtonClear,
   ButtonTypes,
   ButtonSizes,
   IconColor,
@@ -115,7 +116,6 @@ export {
   ISquareSkeletonProps,
   ITags,
   ITagsProps,
-  ICustomTab,
   ITabView,
   ITabsProps,
   ITabBarItem,

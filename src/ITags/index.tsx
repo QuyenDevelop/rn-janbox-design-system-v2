@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { StyleSheet, Text, TouchableOpacity, ViewProps } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { IconButtonClear, IconColor } from "../Button";
 import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
 
@@ -8,7 +8,7 @@ export interface ITagsProps {
   isSelected?: boolean;
   onSelectedTag?: () => void;
   isShowClose?: boolean;
-  LeftIcon?: React.ComponentType<ViewProps>;
+  leftIcon?: React.ReactNode;
   tagName?: string;
   onCloseTag?: () => void;
 }
@@ -35,7 +35,6 @@ export const styles = StyleSheet.create({
     height: StylesConstant.iconSizeMedium,
     alignItems: "center",
     justifyContent: "center",
-    marginLeft: StylesConstant.spacing4,
   },
   tagsNameStyle: {
     ...TextStyles.text14,
@@ -47,7 +46,7 @@ export const ITags: FunctionComponent<ITagsProps> = ({
   isSelected,
   onSelectedTag,
   isShowClose,
-  LeftIcon,
+  leftIcon,
   tagName,
   width,
   onCloseTag,
@@ -65,7 +64,7 @@ export const ITags: FunctionComponent<ITagsProps> = ({
       style={{ ...styles.container, ...selectStyle }}
       onPress={onSelectedTag}
     >
-      {LeftIcon && <LeftIcon style={styles.leftIconStyle} />}
+      {leftIcon && <View style={styles.leftIconStyle}>{leftIcon}</View>}
       {tagName && (
         <Text
           style={{

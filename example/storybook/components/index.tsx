@@ -11,3 +11,4 @@ export * from "./Checkbox";
 export * from "./FlexCenterView";
 export * from "./TabView";
 export * from "./Skeleton";
+export * from "./TagLabelTooltips";
