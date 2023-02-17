@@ -6,10 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		5E555C0D2413F4C50049A1A2 /* RnJanboxDesignSystemV2.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RnJanboxDesignSystemV2.m */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -23,7 +19,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libRnJanboxDesignSystemV2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRnJanboxDesignSystemV2.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		134814201AA4EA6300B7C361 /* .. */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = ..; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RnJanboxDesignSystemV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnJanboxDesignSystemV2.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RnJanboxDesignSystemV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnJanboxDesignSystemV2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,7 +38,7 @@
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134814201AA4EA6300B7C361 /* libRnJanboxDesignSystemV2.a */,
+				134814201AA4EA6300B7C361 /* .. */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,7 +69,7 @@
 			);
 			name = RnJanboxDesignSystemV2;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libRnJanboxDesignSystemV2.a */;
+			productReference = 134814201AA4EA6300B7C361 /* .. */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -113,7 +109,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* RnJanboxDesignSystemV2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

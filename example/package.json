@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "build-apk": "react-native run-android --variant=release",
+    "build-apk": "npx react-native run-android --variant=release",
     "ios": "react-native run-ios",
+    "build-ipa": "npx react-native run-ios --configuration Release",
     "start": "react-native start",
     "pods": "pod-install --quiet",
     "storybook": "start-storybook -p 7007",
