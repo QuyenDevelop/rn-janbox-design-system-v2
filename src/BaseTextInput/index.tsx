@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import { TextInput as Input, Text, View } from "react-native";
 import { IconButtonClear } from "../Button";
-import { Color, ScreenUtils, StylesConstant } from "../Themes";
+import { Color, ScreenUtils, ConstantStyles } from "../Themes";
 import { InputProps, TextareaProps, styles } from "./types";
 
 export const BaseTextInput: FunctionComponent<InputProps> = ({
@@ -113,7 +113,7 @@ export const BaseTextInput: FunctionComponent<InputProps> = ({
         editable && (
           <View
             style={{
-              marginTop: StylesConstant.spacing4,
+              marginTop: ConstantStyles.spacing4,
             }}
           >
             <Text style={styles.errorMessage} numberOfLines={2}>
@@ -124,7 +124,7 @@ export const BaseTextInput: FunctionComponent<InputProps> = ({
       ) : noteMessage ? (
         <View
           style={{
-            marginTop: StylesConstant.spacing4,
+            marginTop: ConstantStyles.spacing4,
           }}
         >
           <Text style={styles.noteMessage} numberOfLines={2}>

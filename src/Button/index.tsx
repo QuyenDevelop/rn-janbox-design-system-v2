@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { Color, StylesConstant, TextStyles } from "../Themes";
+import { Color, ConstantStyles, TextStyles } from "../Themes";
 import { Images } from "../assets/Images";
 import { styles } from "./styles";
 import { ButtonProps, ButtonSizes, ButtonTypes, IconColor } from "./types";
@@ -25,11 +25,11 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   const getSize =
     buttonSize === ButtonSizes.SMALL_SPECIAL ||
     buttonSize === ButtonSizes.SMALL ||
-    width === StylesConstant.sizeSmall
-      ? StylesConstant.sizeSmall
+    width === ConstantStyles.sizeSmall
+      ? ConstantStyles.sizeSmall
       : buttonSize === ButtonSizes.MEDIUM
-      ? StylesConstant.sizeMedium
-      : StylesConstant.sizeLarge;
+      ? ConstantStyles.sizeMedium
+      : ConstantStyles.sizeLarge;
 
   /** get Button background color */
   const getBackgroundColor =
@@ -53,16 +53,16 @@ const Button: React.FunctionComponent<ButtonProps> = ({
       ? {
           ...styles.ButtonLeftStyles,
           backgroundColor: isDisabled ? Color.black5s : getButtonRightBGColor,
-          borderRadius: StylesConstant.borderRadius4,
-          width: StylesConstant.iconSizeSmall,
-          height: StylesConstant.iconSizeSmall,
+          borderRadius: ConstantStyles.borderRadius4,
+          width: ConstantStyles.iconSizeSmall,
+          height: ConstantStyles.iconSizeSmall,
         }
       : {
           ...styles.ButtonLeftStyles,
           backgroundColor: isDisabled ? Color.black5s : getButtonRightBGColor,
-          borderRadius: StylesConstant.borderRadius8,
-          width: StylesConstant.iconSizeMedium,
-          height: StylesConstant.iconSizeMedium,
+          borderRadius: ConstantStyles.borderRadius8,
+          width: ConstantStyles.iconSizeMedium,
+          height: ConstantStyles.iconSizeMedium,
         };
 
   /** get Button Loading styles */
@@ -70,13 +70,13 @@ const Button: React.FunctionComponent<ButtonProps> = ({
     buttonSize === ButtonSizes.SMALL_SPECIAL
       ? {
           ...styles.ButtonLeftStyles,
-          width: StylesConstant.iconSizeSmall,
-          height: StylesConstant.iconSizeSmall,
+          width: ConstantStyles.iconSizeSmall,
+          height: ConstantStyles.iconSizeSmall,
         }
       : {
           ...styles.ButtonLeftStyles,
-          width: StylesConstant.iconSizeMedium,
-          height: StylesConstant.iconSizeMedium,
+          width: ConstantStyles.iconSizeMedium,
+          height: ConstantStyles.iconSizeMedium,
         };
 
   /** get Button Content Text styles */
@@ -86,13 +86,13 @@ const Button: React.FunctionComponent<ButtonProps> = ({
           ...styles.textStyle,
           ...TextStyles.text14,
           color: isDisabled ? Color.black5s : getButtonRightBGColor,
-          maxWidth: (width && width - StylesConstant.spacing12) || undefined,
+          maxWidth: (width && width - ConstantStyles.spacing12) || undefined,
         }
       : {
           ...styles.textStyle,
           ...TextStyles.text16,
           color: isDisabled ? Color.black5s : getButtonRightBGColor,
-          maxWidth: (width && width - StylesConstant.spacing12) || undefined,
+          maxWidth: (width && width - ConstantStyles.spacing12) || undefined,
         };
 
   return (
@@ -156,13 +156,13 @@ const Button: React.FunctionComponent<ButtonProps> = ({
 const IconButton: React.FunctionComponent<ButtonProps> = ({
   children,
   onPress,
-  width = StylesConstant.iconSizeLarge,
+  width = ConstantStyles.iconSizeLarge,
   iconColor = IconColor.LIGHT,
 }) => {
   // const iconSize =
-  //   width > StylesConstant.iconSizeLarge
-  //     ? StylesConstant.iconSizeMedium
-  //     : StylesConstant.iconSizeSmall;
+  //   width > ConstantStyles.iconSizeLarge
+  //     ? ConstantStyles.iconSizeMedium
+  //     : ConstantStyles.iconSizeSmall;
 
   return (
     <TouchableOpacity
@@ -195,7 +195,7 @@ const IconButtonClear: React.FunctionComponent<ButtonProps> = ({
   iconColor = IconColor.LIGHT,
 }) => {
   return (
-    <IconButton width={StylesConstant.iconSizeSmall} onPress={onPress}>
+    <IconButton width={ConstantStyles.iconSizeSmall} onPress={onPress}>
       <Image
         source={
           iconColor === IconColor.LIGHT

@@ -1,5 +1,5 @@
 import type React from "react";
-import { TouchableOpacityProps } from "react-native";
+import type { TouchableOpacityProps } from "react-native";
 import type {
   GestureResponderEvent,
   NativeSyntheticEvent,

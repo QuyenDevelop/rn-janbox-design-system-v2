@@ -1,7 +1,7 @@
 import { text } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react-native";
 import React from "react";
-import { FloatingButton } from "rn-janbox-design-system-v2";
+import { IFloatingButton } from "rn-janbox-design-system-v2";
 import { ContainerView } from "../components";
 
 const List: Array<any> = [
@@ -23,7 +23,7 @@ const List: Array<any> = [
 
 storiesOf("Floating Button", module).add("Primary", () => (
   <ContainerView>
-    <FloatingButton
+    <IFloatingButton
       ListSupport={List}
       floatingImage={{
         uri: text(

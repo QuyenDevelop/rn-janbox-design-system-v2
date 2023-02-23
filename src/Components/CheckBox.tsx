@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
-import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
+import { Color, ScreenUtils, ConstantStyles, TextStyles } from "../Themes";
 import { Images } from "../assets";
 
 export interface CheckBoxProps {
@@ -16,21 +16,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   checkBoxStyle: {
-    width: StylesConstant.iconSizeMedium,
-    height: StylesConstant.iconSizeMedium,
-    borderRadius: StylesConstant.borderRadius16,
+    width: ConstantStyles.iconSizeMedium,
+    height: ConstantStyles.iconSizeMedium,
+    borderRadius: ConstantStyles.borderRadius16,
     justifyContent: "center",
     alignItems: "center",
-    marginRight: StylesConstant.spacing8,
+    marginRight: ConstantStyles.spacing8,
     borderWidth: 2 * StyleSheet.hairlineWidth,
   },
   radioContainer: {
-    width: StylesConstant.iconSizeMedium,
-    height: StylesConstant.iconSizeMedium,
-    borderRadius: StylesConstant.borderRadius4,
+    width: ConstantStyles.iconSizeMedium,
+    height: ConstantStyles.iconSizeMedium,
+    borderRadius: ConstantStyles.borderRadius4,
     justifyContent: "center",
     alignItems: "center",
-    marginRight: StylesConstant.spacing8,
+    marginRight: ConstantStyles.spacing8,
     borderWidth: 2 * StyleSheet.hairlineWidth,
   },
   checkedStyle: {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const CheckBox: FunctionComponent<CheckBoxProps> = ({
+export const ICheckBox: FunctionComponent<CheckBoxProps> = ({
   isChecked,
   isDisabled,
   handleCheck,
@@ -86,7 +86,7 @@ export const CheckBox: FunctionComponent<CheckBoxProps> = ({
   );
 };
 
-export const RadioCheckBox: FunctionComponent<CheckBoxProps> = ({
+export const IRadioCheckBox: FunctionComponent<CheckBoxProps> = ({
   isChecked,
   isDisabled,
   handleCheck,

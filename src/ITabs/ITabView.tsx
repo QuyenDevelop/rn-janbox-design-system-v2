@@ -1,7 +1,7 @@
 import { Tab } from "@rneui/themed";
 import React, { FunctionComponent, useRef } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
-import { Color, ScreenUtils, StylesConstant } from "../Themes";
+import { Color, ScreenUtils, ConstantStyles } from "../Themes";
 import { ITabBarItem, ITabItemProps } from "./ITabBarItem";
 
 export declare type TabModel = {
@@ -50,7 +50,7 @@ export const ITabView: FunctionComponent<ITabsProps> = ({
 }) => {
   const index = navigationState.index || 0;
   const itemWidth = isFixed
-    ? (ScreenUtils.WIDTH_SCREEN - StylesConstant.spacing8 * 2) /
+    ? (ScreenUtils.WIDTH_SCREEN - ConstantStyles.spacing8 * 2) /
       navigationState.routes.length
     : undefined;
   const flatListRef = useRef<FlatList>(null);
@@ -72,7 +72,7 @@ export const ITabView: FunctionComponent<ITabsProps> = ({
           disableIndicator
           scrollable={!isFixed}
           style={{
-            paddingHorizontal: StylesConstant.spacing8,
+            paddingHorizontal: ConstantStyles.spacing8,
             borderBottomWidth: 2 * StyleSheet.hairlineWidth,
             borderBottomColor: Color.black1s,
           }}

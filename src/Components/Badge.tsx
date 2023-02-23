@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { Color, StylesConstant, TextStyles } from "../Themes";
+import { Color, ConstantStyles, TextStyles } from "../Themes";
 import type { BadgeProps } from "./types";
 
-const Badge: FunctionComponent<BadgeProps> = ({
-  size = StylesConstant.iconSizeSmall,
+export const IBadge: FunctionComponent<BadgeProps> = ({
+  size = ConstantStyles.iconSizeSmall,
   color = Color.red6s,
   content,
   contentStyles,
@@ -40,5 +40,3 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
-
-export default Badge;

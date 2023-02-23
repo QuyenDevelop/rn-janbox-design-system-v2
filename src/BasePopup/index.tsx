@@ -15,10 +15,10 @@ import {
   Color,
   ScreenUtils,
   ShadowStyles,
-  StylesConstant,
+  ConstantStyles,
   TextStyles,
 } from "../Themes";
-import { SpacingHorizontal } from "../Components";
+import { ISpacingHorizontal } from "../Components";
 
 export interface PopupProps {
   /** property using show/hide dialog (required) */
@@ -61,15 +61,15 @@ const styles = StyleSheet.create({
   contentContainer: {
     ...ShadowStyles.secondary,
     backgroundColor: Color.white6,
-    paddingHorizontal: StylesConstant.spacing16,
-    borderRadius: StylesConstant.borderRadius12,
-    width: StylesConstant.dialogWidthPrimary,
+    paddingHorizontal: ConstantStyles.spacing16,
+    borderRadius: ConstantStyles.borderRadius12,
+    width: ConstantStyles.dialogWidthPrimary,
     justifyContent: "center",
     overflow: "hidden",
     alignItems: "center",
   },
   content: {
-    paddingVertical: StylesConstant.spacing16,
+    paddingVertical: ConstantStyles.spacing16,
   },
   title: {
     textAlign: "center",
@@ -82,21 +82,21 @@ const styles = StyleSheet.create({
     ...TextStyles.text14,
     color: Color.black5s,
     fontWeight: "400",
-    marginTop: StylesConstant.spacing8,
+    marginTop: ConstantStyles.spacing8,
   },
   buttonBox: {
     flexDirection: "row",
-    marginTop: StylesConstant.spacing24,
+    marginTop: ConstantStyles.spacing24,
   },
   imageBackground: {
-    width: StylesConstant.dialogWidthPrimary,
-    height: ScreenUtils.scale(StylesConstant.dialogWidthPrimary),
+    width: ConstantStyles.dialogWidthPrimary,
+    height: ScreenUtils.scale(ConstantStyles.dialogWidthPrimary),
   },
   imageBackgroundAction: {
     flex: 1,
     width: "100%",
-    paddingHorizontal: StylesConstant.spacing16,
-    paddingBottom: StylesConstant.spacing16,
+    paddingHorizontal: ConstantStyles.spacing16,
+    paddingBottom: ConstantStyles.spacing16,
     position: "absolute",
     bottom: 0,
     flexDirection: "row",
@@ -104,8 +104,8 @@ const styles = StyleSheet.create({
   },
   icCloseButton: {
     position: "absolute",
-    right: StylesConstant.spacing12,
-    top: StylesConstant.spacing12,
+    right: ConstantStyles.spacing12,
+    top: ConstantStyles.spacing12,
     zIndex: 999,
   },
 });
@@ -166,7 +166,7 @@ export const BasePopup: FunctionComponent<PopupProps> = ({
                   />
                 )}
                 {buttonCancelName && (
-                  <SpacingHorizontal size={StylesConstant.spacing8} />
+                  <ISpacingHorizontal size={ConstantStyles.spacing8} />
                 )}
                 {buttonAcceptName && onPressAccept && (
                   <Button
@@ -187,7 +187,7 @@ export const BasePopup: FunctionComponent<PopupProps> = ({
                   source={image}
                   resizeMode="cover"
                   style={{
-                    width: StylesConstant.dialogWidthPrimary,
+                    width: ConstantStyles.dialogWidthPrimary,
                     height: ScreenUtils.scale(166),
                   }}
                 />
@@ -208,7 +208,7 @@ export const BasePopup: FunctionComponent<PopupProps> = ({
                     />
                   )}
                   {buttonCancelName && (
-                    <SpacingHorizontal size={StylesConstant.spacing8} />
+                    <ISpacingHorizontal size={ConstantStyles.spacing8} />
                   )}
                   {buttonAcceptName && onPressAccept && (
                     <Button

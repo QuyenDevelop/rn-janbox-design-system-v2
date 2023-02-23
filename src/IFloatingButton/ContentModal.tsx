@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from "react";
 import { View, TouchableOpacity, Text, Image } from "react-native";
-import { Support } from ".";
+import type { Support } from ".";
 import { styles } from "./styles";
 import { IconButton } from "../Button";
-import { Color, StylesConstant } from "../Themes";
+import { Color, ConstantStyles } from "../Themes";
 import Modal from "react-native-modal";
 
 interface ContentModal {
@@ -44,7 +44,7 @@ export const ContentModal: FunctionComponent<ContentModal> = ({
             <Image source={{ uri: item.image }} style={styles.imgStyle} />
           </TouchableOpacity>
         ))}
-        <IconButton width={StylesConstant.sizeLarge} onPress={onCloseContent} />
+        <IconButton width={ConstantStyles.sizeLarge} onPress={onCloseContent} />
       </View>
     </Modal>
   );

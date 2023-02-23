@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
-import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
+import { Color, ScreenUtils, ConstantStyles, TextStyles } from "../Themes";
 import type { EmptyStateProps } from "./types";
 import { Images } from "../assets";
 import { Button } from "../Button";
@@ -12,7 +12,7 @@ import { Button } from "../Button";
   - User finds no content from Search or Filter.
 */
 
-const EmptyState: FunctionComponent<EmptyStateProps> = ({
+export const IEmptyState: FunctionComponent<EmptyStateProps> = ({
   imgSource,
   title,
   message,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: StylesConstant.spacing16,
+    paddingHorizontal: ConstantStyles.spacing16,
   },
   imageStyle: {
     width: ScreenUtils.scale(200),
@@ -68,23 +68,21 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   emptyContentStyle: {
-    marginTop: StylesConstant.spacing40,
-    marginBottom: StylesConstant.spacing8,
+    marginTop: ConstantStyles.spacing40,
+    marginBottom: ConstantStyles.spacing8,
     alignItems: "center",
     justifyContent: "center",
   },
   titleStyle: {
     ...TextStyles.text16,
     fontWeight: "500",
-    marginBottom: StylesConstant.spacing8,
+    marginBottom: ConstantStyles.spacing8,
     textAlign: "center",
   },
   messageStyle: {
     ...TextStyles.text14,
     fontWeight: "400",
-    marginBottom: StylesConstant.spacing24,
+    marginBottom: ConstantStyles.spacing24,
     textAlign: "center",
   },
 });
-
-export default EmptyState;

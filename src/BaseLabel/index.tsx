@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { StyleSheet, Text, TextStyle, View } from "react-native";
-import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
+import { Color, ScreenUtils, ConstantStyles, TextStyles } from "../Themes";
 
 /** Label is a non-interactive component to mark a label for an item or a screen */
 
@@ -28,18 +28,18 @@ const styles = StyleSheet.create({
   container: {
     height: ScreenUtils.scale(24),
     maxWidth: ScreenUtils.WIDTH_SCREEN,
-    paddingHorizontal: StylesConstant.spacing8,
-    borderRadius: StylesConstant.borderRadius4,
+    paddingHorizontal: ConstantStyles.spacing8,
+    borderRadius: ConstantStyles.borderRadius4,
     borderWidth: 2 * StyleSheet.hairlineWidth,
     flexDirection: "row",
     alignItems: "center",
   },
   childrenView: {
-    width: StylesConstant.iconSizeSmall,
-    height: StylesConstant.iconSizeSmall,
+    width: ConstantStyles.iconSizeSmall,
+    height: ConstantStyles.iconSizeSmall,
     alignItems: "center",
     justifyContent: "center",
-    marginRight: StylesConstant.spacing4,
+    marginRight: ConstantStyles.spacing4,
   },
   contentStyle: {
     maxWidth: (ScreenUtils.WIDTH_SCREEN / 10) * 8,

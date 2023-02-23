@@ -10,7 +10,7 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
+import { Color, ScreenUtils, ConstantStyles, TextStyles } from "../Themes";
 import { Images } from "../assets";
 
 /** Thanh điều hướng ở trên cùng của app để điều hướng người dùng và có các nút điều khiển */
@@ -52,10 +52,10 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     width: "100%",
-    height: StylesConstant.headerHeight,
+    height: ConstantStyles.headerHeight,
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: StylesConstant.spacing8,
+    paddingHorizontal: ConstantStyles.spacing8,
   },
   iconLeft: {
     minWidth: ScreenUtils.scale(40),
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   headerTextStyle: {
     flex: 1,
     textAlign: "center",
-    marginLeft: StylesConstant.spacing4,
+    marginLeft: ConstantStyles.spacing4,
     ...TextStyles.text16,
     fontWeight: "500",
   },
@@ -107,7 +107,7 @@ export const BaseHeaderBar: FunctionComponent<HeaderBarProps> = ({
     >
       <View style={[styles.contentContainer, containerStyle]}>
         <View
-          style={{ ...styles.iconLeft, marginLeft: StylesConstant.spacing4 }}
+          style={{ ...styles.iconLeft, marginLeft: ConstantStyles.spacing4 }}
         >
           <TouchableOpacity
             style={styles.iconBackPress}

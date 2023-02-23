@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { Color, ScreenUtils, StylesConstant } from "../Themes";
+import { Color, ScreenUtils, ConstantStyles } from "../Themes";
 import { TextStyles } from "../Themes/TextStyles";
 
 export const styles = StyleSheet.create({
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   },
   areIconSupport: {
     flex: 1,
-    padding: StylesConstant.spacing8,
+    padding: ConstantStyles.spacing8,
   },
   imgSupport: {
     width: ScreenUtils.scale(64),
@@ -29,14 +29,14 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "flex-end",
     justifyContent: "flex-end",
-    paddingHorizontal: StylesConstant.spacing16,
-    paddingBottom: StylesConstant.spacing40,
+    paddingHorizontal: ConstantStyles.spacing16,
+    paddingBottom: ConstantStyles.spacing40,
     width: ScreenUtils.WIDTH_SCREEN,
   },
   iconCloseSup: {
     marginTop: ScreenUtils.scale(16),
-    height: StylesConstant.iconSizeLarge,
-    width: StylesConstant.iconSizeLarge,
+    height: ConstantStyles.iconSizeLarge,
+    width: ConstantStyles.iconSizeLarge,
     borderRadius: ScreenUtils.scale(24),
     backgroundColor: Color.white6,
     alignItems: "center",

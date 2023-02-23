@@ -8,7 +8,7 @@ import {
   BasePopup,
   BaseSearch,
   Button,
-  FloatingButton,
+  IFloatingButton,
   ILineSkeleton,
   ISquareSkeleton,
   ITags,
@@ -70,7 +70,7 @@ export default function App() {
           />
           <View
             style={{
-              width: Themes.StylesConstant.spacing16,
+              width: Themes.ConstantStyles.spacing16,
             }}
           />
 
@@ -167,7 +167,7 @@ export default function App() {
         onPressAccept={() => console.log("Đồng ý")}
       /> */}
       {/* <SnackBar message={showSnackBar} buttonName="Button" /> */}
-      <FloatingButton
+      <IFloatingButton
         ListSupport={[
           {
             key: 1,
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   boxButton: {
-    paddingHorizontal: Themes.StylesConstant.spacing16,
+    paddingHorizontal: Themes.ConstantStyles.spacing16,
     marginTop: 20,
     flexDirection: "row",
   },

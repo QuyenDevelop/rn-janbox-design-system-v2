@@ -1,11 +1,11 @@
 import { action } from "@storybook/addon-actions";
 import { select, text } from "@storybook/addon-knobs";
 import React, { FunctionComponent } from "react";
-import { EmptyState, Themes } from "rn-janbox-design-system-v2";
+import { IEmptyState, Themes } from "rn-janbox-design-system-v2";
 
 export const SheetEmptyPrimary: FunctionComponent = () => {
   return (
-    <EmptyState
+    <IEmptyState
       title={text("Title", "Phần title nhé, viết tối đa 2 dòng thôi nhé")}
       message={text(
         "Message",
@@ -24,7 +24,7 @@ export const SheetEmptyPrimary: FunctionComponent = () => {
 
 export const SheetEmptyChangeImage: FunctionComponent = () => {
   return (
-    <EmptyState
+    <IEmptyState
       title={text("Title", "Phần title nhé, viết tối đa 2 dòng thôi nhé")}
       message={text(
         "Message",

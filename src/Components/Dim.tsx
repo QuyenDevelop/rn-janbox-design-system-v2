@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { StyleSheet, View } from "react-native";
 import { Color, ScreenUtils } from "../Themes";
 
-const ComponentDIM: FunctionComponent = () => {
+export const IComponentDIM: FunctionComponent = () => {
   return <View style={styles.container} />;
 };
 
@@ -13,5 +13,3 @@ const styles = StyleSheet.create({
     backgroundColor: Color.black5,
   },
 });
-
-export default ComponentDIM;

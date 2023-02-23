@@ -1,5 +1,5 @@
-import { ImageSourcePropType } from "react-native";
-import { FloatingButton } from "./FloatingButton";
+import type { ImageSourcePropType } from "react-native";
+import { IFloatingButton } from "./FloatingButton";
 
 export interface Support {
   key: number;
@@ -13,4 +13,4 @@ export interface FloatingButtonProps {
   floatingImage: ImageSourcePropType;
 }
 
-export { FloatingButton };
+export { IFloatingButton };

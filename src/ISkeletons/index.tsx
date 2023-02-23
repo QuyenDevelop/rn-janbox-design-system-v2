@@ -5,7 +5,7 @@ import {
   PlaceholderLine,
   PlaceholderMedia,
 } from "rn-placeholder";
-import { Color, StylesConstant } from "../Themes";
+import { Color, ConstantStyles } from "../Themes";
 
 export interface ISkeletonProps {
   width: number;
@@ -15,8 +15,8 @@ export interface ISkeletonProps {
 
 export const ILineSkeleton: FunctionComponent<ISkeletonProps> = ({
   width,
-  height = StylesConstant.spacing8,
-  cornerRadius = StylesConstant.borderRadius8,
+  height = ConstantStyles.spacing8,
+  cornerRadius = ConstantStyles.borderRadius8,
 }) => {
   return (
     <Placeholder
@@ -24,7 +24,7 @@ export const ILineSkeleton: FunctionComponent<ISkeletonProps> = ({
       style={{
         width: width,
         height: height,
-        margin: StylesConstant.spacing4,
+        margin: ConstantStyles.spacing4,
       }}
     >
       <PlaceholderLine
@@ -46,15 +46,15 @@ export interface ISquareSkeletonProps {
 }
 
 export const ISquareSkeleton: FunctionComponent<ISquareSkeletonProps> = ({
-  size = StylesConstant.sizeLarge,
-  cornerRadius = StylesConstant.borderRadius8,
+  size = ConstantStyles.sizeLarge,
+  cornerRadius = ConstantStyles.borderRadius8,
   isCircle = false,
 }) => {
   return (
     <Placeholder
       Animation={Fade}
       style={{
-        margin: StylesConstant.spacing4,
+        margin: ConstantStyles.spacing4,
         width: size,
         height: size,
       }}

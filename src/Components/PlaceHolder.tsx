@@ -1,18 +1,18 @@
 import React, { FunctionComponent } from "react";
 import { Image, StyleSheet, View } from "react-native";
-import { Color, StylesConstant } from "../Themes";
+import { Color, ConstantStyles } from "../Themes";
 import { Images } from "../assets";
 import type { PlaceHolderProps } from "./types";
 
-const PlaceHolder: FunctionComponent<PlaceHolderProps> = ({
+export const IPlaceHolder: FunctionComponent<PlaceHolderProps> = ({
   backgroundColor,
   renderIcon,
   holderSize,
 }) => {
   const getImageSize =
-    holderSize > StylesConstant.sizeLarge
-      ? StylesConstant.iconSizeLarge
-      : StylesConstant.iconSizeSmall;
+    holderSize > ConstantStyles.sizeLarge
+      ? ConstantStyles.iconSizeLarge
+      : ConstantStyles.iconSizeSmall;
 
   return (
     <View
@@ -46,5 +46,3 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
-
-export default PlaceHolder;

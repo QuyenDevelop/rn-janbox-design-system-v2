@@ -1,9 +1,8 @@
-import Badge from "./Badge";
-import ComponentDIM from "./Dim";
-import Dot from "./Dot";
-import EmptyState from "./EmptyState";
-import PlaceHolder from "./PlaceHolder";
-
+export * from "./Badge";
+export * from "./Dim";
+export * from "./Dot";
+export * from "./EmptyState";
+export * from "./PlaceHolder";
 export * from "./Spacing";
 export * from "./CheckBox";
-export { ComponentDIM, EmptyState, PlaceHolder, Dot, Badge };
+export * from "./Spacing";

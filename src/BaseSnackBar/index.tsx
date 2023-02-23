@@ -8,7 +8,7 @@ import {
   View,
   ViewProps,
 } from "react-native";
-import { Color, StylesConstant, TextStyles } from "../Themes";
+import { Color, ConstantStyles, TextStyles } from "../Themes";
 import { ScreenUtils } from "../Themes/ScreenUtils";
 
 export declare type SnackBarType = "INFO" | "ERROR" | "SUCCESS";
@@ -53,15 +53,15 @@ export interface SnackBarProps extends ViewProps, SnackBarProperties {}
 const styles = StyleSheet.create({
   snackBar: {
     flex: 1,
-    width: ScreenUtils.WIDTH_SCREEN - StylesConstant.spacing16 * 2,
-    minHeight: StylesConstant.sizeLarge,
+    width: ScreenUtils.WIDTH_SCREEN - ConstantStyles.spacing16 * 2,
+    minHeight: ConstantStyles.sizeLarge,
     position: "absolute",
   },
   snackBarContent: {
     flex: 1,
-    paddingHorizontal: StylesConstant.spacing16,
-    paddingVertical: StylesConstant.spacing8,
-    borderRadius: StylesConstant.borderRadius8,
+    paddingHorizontal: ConstantStyles.spacing16,
+    paddingVertical: ConstantStyles.spacing8,
+    borderRadius: ConstantStyles.borderRadius8,
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
@@ -72,10 +72,10 @@ const styles = StyleSheet.create({
     color: Color.white6,
   },
   iconView: {
-    width: StylesConstant.iconSizeMedium,
+    width: ConstantStyles.iconSizeMedium,
     alignItems: "center",
     justifyContent: "center",
-    marginRight: StylesConstant.spacing8,
+    marginRight: ConstantStyles.spacing8,
   },
   flexRow: { flex: 1, flexDirection: "row" },
   buttonName: {
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const SnackBar = React.forwardRef<SnackRef, SnackBarProps>(
+export const BaseSnackBar = React.forwardRef<SnackRef, SnackBarProps>(
   (
     {
       message,
@@ -161,12 +161,12 @@ export const SnackBar = React.forwardRef<SnackRef, SnackBarProps>(
           {buttonName && (
             <View
               style={{
-                marginLeft: StylesConstant.spacing16,
+                marginLeft: ConstantStyles.spacing16,
               }}
             >
               <TouchableOpacity
                 style={{
-                  paddingLeft: StylesConstant.spacing16,
+                  paddingLeft: ConstantStyles.spacing16,
                   borderLeftWidth: 2 * StyleSheet.hairlineWidth,
                   borderLeftColor: Color.white6,
                 }}

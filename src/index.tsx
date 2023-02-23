@@ -13,34 +13,36 @@ import {
 } from "./Button";
 
 /** import component/types from BaseBottomSheet */
-import { BaseBottomSheet } from "./BottomSheet";
+import { BaseBottomSheet } from "./BaseBottomSheet";
 
 /** import component/types from TextInput */
 import { BaseTextInput, Textarea } from "./BaseTextInput";
 
 /** import component/types from BaseDialog */
 import { BaseDialog } from "./BaseDialog";
-import { DialogProps } from "./BaseDialog/types";
+import type { DialogProps } from "./BaseDialog/types";
 
 /** import component/types from SnackBar */
-import { SnackBar, SnackBarTypes, SnackBarPosition } from "./SnackBar";
+import { BaseSnackBar, SnackBarTypes, SnackBarPosition } from "./BaseSnackBar";
 
 /** import component/types from HeaderBar */
 import { BaseHeaderBar, HeaderTypes } from "./BaseHeaderBar";
 
 /** import component/types from Components*/
 import {
-  ComponentDIM,
-  EmptyState,
-  PlaceHolder,
-  Dot,
-  Badge,
-  CheckBox,
-  RadioCheckBox,
+  IComponentDIM,
+  IEmptyState,
+  IPlaceHolder,
+  IDot,
+  IBadge,
+  ICheckBox,
+  IRadioCheckBox,
+  ISpacingHorizontal,
+  ISpacingVertical,
 } from "./Components";
 
 /** import component/types from Label */
-import { BaseLabel, LabelTypes, LabelProps } from "./Label";
+import { BaseLabel, LabelTypes, LabelProps } from "./BaseLabel";
 
 /** import component/types from BasePopup */
 import { BasePopup } from "./BasePopup";
@@ -49,10 +51,10 @@ import { BasePopup } from "./BasePopup";
 import { BaseSearch } from "./BaseSearch";
 
 /** import component/types from FloatingButton */
-import { FloatingButton, FloatingButtonProps } from "./FloatingButton";
+import { IFloatingButton, FloatingButtonProps } from "./IFloatingButton";
 
 /** import component/types from Tooltip */
-import { IToolTipProps, ITooltip } from "./Tooltip";
+import { IToolTipProps, ITooltip } from "./ITooltip";
 
 /** import component/types from ISkeletons */
 import {
@@ -85,18 +87,20 @@ export {
   ButtonSizes,
   IconColor,
   BaseBottomSheet,
-  ComponentDIM,
-  EmptyState,
-  PlaceHolder,
-  Dot,
-  Badge,
-  CheckBox,
-  RadioCheckBox,
+  IComponentDIM,
+  IEmptyState,
+  IPlaceHolder,
+  IDot,
+  IBadge,
+  ICheckBox,
+  IRadioCheckBox,
+  ISpacingHorizontal,
+  ISpacingVertical,
   BaseTextInput,
   Textarea,
   BaseDialog,
   DialogProps,
-  SnackBar,
+  BaseSnackBar,
   SnackBarTypes,
   SnackBarPosition,
   BaseLabel,
@@ -106,7 +110,7 @@ export {
   HeaderTypes,
   BasePopup,
   BaseSearch,
-  FloatingButton,
+  IFloatingButton,
   FloatingButtonProps,
   ITooltip,
   IToolTipProps,

@@ -6,12 +6,12 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { FloatingButtonProps } from ".";
+import type { FloatingButtonProps } from ".";
 import { ScreenUtils } from "../Themes";
 import { ContentModal } from "./ContentModal";
 import { styles } from "./styles";
 
-export const FloatingButton: FunctionComponent<FloatingButtonProps> = ({
+export const IFloatingButton: FunctionComponent<FloatingButtonProps> = ({
   ListSupport,
   floatingImage,
 }) => {

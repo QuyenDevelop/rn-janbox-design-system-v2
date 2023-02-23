@@ -9,7 +9,7 @@ import {
   View,
 } from "react-native";
 import Modal from "react-native-modal";
-import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
+import { Color, ScreenUtils, ConstantStyles, TextStyles } from "../Themes";
 import type { BottomSheetProps, BottomSheetRef } from "./types";
 import { Images } from "../assets";
 
@@ -69,7 +69,7 @@ export const BaseBottomSheetRef: ForwardRefRenderFunction<
                 <TouchableOpacity
                   style={{
                     ...styles.headerChildStyle,
-                    width: StylesConstant.sizeLarge,
+                    width: ConstantStyles.sizeLarge,
                   }}
                   onPress={headerLeftOnPress || onCloseModal}
                 >
@@ -90,7 +90,7 @@ export const BaseBottomSheetRef: ForwardRefRenderFunction<
               <TouchableOpacity
                 style={{
                   ...styles.headerChildStyle,
-                  width: StylesConstant.sizeLarge,
+                  width: ConstantStyles.sizeLarge,
                 }}
                 onPress={headerRightOnPress}
               >
@@ -118,17 +118,17 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   contentContainer: {
-    borderTopLeftRadius: StylesConstant.borderRadius16,
-    borderTopRightRadius: StylesConstant.borderRadius16,
+    borderTopLeftRadius: ConstantStyles.borderRadius16,
+    borderTopRightRadius: ConstantStyles.borderRadius16,
     backgroundColor: Color.white6,
-    paddingBottom: StylesConstant.spacing16,
+    paddingBottom: ConstantStyles.spacing16,
   },
   headerView: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: StylesConstant.spacing4,
-    paddingHorizontal: StylesConstant.spacing8,
+    paddingVertical: ConstantStyles.spacing4,
+    paddingHorizontal: ConstantStyles.spacing8,
     borderBottomWidth: 2 * StyleSheet.hairlineWidth,
     borderBottomColor: Color.black1s,
   },
@@ -140,19 +140,19 @@ const styles = StyleSheet.create({
     color: Color.black6s,
   },
   headerChildStyle: {
-    height: StylesConstant.sizeLarge,
+    height: ConstantStyles.sizeLarge,
     alignItems: "center",
     justifyContent: "center",
   },
   view24: {
-    width: StylesConstant.iconSizeMedium,
-    height: StylesConstant.iconSizeMedium,
+    width: ConstantStyles.iconSizeMedium,
+    height: ConstantStyles.iconSizeMedium,
     alignItems: "center",
     justifyContent: "center",
   },
   iconCloseStyle: {
-    width: StylesConstant.iconSizeMedium,
-    height: StylesConstant.iconSizeMedium,
+    width: ConstantStyles.iconSizeMedium,
+    height: ConstantStyles.iconSizeMedium,
     overflow: "hidden",
     alignItems: "center",
     justifyContent: "center",

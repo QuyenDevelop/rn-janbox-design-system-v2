@@ -1,5 +1,5 @@
 import { StyleProp, StyleSheet, TextInputProps, ViewStyle } from "react-native";
-import { Color, StylesConstant, TextStyles } from "../Themes";
+import { Color, ConstantStyles, TextStyles } from "../Themes";
 
 export declare interface InputProps extends TextInputProps {
   label?: string;
@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
   label: {
     ...TextStyles.text16,
     color: Color.black5s,
-    marginBottom: StylesConstant.spacing8,
+    marginBottom: ConstantStyles.spacing8,
   },
   required: {
     color: Color.red6s,
@@ -48,65 +48,65 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     overflow: "hidden",
-    borderRadius: StylesConstant.borderRadius8,
+    borderRadius: ConstantStyles.borderRadius8,
     borderWidth: 2 * StyleSheet.hairlineWidth,
     borderColor: Color.black2s,
-    paddingHorizontal: StylesConstant.spacing16,
+    paddingHorizontal: ConstantStyles.spacing16,
   },
   inputFocusContainer: {
     flexDirection: "row",
     alignItems: "center",
     overflow: "hidden",
-    borderRadius: StylesConstant.borderRadius8,
+    borderRadius: ConstantStyles.borderRadius8,
     borderWidth: 2 * StyleSheet.hairlineWidth,
     borderColor: Color.blue6s,
-    paddingHorizontal: StylesConstant.spacing16,
+    paddingHorizontal: ConstantStyles.spacing16,
   },
   inputErrorContainer: {
     flexDirection: "row",
     alignItems: "center",
     overflow: "hidden",
-    borderRadius: StylesConstant.borderRadius8,
+    borderRadius: ConstantStyles.borderRadius8,
     borderWidth: 2 * StyleSheet.hairlineWidth,
     borderColor: Color.red6s,
-    paddingHorizontal: StylesConstant.spacing16,
+    paddingHorizontal: ConstantStyles.spacing16,
   },
   inputDisableContainer: {
     flexDirection: "row",
     alignItems: "center",
     overflow: "hidden",
-    borderRadius: StylesConstant.borderRadius8,
+    borderRadius: ConstantStyles.borderRadius8,
     borderWidth: 2 * StyleSheet.hairlineWidth,
     borderColor: Color.black2s,
     backgroundColor: Color.black2s,
-    paddingHorizontal: StylesConstant.spacing16,
+    paddingHorizontal: ConstantStyles.spacing16,
   },
   input: {
     flex: 1,
     ...TextStyles.text16,
     color: Color.black6s,
-    marginRight: StylesConstant.spacing8,
+    marginRight: ConstantStyles.spacing8,
   },
   errorMessage: {
     ...TextStyles.text14,
     color: Color.red6s,
-    marginLeft: StylesConstant.spacing16,
+    marginLeft: ConstantStyles.spacing16,
   },
   noteMessage: {
     ...TextStyles.text14,
     color: Color.black5s,
-    marginLeft: StylesConstant.spacing16,
+    marginLeft: ConstantStyles.spacing16,
   },
   noteView: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: StylesConstant.spacing4,
+    marginTop: ConstantStyles.spacing4,
   },
   counter: {
     ...TextStyles.text14,
     color: Color.black5s,
-    width: StylesConstant.spacing40,
+    width: ConstantStyles.spacing40,
     textAlign: "right",
   },
 });

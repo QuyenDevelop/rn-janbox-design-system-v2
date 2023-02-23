@@ -51,7 +51,7 @@ export default function ButtonTab() {
           />
           <View
             style={{
-              width: Themes.StylesConstant.spacing16,
+              width: Themes.ConstantStyles.spacing16,
             }}
           />
           <Button
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   boxButton: {
-    paddingHorizontal: Themes.StylesConstant.spacing16,
+    paddingHorizontal: Themes.ConstantStyles.spacing16,
     marginTop: 20,
     flexDirection: "row",
   },

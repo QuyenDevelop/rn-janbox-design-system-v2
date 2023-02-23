@@ -1,13 +1,13 @@
 import { action } from "@storybook/addon-actions";
 import { number, select, text } from "@storybook/addon-knobs";
 import React, { FunctionComponent } from "react";
-import { SnackBar, SnackBarTypes } from "rn-janbox-design-system-v2";
+import { BaseSnackBar, SnackBarTypes } from "rn-janbox-design-system-v2";
 import { ContainerView } from ".";
 
 export const SnackBarPrimary: FunctionComponent = () => {
   return (
     <ContainerView>
-      <SnackBar
+      <BaseSnackBar
         message={text("Nội dung thông báo", "Thông báo")}
         buttonName={text("Button Name", "Button")}
         snackBarAction={action("snackBarAction")}

@@ -8,7 +8,7 @@ import {
   ViewStyle,
 } from "react-native";
 import { IconButtonClear, IconColor } from "../Button";
-import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
+import { Color, ScreenUtils, ConstantStyles, TextStyles } from "../Themes";
 import { Images } from "../assets";
 
 export interface SearchProps extends TextInputProps {
@@ -29,19 +29,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     overflow: "hidden",
-    borderRadius: StylesConstant.borderRadius8,
+    borderRadius: ConstantStyles.borderRadius8,
     borderWidth: 2 * StyleSheet.hairlineWidth,
     borderColor: Color.black2s,
-    paddingHorizontal: StylesConstant.spacing12,
+    paddingHorizontal: ConstantStyles.spacing12,
   },
   inputFocusContainer: {
     flexDirection: "row",
     alignItems: "center",
     overflow: "hidden",
-    borderRadius: StylesConstant.borderRadius8,
+    borderRadius: ConstantStyles.borderRadius8,
     borderWidth: 2 * StyleSheet.hairlineWidth,
     borderColor: Color.blue6s,
-    paddingHorizontal: StylesConstant.spacing12,
+    paddingHorizontal: ConstantStyles.spacing12,
   },
   input: {
     flex: 1,
@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
   },
   iconClearView: {
-    width: StylesConstant.iconSizeMedium,
-    height: StylesConstant.iconSizeMedium,
+    width: ConstantStyles.iconSizeMedium,
+    height: ConstantStyles.iconSizeMedium,
     alignItems: "center",
     justifyContent: "center",
-    marginLeft: StylesConstant.spacing8,
+    marginLeft: ConstantStyles.spacing8,
   },
 });
 
@@ -99,9 +99,9 @@ export const BaseSearch: FunctionComponent<SearchProps> = ({
         <Image
           source={Images.icSearch}
           style={{
-            width: StylesConstant.iconSizeMedium,
-            height: StylesConstant.iconSizeMedium,
-            marginRight: StylesConstant.spacing8,
+            width: ConstantStyles.iconSizeMedium,
+            height: ConstantStyles.iconSizeMedium,
+            marginRight: ConstantStyles.spacing8,
           }}
           resizeMode="cover"
         />

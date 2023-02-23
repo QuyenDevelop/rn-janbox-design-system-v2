@@ -1,9 +1,9 @@
 import { Text } from "@rneui/themed";
 import React, { FunctionComponent } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
-import { TabModel } from ".";
-import { Badge, Dot } from "../Components";
-import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
+import type { TabModel } from ".";
+import { IBadge, IDot } from "../Components";
+import { Color, ScreenUtils, ConstantStyles, TextStyles } from "../Themes";
 
 export interface ITabItemProps {
   tab: TabModel;
@@ -22,19 +22,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   tabContainer: {
-    height: StylesConstant.sizeMedium,
+    height: ConstantStyles.sizeMedium,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
-    paddingHorizontal: StylesConstant.spacing8,
+    paddingHorizontal: ConstantStyles.spacing8,
     backgroundColor: Color.white6,
   },
   tabIcon: {
-    width: StylesConstant.iconSizeMedium,
-    height: StylesConstant.iconSizeMedium,
+    width: ConstantStyles.iconSizeMedium,
+    height: ConstantStyles.iconSizeMedium,
     alignItems: "center",
     justifyContent: "center",
-    marginRight: StylesConstant.spacing4,
+    marginRight: ConstantStyles.spacing4,
     overflow: "hidden",
   },
   contentStyle: {
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
     color: Color.black6s,
   },
   view24: {
-    width: StylesConstant.iconSizeMedium,
-    marginLeft: StylesConstant.spacing4,
+    width: ConstantStyles.iconSizeMedium,
+    marginLeft: ConstantStyles.spacing4,
   },
   relativeView: {
     position: "relative",
-    top: -StylesConstant.spacing4,
+    top: -ConstantStyles.spacing4,
   },
 });
 
@@ -78,13 +78,13 @@ export const ITabBarItem: FunctionComponent<ITabItemProps> = ({
         {isShowRedDot ? (
           <View style={styles.view24}>
             <View style={styles.relativeView}>
-              <Dot />
+              <IDot />
             </View>
           </View>
         ) : isShowBadge && tab.badgeNumber && tab.badgeNumber > 0 ? (
           <View style={styles.view24}>
             <View style={styles.relativeView}>
-              <Badge content={tab.badgeNumber} />
+              <IBadge content={tab.badgeNumber} />
             </View>
           </View>
         ) : null}

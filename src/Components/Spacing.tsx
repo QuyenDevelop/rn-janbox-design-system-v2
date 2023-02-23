@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from "react";
 import { View, StyleSheet } from "react-native";
-import { Color, StylesConstant } from "../Themes";
+import { Color, ConstantStyles } from "../Themes";
 import type { DotProps } from "./types";
 
-export const SpacingVertical: FunctionComponent<DotProps> = ({
-  size = StylesConstant.spacing4,
+export const ISpacingVertical: FunctionComponent<DotProps> = ({
+  size = ConstantStyles.spacing4,
   color = Color.black3s,
 }) => {
   return (
@@ -18,8 +18,8 @@ export const SpacingVertical: FunctionComponent<DotProps> = ({
   );
 };
 
-export const SpacingHorizontal: FunctionComponent<DotProps> = ({
-  size = StylesConstant.spacing4,
+export const ISpacingHorizontal: FunctionComponent<DotProps> = ({
+  size = ConstantStyles.spacing4,
   color,
 }) => {
   return (

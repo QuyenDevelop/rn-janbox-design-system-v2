@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { IconButtonClear, IconColor } from "../Button";
-import { Color, ScreenUtils, StylesConstant, TextStyles } from "../Themes";
+import { Color, ScreenUtils, ConstantStyles, TextStyles } from "../Themes";
 
 export interface ITagsProps {
   width?: number;
@@ -19,20 +19,20 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     height: ScreenUtils.scale(32),
-    paddingHorizontal: StylesConstant.spacing8,
-    borderRadius: StylesConstant.borderRadius16,
+    paddingHorizontal: ConstantStyles.spacing8,
+    borderRadius: ConstantStyles.borderRadius16,
     overflow: "hidden",
   },
   leftIconStyle: {
-    width: StylesConstant.iconSizeMedium,
-    height: StylesConstant.iconSizeMedium,
+    width: ConstantStyles.iconSizeMedium,
+    height: ConstantStyles.iconSizeMedium,
     alignItems: "center",
     justifyContent: "center",
-    marginRight: StylesConstant.spacing4,
+    marginRight: ConstantStyles.spacing4,
   },
   rightIconStyle: {
-    width: StylesConstant.iconSizeMedium,
-    height: StylesConstant.iconSizeMedium,
+    width: ConstantStyles.iconSizeMedium,
+    height: ConstantStyles.iconSizeMedium,
     alignItems: "center",
     justifyContent: "center",
   },

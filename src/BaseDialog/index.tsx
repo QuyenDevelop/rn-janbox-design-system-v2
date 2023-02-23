@@ -2,9 +2,9 @@ import React, { FunctionComponent } from "react";
 import { KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
 import Modal from "react-native-modal";
 import { Button, ButtonTypes } from "../Button";
-import { Color, ShadowStyles, StylesConstant, TextStyles } from "../Themes";
+import { Color, ShadowStyles, ConstantStyles, TextStyles } from "../Themes";
 import type { DialogProps } from "./types";
-import { SpacingHorizontal } from "../Components";
+import { ISpacingHorizontal } from "../Components";
 
 export const BaseDialog: FunctionComponent<DialogProps> = ({
   isVisible,
@@ -57,7 +57,7 @@ export const BaseDialog: FunctionComponent<DialogProps> = ({
               />
             )}
             {buttonCancelName && (
-              <SpacingHorizontal size={StylesConstant.spacing8} />
+              <ISpacingHorizontal size={ConstantStyles.spacing8} />
             )}
             {buttonAcceptName && onPressAccept && (
               <Button
@@ -83,9 +83,9 @@ const styles = StyleSheet.create({
   contentContainer: {
     ...ShadowStyles.secondary,
     backgroundColor: Color.white6,
-    padding: StylesConstant.spacing24,
-    borderRadius: StylesConstant.borderRadius8,
-    width: StylesConstant.dialogWidthPrimary,
+    padding: ConstantStyles.spacing24,
+    borderRadius: ConstantStyles.borderRadius8,
+    width: ConstantStyles.dialogWidthPrimary,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -98,10 +98,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     ...TextStyles.text14,
     color: Color.black5s,
-    marginTop: StylesConstant.spacing8,
+    marginTop: ConstantStyles.spacing8,
   },
   buttonBox: {
     flexDirection: "row",
-    marginTop: StylesConstant.spacing24,
+    marginTop: ConstantStyles.spacing24,
   },
 });

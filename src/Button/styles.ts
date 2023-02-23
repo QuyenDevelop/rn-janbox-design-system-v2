@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { Color, StylesConstant } from "../Themes";
+import { Color, ConstantStyles } from "../Themes";
 
 export const styles = StyleSheet.create({
   disableStyle: {
@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-    borderRadius: StylesConstant.borderRadius8,
+    borderRadius: ConstantStyles.borderRadius8,
     backgroundColor: Color.black3s,
   },
   enableStyle: {
@@ -15,20 +15,20 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-    borderRadius: StylesConstant.borderRadius8,
+    borderRadius: ConstantStyles.borderRadius8,
   },
   contentStyle: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-    marginHorizontal: StylesConstant.spacing16,
+    marginHorizontal: ConstantStyles.spacing16,
   },
   ButtonLeftStyles: {
     overflow: "hidden",
     alignItems: "center",
     justifyContent: "center",
-    marginHorizontal: StylesConstant.spacing8,
+    marginHorizontal: ConstantStyles.spacing8,
   },
   textStyle: {
     textAlign: "center",

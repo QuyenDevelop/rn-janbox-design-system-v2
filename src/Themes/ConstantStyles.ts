@@ -1,6 +1,6 @@
 import { ScreenUtils } from "./ScreenUtils";
 
-export const StylesConstant = {
+export const ConstantStyles = {
   /* ----- Spacing Size ----- */
   spacing4: ScreenUtils.scale(4),
   spacing8: ScreenUtils.scale(8),
