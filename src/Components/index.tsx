@@ -6,3 +6,4 @@ export * from "./PlaceHolder";
 export * from "./Spacing";
 export * from "./CheckBox";
 export * from "./Spacing";
+export * from "./types";

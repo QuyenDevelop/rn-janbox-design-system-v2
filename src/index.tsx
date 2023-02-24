@@ -13,10 +13,11 @@ import {
 } from "./Button";
 
 /** import component/types from BaseBottomSheet */
-import { BaseBottomSheet } from "./BaseBottomSheet";
+import { BaseBottomSheet, BottomSheetProps } from "./BaseBottomSheet";
 
 /** import component/types from TextInput */
 import { BaseTextInput, Textarea } from "./BaseTextInput";
+import { InputProps, TextareaProps } from "./BaseTextInput/types";
 
 /** import component/types from BaseDialog */
 import { BaseDialog } from "./BaseDialog";
@@ -26,16 +27,21 @@ import type { DialogProps } from "./BaseDialog/types";
 import { BaseSnackBar, SnackBarTypes, SnackBarPosition } from "./BaseSnackBar";
 
 /** import component/types from HeaderBar */
-import { BaseHeaderBar, HeaderTypes } from "./BaseHeaderBar";
+import { BaseHeaderBar, HeaderTypes, HeaderBarProps } from "./BaseHeaderBar";
 
 /** import component/types from Components*/
 import {
   IComponentDIM,
   IEmptyState,
+  EmptyStateProps,
   IPlaceHolder,
+  PlaceHolderProps,
   IDot,
+  DotProps,
   IBadge,
+  BadgeProps,
   ICheckBox,
+  CheckBoxProps,
   IRadioCheckBox,
   ISpacingHorizontal,
   ISpacingVertical,
@@ -45,10 +51,10 @@ import {
 import { BaseLabel, LabelTypes, LabelProps } from "./BaseLabel";
 
 /** import component/types from BasePopup */
-import { BasePopup } from "./BasePopup";
+import { BasePopup, PopupProps } from "./BasePopup";
 
 /** import component/types from BaseSearch */
-import { BaseSearch } from "./BaseSearch";
+import { BaseSearch, SearchProps } from "./BaseSearch";
 
 /** import component/types from FloatingButton */
 import { IFloatingButton, FloatingButtonProps } from "./IFloatingButton";
@@ -87,17 +93,25 @@ export {
   ButtonSizes,
   IconColor,
   BaseBottomSheet,
+  BottomSheetProps,
   IComponentDIM,
   IEmptyState,
+  EmptyStateProps,
   IPlaceHolder,
+  PlaceHolderProps,
   IDot,
+  DotProps,
   IBadge,
+  BadgeProps,
   ICheckBox,
+  CheckBoxProps,
   IRadioCheckBox,
   ISpacingHorizontal,
   ISpacingVertical,
   BaseTextInput,
+  InputProps,
   Textarea,
+  TextareaProps,
   BaseDialog,
   DialogProps,
   BaseSnackBar,
@@ -107,9 +121,12 @@ export {
   LabelTypes,
   LabelProps,
   BaseHeaderBar,
+  HeaderBarProps,
   HeaderTypes,
   BasePopup,
+  PopupProps,
   BaseSearch,
+  SearchProps,
   IFloatingButton,
   FloatingButtonProps,
   ITooltip,
