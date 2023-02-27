@@ -3,6 +3,7 @@ import * as React from "react";
 import { View } from "react-native";
 import {
   BaseHeaderBar,
+  IFloatingButton,
   ITabBarItem,
   ITabItemProps,
   ITabView,
@@ -56,6 +57,27 @@ export default function App() {
         renderTabIcon={renderTabIcon}
         // disableSwipe
         isFixed
+      />
+      <IFloatingButton
+        ListSupport={[
+          {
+            key: 1,
+            title: "Estimated Price",
+            image:
+              "https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914__340.png",
+            onPress: () => {},
+          },
+          {
+            key: 2,
+            title: "Messenger",
+            image:
+              "https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914__340.png",
+            onPress: () => {},
+          },
+        ]}
+        floatingImage={{
+          uri: "https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914__340.png",
+        }}
       />
     </View>
   );

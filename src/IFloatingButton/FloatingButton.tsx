@@ -5,7 +5,7 @@ import {
   ImageSourcePropType,
   PanResponder,
   TouchableOpacity,
-  View,
+  ViewStyle,
 } from "react-native";
 import { ScreenUtils } from "../Themes";
 import { ContentModal } from "./ContentModal";
@@ -80,19 +80,18 @@ export const IFloatingButton: FunctionComponent<FloatingButtonProps> = ({
     })
   ).current;
 
+  const containerStyle: ViewStyle = {
+    flex: 1,
+    position: "absolute",
+    zIndex: 99,
+    left: ScreenUtils.WIDTH_SCREEN - ScreenUtils.scale(80),
+    bottom: ScreenUtils.scale(60),
+    transform: [{ translateX: pan.x }, { translateY: pan.y }],
+  };
+
   return (
-    <View>
-      <Animated.View
-        style={[
-          {
-            ...styles.imgSupport,
-            left: ScreenUtils.WIDTH_SCREEN - ScreenUtils.scale(96),
-            bottom: ScreenUtils.scale(60),
-            transform: [{ translateX: pan.x }, { translateY: pan.y }],
-          },
-        ]}
-        {...panResponder.panHandlers}
-      >
+    <>
+      <Animated.View style={[containerStyle]} {...panResponder.panHandlers}>
         {!isShowAction && (
           <TouchableOpacity onPress={() => showAction(true)}>
             <Image
@@ -108,6 +107,6 @@ export const IFloatingButton: FunctionComponent<FloatingButtonProps> = ({
         onCloseContent={() => showAction(false)}
         ListSupport={ListSupport}
       />
-    </View>
+    </>
   );
 };
