@@ -1,35 +1,5 @@
-import { StyleProp, StyleSheet, TextInputProps, ViewStyle } from "react-native";
+import { StyleSheet } from "react-native";
 import { Color, ConstantStyles, TextStyles } from "../Themes";
-
-export declare interface InputProps extends TextInputProps {
-  label?: string;
-  noteMessage?: string;
-  errorMessage?: string;
-  height?: number;
-  containerStyle?: StyleProp<ViewStyle>;
-  onClearInput: () => void;
-  inputStyle?: StyleProp<ViewStyle>;
-  isRequired?: boolean;
-  isFocus?: boolean;
-  textRightComponent?: React.ReactNode;
-  textLeftComponent?: React.ReactNode;
-}
-
-export declare interface TextareaProps extends TextInputProps {
-  label?: string;
-  noteMessage?: string;
-  errorMessage?: string;
-  height?: number;
-  containerStyle?: StyleProp<ViewStyle>;
-  onClearInput?: () => void;
-  inputStyle?: StyleProp<ViewStyle>;
-  isFocus?: boolean;
-  isRequired?: boolean;
-  textRightComponent?: React.ReactNode;
-  textLeftComponent?: React.ReactNode;
-  /** num of limited of value length */
-  limited?: number;
-}
 
 export const styles = StyleSheet.create({
   container: {

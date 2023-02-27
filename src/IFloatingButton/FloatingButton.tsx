@@ -2,14 +2,26 @@ import React, { FunctionComponent, useRef, useState } from "react";
 import {
   Animated,
   Image,
+  ImageSourcePropType,
   PanResponder,
   TouchableOpacity,
   View,
 } from "react-native";
-import type { FloatingButtonProps } from ".";
 import { ScreenUtils } from "../Themes";
 import { ContentModal } from "./ContentModal";
 import { styles } from "./styles";
+
+export interface Support {
+  key: number;
+  title: string;
+  image: string;
+  onPress: () => void;
+}
+
+export interface FloatingButtonProps {
+  ListSupport: Array<Support>;
+  floatingImage: ImageSourcePropType;
+}
 
 export const IFloatingButton: FunctionComponent<FloatingButtonProps> = ({
   ListSupport,

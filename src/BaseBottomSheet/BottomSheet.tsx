@@ -1,5 +1,6 @@
 import React, { forwardRef, ForwardRefRenderFunction, useRef } from "react";
 import {
+  GestureResponderEvent,
   Image,
   KeyboardAvoidingView,
   ScrollView,
@@ -7,11 +8,29 @@ import {
   Text,
   TouchableOpacity,
   View,
+  ViewStyle,
 } from "react-native";
 import Modal from "react-native-modal";
-import { Color, ScreenUtils, ConstantStyles, TextStyles } from "../Themes";
-import type { BottomSheetProps, BottomSheetRef } from "./types";
 import { Images } from "../assets";
+import { Color, ConstantStyles, ScreenUtils, TextStyles } from "../Themes";
+
+export interface BottomSheetProps {
+  isVisible: boolean;
+  headerTitle: string;
+  containerStyle?: ViewStyle;
+  height?: number;
+  children: React.ReactNode | JSX.Element;
+  headerLeftView?: React.ReactNode;
+  headerRightView?: React.ReactNode;
+  disableBackdrop?: boolean;
+  disableSwipeComplete?: boolean;
+  backdropOpacity?: number;
+  onCloseModal?: (() => void) | undefined;
+  headerLeftOnPress?: ((event: GestureResponderEvent) => void) | undefined;
+  headerRightOnPress?: ((event: GestureResponderEvent) => void) | undefined;
+}
+
+export interface BottomSheetRef {}
 
 export const BaseBottomSheetRef: ForwardRefRenderFunction<
   BottomSheetRef,

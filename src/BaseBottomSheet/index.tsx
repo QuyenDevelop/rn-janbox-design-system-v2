@@ -1,2 +1,4 @@
-export * from "./BottomSheet";
-export * from "./types";
+import { BaseBottomSheet, BottomSheetProps } from "./BottomSheet";
+
+export { BaseBottomSheet };
+export type { BottomSheetProps };

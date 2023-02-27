@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from "react";
 import { View, TouchableOpacity, Text, Image } from "react-native";
-import type { Support } from ".";
 import { styles } from "./styles";
 import { IconButton } from "../Button";
 import { Color, ConstantStyles } from "../Themes";
 import Modal from "react-native-modal";
+import { Support } from "./FloatingButton";
 
 interface ContentModal {
   ListSupport: Array<Support>;

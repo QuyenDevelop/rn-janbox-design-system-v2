@@ -5,7 +5,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import {
   BaseBottomSheet,
   BaseTextInput,
-  Textarea,
+  BaseTextArea,
   Themes,
 } from "rn-janbox-design-system-v2";
 import { FlexCenterView } from "./FlexCenterView";
@@ -27,7 +27,7 @@ export const TextInputDefault: FunctionComponent = () => {
 
 export const TextAreaDefault: FunctionComponent = () => {
   return (
-    <Textarea
+    <BaseTextArea
       editable={boolean("Editable", true)}
       label={text("Label", "Text Area")}
       value={text("Input Value", "Nhập nội dung ở đây")}
