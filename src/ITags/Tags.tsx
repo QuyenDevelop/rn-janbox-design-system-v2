@@ -11,6 +11,8 @@ export interface ITagsProps {
   isShowClose?: boolean;
   leftIcon?: React.ReactNode;
   tagName?: string;
+  /** set Font for Text */
+  fontFamily?: string;
   onCloseTag?: () => void;
 }
 
@@ -20,6 +22,7 @@ export const ITags: FunctionComponent<ITagsProps> = ({
   isShowClose,
   leftIcon,
   tagName,
+  fontFamily,
   width,
   onCloseTag,
 }) => {
@@ -42,6 +45,7 @@ export const ITags: FunctionComponent<ITagsProps> = ({
           style={{
             ...styles.tagsNameStyle,
             maxWidth: width,
+            fontFamily: fontFamily,
             color: isSelected ? Color.white6 : Color.black6s,
           }}
           numberOfLines={1}

@@ -17,6 +17,7 @@ export const IEmptyState: FunctionComponent<EmptyStateProps> = ({
   title,
   message,
   buttonTitle,
+  fontFamily,
   buttonHandler,
   backgroundColor,
 }) => {
@@ -34,11 +35,17 @@ export const IEmptyState: FunctionComponent<EmptyStateProps> = ({
       />
       <View style={styles.emptyContentStyle}>
         {title && (
-          <Text numberOfLines={2} style={styles.titleStyle}>
+          <Text
+            numberOfLines={2}
+            style={{ ...styles.titleStyle, fontFamily: fontFamily }}
+          >
             {title}
           </Text>
         )}
-        <Text numberOfLines={3} style={styles.messageStyle}>
+        <Text
+          numberOfLines={3}
+          style={{ ...styles.messageStyle, fontFamily: fontFamily }}
+        >
           {message}
         </Text>
         {buttonTitle && buttonHandler && (

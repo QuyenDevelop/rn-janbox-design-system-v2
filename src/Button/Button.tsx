@@ -86,13 +86,11 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
           ...styles.textStyle,
           ...TextStyles.text14,
           color: isDisabled ? Color.black5s : getButtonRightBGColor,
-          maxWidth: (width && width - ConstantStyles.spacing12) || undefined,
         }
       : {
           ...styles.textStyle,
           ...TextStyles.text16,
           color: isDisabled ? Color.black5s : getButtonRightBGColor,
-          maxWidth: (width && width - ConstantStyles.spacing12) || undefined,
         };
 
   return (
@@ -105,8 +103,9 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
               height: getSize,
               minHeight: getSize,
               minWidth: getSize,
-              width: width,
               maxWidth: width,
+              paddingHorizontal:
+                width && width > 0 ? undefined : ConstantStyles.spacing12,
             }
           : {
               ...styles.enableStyle,
@@ -115,8 +114,9 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
               minHeight: getSize,
               backgroundColor: getBackgroundColor,
               minWidth: getSize,
-              width: width,
               maxWidth: width,
+              paddingHorizontal:
+                width && width > 0 ? undefined : ConstantStyles.spacing12,
             }
       }
       onPress={onPress}

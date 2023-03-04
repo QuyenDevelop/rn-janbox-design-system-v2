@@ -24,7 +24,7 @@ export interface ITabsProps {
   isHideTabBar?: boolean;
   disableSwipe?: boolean;
   isFixed?: boolean;
-  renderTabIcon?: (
+  renderTab?: (
     props: ITabItemProps & { tabKey?: string }
   ) => React.ReactElement;
   isShowRedDot?: boolean;
@@ -44,7 +44,7 @@ export const ITabView: FunctionComponent<ITabsProps> = ({
   isFixed,
   renderScene,
   disableSwipe,
-  renderTabIcon,
+  renderTab,
   isShowRedDot,
   isShowBadge,
 }) => {
@@ -89,11 +89,7 @@ export const ITabView: FunctionComponent<ITabsProps> = ({
               isShowBadge: isShowBadge,
             };
 
-            return renderTabIcon ? (
-              renderTabIcon(rest)
-            ) : (
-              <ITabBarItem {...rest} />
-            );
+            return renderTab ? renderTab(rest) : <ITabBarItem {...rest} />;
           })}
         </Tab>
       )}

@@ -41,6 +41,8 @@ export interface SnackBarProperties {
   buttonName?: string;
   /** snack bar event of button */
   snackBarAction?: ((event: GestureResponderEvent) => void) | undefined;
+  /** set Font for Text */
+  fontFamily?: string;
 }
 
 export interface SnackBarProps extends ViewProps, SnackBarProperties {}
@@ -55,6 +57,7 @@ export const BaseSnackBar = React.forwardRef<SnackRef, SnackBarProps>(
       snackBarIcon,
       buttonName,
       snackBarAction,
+      fontFamily,
       ...props
     },
     SnackRef
@@ -114,7 +117,10 @@ export const BaseSnackBar = React.forwardRef<SnackRef, SnackBarProps>(
             {snackBarIcon && (
               <View style={styles.iconView}>{snackBarIcon}</View>
             )}
-            <Text style={styles.contentStyle} numberOfLines={3}>
+            <Text
+              style={{ ...styles.contentStyle, fontFamily: fontFamily }}
+              numberOfLines={3}
+            >
               {message}
             </Text>
           </View>
@@ -132,7 +138,9 @@ export const BaseSnackBar = React.forwardRef<SnackRef, SnackBarProps>(
                 }}
                 onPress={snackBarAction}
               >
-                <Text style={styles.buttonName}>{buttonName}</Text>
+                <Text style={{ ...styles.buttonName, fontFamily: fontFamily }}>
+                  {buttonName}
+                </Text>
               </TouchableOpacity>
             </View>
           )}

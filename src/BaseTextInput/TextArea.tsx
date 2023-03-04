@@ -24,6 +24,8 @@ export declare interface ITextareaProps extends TextInputProps {
   textLeftComponent?: React.ReactNode;
   /** num of limited of value length */
   limited?: number;
+  /** set Font for Text */
+  fontFamily?: string;
 }
 
 export const BaseTextArea: FunctionComponent<ITextareaProps> = ({
@@ -37,6 +39,7 @@ export const BaseTextArea: FunctionComponent<ITextareaProps> = ({
   onChangeText,
   isFocus,
   limited = 24,
+  fontFamily,
   ...props
 }) => {
   const inputRef = useRef<Input>(null);
@@ -67,7 +70,9 @@ export const BaseTextArea: FunctionComponent<ITextareaProps> = ({
 
   return (
     <View style={[styles.container, containerStyle]}>
-      {label && <Text style={styles.label}>{label}</Text>}
+      {label && (
+        <Text style={{ ...styles.label, fontFamily: fontFamily }}>{label}</Text>
+      )}
       <View style={editable ? getInputStyle : styles.inputDisableContainer}>
         <Input
           ref={inputRef}
@@ -77,7 +82,11 @@ export const BaseTextArea: FunctionComponent<ITextareaProps> = ({
           onChangeText={onChangeText}
           value={value}
           placeholderTextColor={Color.black4s}
-          style={{ ...styles.input, height: height || ScreenUtils.scale(56) }}
+          style={{
+            ...styles.input,
+            height: height || ScreenUtils.scale(56),
+            fontFamily: fontFamily,
+          }}
           onFocus={handleFocus}
           maxLength={limited}
           onBlur={handleBlur}
@@ -94,17 +103,25 @@ export const BaseTextArea: FunctionComponent<ITextareaProps> = ({
         >
           {errorMessage ? (
             editable && (
-              <Text style={styles.errorMessage} numberOfLines={2}>
+              <Text
+                style={{ ...styles.errorMessage, fontFamily: fontFamily }}
+                numberOfLines={2}
+              >
                 {errorMessage}
               </Text>
             )
           ) : noteMessage ? (
-            <Text style={styles.noteMessage} numberOfLines={2}>
+            <Text
+              style={{ ...styles.noteMessage, fontFamily: fontFamily }}
+              numberOfLines={2}
+            >
               {noteMessage}
             </Text>
           ) : null}
         </View>
-        <Text style={styles.counter}>{counter}</Text>
+        <Text style={{ ...styles.counter, fontFamily: fontFamily }}>
+          {counter}
+        </Text>
       </View>
     </View>
   );

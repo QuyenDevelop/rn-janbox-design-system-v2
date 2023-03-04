@@ -22,7 +22,6 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-    marginHorizontal: ConstantStyles.spacing16,
   },
   ButtonLeftStyles: {
     overflow: "hidden",

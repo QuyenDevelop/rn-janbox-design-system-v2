@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Text, TextStyle, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { Color, ScreenUtils, ConstantStyles, TextStyles } from "../Themes";
 
 /** Label is a non-interactive component to mark a label for an item or a screen */
@@ -13,20 +13,20 @@ export enum LabelTypes {
   ORANGE = "ORANGE",
 }
 export interface LabelProps {
+  /** set Font for Text */
+  fontFamily?: string;
   /** property using custom Icon View/Image View in the left */
   children?: React.ReactNode;
   /** property using custom Icon View/Image View in the left */
   labelType?: LabelType;
   /** property using show Value of label (*required)*/
   content: string;
-  /** property using custom content Style */
-  textStyles?: TextStyle;
 }
 
 export const BaseLabel: React.FunctionComponent<LabelProps> = ({
+  fontFamily,
   children,
   content,
-  textStyles,
   labelType = LabelTypes.INFO,
 }) => {
   const getLabelColorType =
@@ -48,7 +48,10 @@ export const BaseLabel: React.FunctionComponent<LabelProps> = ({
       }}
     >
       {children && <View style={styles.childrenView}>{children}</View>}
-      <Text style={[styles.contentStyle, textStyles]} numberOfLines={1}>
+      <Text
+        style={{ ...styles.contentStyle, fontFamily: fontFamily }}
+        numberOfLines={1}
+      >
         {content}
       </Text>
     </View>

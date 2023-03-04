@@ -43,13 +43,15 @@ export interface PopupProps {
   image?: ImageSourcePropType;
   /** property custom Opacity of DIM */
   imageBackground?: ImageSourcePropType;
+  /** set Font for Text */
+  fontFamily?: string;
 }
 
 export const BasePopup: FunctionComponent<PopupProps> = ({
   isVisible,
   onClose,
   containerStyle,
-  // children,
+  fontFamily,
   title,
   message,
   disableBackdrop = false,
@@ -128,10 +130,16 @@ export const BasePopup: FunctionComponent<PopupProps> = ({
                 />
               )}
               <View style={styles.content}>
-                <Text style={styles.title} numberOfLines={1}>
+                <Text
+                  style={{ ...styles.title, fontFamily: fontFamily }}
+                  numberOfLines={1}
+                >
                   {title}
                 </Text>
-                <Text style={styles.message} numberOfLines={4}>
+                <Text
+                  style={{ ...styles.message, fontFamily: fontFamily }}
+                  numberOfLines={4}
+                >
                   {message}
                 </Text>
                 <View style={styles.buttonBox}>

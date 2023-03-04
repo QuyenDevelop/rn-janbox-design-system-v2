@@ -54,7 +54,7 @@ export default function App() {
         onIndexChange={setIndex}
         renderScene={renderScene}
         navigationState={{ index, routes }}
-        renderTabIcon={renderTabIcon}
+        renderTab={renderTabIcon}
         // disableSwipe
         isFixed
       />

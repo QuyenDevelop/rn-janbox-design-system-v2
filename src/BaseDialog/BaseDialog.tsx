@@ -22,6 +22,8 @@ export interface DialogProps {
   title: string;
   /** property is the description dialog (required) */
   message: string;
+  /** set Font for Text */
+  fontFamily?: string;
   /** property using custom styles of content */
   containerStyle?: ViewStyle;
   /** property using show/hide button cancel  */
@@ -49,6 +51,7 @@ export const BaseDialog: FunctionComponent<DialogProps> = ({
   onClose,
   containerStyle,
   // children,
+  fontFamily,
   title,
   message,
   disableBackdrop = false,
@@ -80,10 +83,16 @@ export const BaseDialog: FunctionComponent<DialogProps> = ({
     >
       <KeyboardAvoidingView behavior="position" enabled>
         <View style={[styles.contentContainer, containerStyle]}>
-          <Text style={styles.title} numberOfLines={2}>
+          <Text
+            style={{ ...styles.title, fontFamily: fontFamily }}
+            numberOfLines={2}
+          >
             {title}
           </Text>
-          <Text style={styles.message} numberOfLines={2}>
+          <Text
+            style={{ ...styles.message, fontFamily: fontFamily }}
+            numberOfLines={2}
+          >
             {message}
           </Text>
           <View style={styles.buttonBox}>

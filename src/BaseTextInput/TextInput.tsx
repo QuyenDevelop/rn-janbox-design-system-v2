@@ -17,12 +17,15 @@ export declare interface ITextInputProps extends TextInputProps {
   errorMessage?: string;
   height?: number;
   containerStyle?: StyleProp<ViewStyle>;
-  onClearInput: () => void;
+  isHideClear?: boolean;
+  onClearInput?: () => void;
   inputStyle?: StyleProp<ViewStyle>;
   isRequired?: boolean;
   isFocus?: boolean;
   textRightComponent?: React.ReactNode;
   textLeftComponent?: React.ReactNode;
+  /** set Font for Text */
+  fontFamily?: string;
 }
 
 export const BaseTextInput: FunctionComponent<ITextInputProps> = ({
@@ -32,6 +35,7 @@ export const BaseTextInput: FunctionComponent<ITextInputProps> = ({
   value,
   height,
   onChangeText,
+  isHideClear,
   onClearInput,
   containerStyle,
   keyboardType,
@@ -42,6 +46,7 @@ export const BaseTextInput: FunctionComponent<ITextInputProps> = ({
   textLeftComponent,
   editable = true,
   isFocus,
+  fontFamily,
   ...props
 }) => {
   const [focus, setFocus] = useState<boolean>(false);
@@ -72,7 +77,7 @@ export const BaseTextInput: FunctionComponent<ITextInputProps> = ({
   return (
     <View style={[styles.container, containerStyle]}>
       {label && (
-        <Text style={styles.label}>
+        <Text style={{ ...styles.label, fontFamily: fontFamily }}>
           {label}
           <Text style={styles.required}>{isRequired ? " *" : ""}</Text>
         </Text>
@@ -82,34 +87,6 @@ export const BaseTextInput: FunctionComponent<ITextInputProps> = ({
           editable ? [getInputStyle, inputStyle] : styles.inputDisableContainer
         }
       >
-        {/* {textLeftComponent && !chooseCountry ? textLeftComponent : null}
-        {chooseCountry && (
-          <View
-            style={{
-              marginTop: errorMessage
-                ? ScreenUtils.scale(-2)
-                : ScreenUtils.scale(-10),
-            }}
-          >
-            <CountryPicker
-              countryCode={countryCode!}
-              theme={{
-                fontSize: 16,
-                ...Themes.font.regular,
-              }}
-              withFilter
-              withFlagButton
-              withCountryNameButton={false}
-              withCallingCodeButton
-              withEmoji
-              onSelect={onSelectCountry}
-              translation="common"
-              containerButtonStyle={{
-                paddingTop: ScreenUtils.scale(9),
-              }}
-            />
-          </View>
-        )} */}
         {textLeftComponent}
         <Input
           ref={inputRef}
@@ -121,13 +98,19 @@ export const BaseTextInput: FunctionComponent<ITextInputProps> = ({
           keyboardType={keyboardType || "default"}
           secureTextEntry={secureTextEntry}
           placeholderTextColor={Color.black4s}
-          style={{ ...styles.input, height: height || ScreenUtils.scale(40) }}
+          style={{
+            ...styles.input,
+            height: height || ScreenUtils.scale(40),
+            fontFamily: fontFamily,
+          }}
           onFocus={handleFocus}
           onBlur={handleBlur}
           multiline={false}
           {...props}
         />
-        {value && editable && <IconButtonClear onPress={onClearInput} />}
+        {value && editable && !isHideClear && (
+          <IconButtonClear onPress={onClearInput} />
+        )}
         {textRightComponent}
       </View>
       {errorMessage ? (
@@ -137,7 +120,10 @@ export const BaseTextInput: FunctionComponent<ITextInputProps> = ({
               marginTop: ConstantStyles.spacing4,
             }}
           >
-            <Text style={styles.errorMessage} numberOfLines={2}>
+            <Text
+              style={{ ...styles.errorMessage, fontFamily: fontFamily }}
+              numberOfLines={2}
+            >
               {errorMessage}
             </Text>
           </View>
@@ -148,7 +134,10 @@ export const BaseTextInput: FunctionComponent<ITextInputProps> = ({
             marginTop: ConstantStyles.spacing4,
           }}
         >
-          <Text style={styles.noteMessage} numberOfLines={2}>
+          <Text
+            style={{ ...styles.noteMessage, fontFamily: fontFamily }}
+            numberOfLines={2}
+          >
             {noteMessage}
           </Text>
         </View>

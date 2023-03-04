@@ -25,7 +25,7 @@ export const IconButton: React.FunctionComponent<ButtonProps> = ({
         alignItems: "center",
         justifyContent: "center",
         borderRadius: width / 2,
-        backgroundColor: Color.black3s,
+        backgroundColor: Color.black3,
         overflow: "hidden",
       }}
     >

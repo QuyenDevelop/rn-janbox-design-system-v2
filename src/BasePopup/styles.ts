@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
   },
   buttonBox: {
     flexDirection: "row",
-    marginTop: ConstantStyles.spacing24,
+    marginTop: ConstantStyles.spacing16,
   },
   imageBackground: {
     width: ConstantStyles.dialogWidthPrimary,

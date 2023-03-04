@@ -9,6 +9,8 @@ export interface IToolTipProps {
   onCloseTooltip: () => void;
   onOpenTooltip?: () => void;
   message: string;
+  /** set Font for Text */
+  fontFamily?: string;
   height?: number;
   width?: number;
 }
@@ -19,6 +21,7 @@ export const ITooltip: FunctionComponent<IToolTipProps> = ({
   onOpenTooltip,
   children,
   message,
+  fontFamily,
   height = ScreenUtils.scale(44),
   width = ScreenUtils.scale(280),
 }) => {
@@ -33,7 +36,10 @@ export const ITooltip: FunctionComponent<IToolTipProps> = ({
       onOpen={onOpenTooltip}
       onClose={onCloseTooltip}
       popover={
-        <Text style={styles.messageStyle} numberOfLines={5}>
+        <Text
+          style={{ ...styles.messageStyle, fontFamily: fontFamily }}
+          numberOfLines={5}
+        >
           {message}
         </Text>
       }

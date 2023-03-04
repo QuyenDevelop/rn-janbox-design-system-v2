@@ -28,6 +28,8 @@ export interface HeaderBarProps {
   containerStyle?: ViewStyle;
   /** Property is used setup background color of Header */
   headerColor?: string;
+  /** show/hide icon left (Icon goBack) default = true */
+  isShowGoBack?: boolean;
   /** Property is used render icon Left and action Left */
   renderIconLeft?: React.ReactNode;
   /** Property is Event when click icon Left */
@@ -36,6 +38,8 @@ export interface HeaderBarProps {
   renderIconRight?: React.ReactNode;
   /** property is header title show */
   title: string;
+  /** set Font for Text */
+  fontFamily?: string;
   /** Property is used customize style of header title */
   headerTextStyle?: TextStyle;
 }
@@ -47,6 +51,8 @@ export const BaseHeaderBar: React.FunctionComponent<HeaderBarProps> = ({
   renderIconLeft,
   renderIconRight,
   title,
+  isShowGoBack = true,
+  fontFamily,
   headerTextStyle,
   onPressGoBack,
 }) => {
@@ -71,27 +77,30 @@ export const BaseHeaderBar: React.FunctionComponent<HeaderBarProps> = ({
         <View
           style={{ ...styles.iconLeft, marginLeft: ConstantStyles.spacing4 }}
         >
-          <TouchableOpacity
-            style={styles.iconBackPress}
-            onPress={onPressGoBack}
-          >
-            {renderIconLeft ? (
-              renderIconLeft
-            ) : (
-              <Image
-                source={
-                  headerType === HeaderTypes.DARK
-                    ? Images.icBack
-                    : Images.icBackWhite
-                }
-              />
-            )}
-          </TouchableOpacity>
+          {isShowGoBack && (
+            <TouchableOpacity
+              style={styles.iconBackPress}
+              onPress={onPressGoBack}
+            >
+              {renderIconLeft ? (
+                renderIconLeft
+              ) : (
+                <Image
+                  source={
+                    headerType === HeaderTypes.DARK
+                      ? Images.icBack
+                      : Images.icBackWhite
+                  }
+                />
+              )}
+            </TouchableOpacity>
+          )}
         </View>
         <Text
           style={[
             {
               ...styles.headerTextStyle,
+              fontFamily: fontFamily,
               color:
                 headerType === HeaderTypes.DARK ? Color.black6s : Color.white6,
             },

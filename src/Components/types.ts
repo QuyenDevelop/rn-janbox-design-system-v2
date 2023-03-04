@@ -8,6 +8,8 @@ import type {
 export declare interface EmptyStateProps {
   backgroundColor?: string;
   imgSource?: ImageSourcePropType;
+  /** set Font for Text */
+  fontFamily?: string;
   title?: string;
   message: string;
   buttonTitle?: string;
@@ -27,5 +29,7 @@ export declare interface DotProps {
 
 export declare interface BadgeProps extends DotProps, ViewProps {
   content?: number;
+  /** set Font for Text */
+  fontFamily?: string;
   contentStyles?: TextStyle;
 }

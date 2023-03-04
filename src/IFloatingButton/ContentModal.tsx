@@ -10,12 +10,14 @@ interface ContentModal {
   ListSupport: Array<Support>;
   isShowContent: boolean;
   onCloseContent: () => void;
+  fontFamily?: string;
 }
 
 export const ContentModal: FunctionComponent<ContentModal> = ({
   isShowContent,
   ListSupport,
   onCloseContent,
+  fontFamily,
 }) => {
   return (
     <Modal
@@ -40,7 +42,9 @@ export const ContentModal: FunctionComponent<ContentModal> = ({
             onPress={item.onPress}
             key={index}
           >
-            <Text style={styles.buttonText}>{item.title}</Text>
+            <Text style={{ ...styles.buttonText, fontFamily: fontFamily }}>
+              {item.title}
+            </Text>
             <Image source={{ uri: item.image }} style={styles.imgStyle} />
           </TouchableOpacity>
         ))}

@@ -8,6 +8,7 @@ export const IBadge: FunctionComponent<BadgeProps> = ({
   color = Color.red6s,
   content,
   contentStyles,
+  fontFamily,
 }) => {
   const cornerRadius = size / 2;
 
@@ -23,7 +24,14 @@ export const IBadge: FunctionComponent<BadgeProps> = ({
     >
       {content && (
         <Text
-          style={[{ ...TextStyles.text12, color: Color.white6 }, contentStyles]}
+          style={[
+            {
+              ...TextStyles.text12,
+              color: Color.white6,
+              fontFamily: fontFamily,
+            },
+            contentStyles,
+          ]}
           numberOfLines={1}
           adjustsFontSizeToFit
         >

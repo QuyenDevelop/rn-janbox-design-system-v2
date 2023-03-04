@@ -68,7 +68,7 @@ export const TabViewPrimary: FunctionComponent = () => {
           index: index,
           routes: routes,
         })}
-        renderTabIcon={renderTabIcon}
+        renderTab={renderTabIcon}
         isHideTabBar={boolean("Show/Hide Tab Bar", false)}
         isShowRedDot={boolean("Show/Hide Dot", false)}
         isShowBadge={boolean("Show/Hide Badge", false)}

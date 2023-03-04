@@ -24,6 +24,8 @@ export interface SearchProps extends TextInputProps {
   containerStyle?: ViewStyle;
   /** customize icon clear text */
   clearTextIcon?: React.ReactNode;
+  /** set Font for Text */
+  fontFamily?: string;
 }
 
 export const BaseSearch: FunctionComponent<SearchProps> = ({
@@ -33,6 +35,7 @@ export const BaseSearch: FunctionComponent<SearchProps> = ({
   onClearInput,
   containerStyle,
   clearTextIcon,
+  fontFamily,
   ...props
 }) => {
   const [focus, setFocus] = useState<boolean>(false);
@@ -81,7 +84,7 @@ export const BaseSearch: FunctionComponent<SearchProps> = ({
           keyboardType={props.keyboardType || "default"}
           secureTextEntry={props.secureTextEntry}
           placeholderTextColor={Color.black4s}
-          style={{ ...styles.input }}
+          style={{ ...styles.input, fontFamily: fontFamily }}
           onFocus={handleFocus}
           onBlur={handleBlur}
           {...props}

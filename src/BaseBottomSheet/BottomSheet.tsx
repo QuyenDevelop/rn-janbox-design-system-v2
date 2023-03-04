@@ -19,6 +19,8 @@ export interface BottomSheetProps {
   headerTitle: string;
   containerStyle?: ViewStyle;
   height?: number;
+  /** set Font for Text */
+  fontFamily?: string;
   children: React.ReactNode | JSX.Element;
   headerLeftView?: React.ReactNode;
   headerRightView?: React.ReactNode;
@@ -50,6 +52,7 @@ export const BaseBottomSheetRef: ForwardRefRenderFunction<
     disableSwipeComplete = false,
     backdropOpacity,
     height,
+    fontFamily,
   } = props;
   const scrollRef = useRef<ScrollView>(null);
   const MAX_HEIGHT =
@@ -105,7 +108,14 @@ export const BaseBottomSheetRef: ForwardRefRenderFunction<
                   )}
                 </TouchableOpacity>
               </View>
-              <Text style={styles.headerTitle}>{headerTitle}</Text>
+              <Text
+                style={{
+                  ...styles.headerTitle,
+                  fontFamily: fontFamily,
+                }}
+              >
+                {headerTitle}
+              </Text>
               <TouchableOpacity
                 style={{
                   ...styles.headerChildStyle,
